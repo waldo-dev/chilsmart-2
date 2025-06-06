@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-import colors from 'common/theme/agencyClassic/colors';
+import styled, { keyframes } from "styled-components";
+import colors from "common/theme/agencyClassic/colors";
 
 const slideShow = keyframes`
 width: 100%;
@@ -12,9 +12,9 @@ width: 100%;
 `;
 
 const SectionWrapper = styled.section`
-  padding-top: 40px;
   position: relative;
-
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 30px rgba(0, 180, 255, 0.2);
   @media only screen and (max-width: 991px) {
     padding-bottom: 60px;
   }
@@ -131,7 +131,8 @@ export const ImageSlider = styled.div`
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  padding: 50px 0px 0;
+  padding:0px;
+  height: 21vh;
 
   @media only screen and (max-width: 991px) {
     padding-top: 65px;
@@ -147,7 +148,7 @@ export const ImageSlide = styled.div`
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  animation: ${slideShow} 80s linear infinite;
+  animation: ${slideShow} 20s linear infinite;
 
   a {
     margin: 0 35px;
@@ -161,8 +162,9 @@ export const ImageSlide = styled.div`
     @media only screen and (max-width: 624px) {
       margin: 0 5px;
     }
-
     img {
+      max-height: 100px;    /* Ajusta aquí el tamaño máximo */
+      max-width: 120px;
       @media only screen and (max-width: 1360px) {
         max-width: 90%;
       }

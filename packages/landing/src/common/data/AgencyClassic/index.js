@@ -10,7 +10,7 @@ import { pieChart } from 'react-icons-kit/icomoon/pieChart';
 import { briefcase } from 'react-icons-kit/fa/briefcase';
 
 import evernote from '../../assets/image/agencyClassic/clients/evernote.svg';
-import google from '../../assets/image/agencyClassic/clients/Google.svg';
+import google from '../../assets/image/agencyClassic/clients/salfaing.png';
 import dribble from '../../assets/image/agencyClassic/clients/dribble.svg';
 import microsoft from '../../assets/image/agencyClassic/clients/header-logo2.png';
 import paypal from '../../assets/image/agencyClassic/clients/header-logo.png';
@@ -67,7 +67,7 @@ export const MENU_ITEMS = [
   },
 ];
 
-export const clients = [uber, google, paypal, microsoft, dribble, evernote];
+export const clients = [uber, paypal, microsoft, google];
 
 export const FEATURES = [
   {

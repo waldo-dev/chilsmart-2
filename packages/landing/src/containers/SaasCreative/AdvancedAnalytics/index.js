@@ -6,29 +6,38 @@ import NextImage from 'common/components/NextImage';
 import Text from 'common/components/Text';
 import Link from 'common/components/Link';
 import Heading from 'common/components/Heading';
-import analytics from 'common/assets/image/saasCreative/analytics.png';
+import analytics from 'common/assets/image/saasCreative/quienes-somos.jpg';
 import Section, { Grid, Figure, Content } from './analytics.style';
 import { Fade } from 'react-awesome-reveal';
 
 const AdvancedAnalytics = () => {
   return (
-    <Section>
-      <Container width="1400px">
+    <Section id="how-to">
+      <Container width="1200px">
         <Grid>
-          <Fade direction='up' triggerOnce>
+          <Fade direction="up" triggerOnce>
             <Figure>
-              <NextImage src={analytics} alt="analytics" />
+              <NextImage
+                src={analytics}
+                alt="Equipo de desarrollo"
+                style={{
+                  borderRadius: '12px',
+                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+                  maxWidth: '100%',
+                  height: 'auto',
+                  objectFit: 'cover',
+                }}
+              />
             </Figure>
           </Fade>
           <Content>
-            <Text className="subtitle" content="Audience Source Monitoring" />
-            <Heading content="Advanced analytics tools to keep you in control & customizable" />
+            <Heading as="h2" content="Quiénes Somos" />
             <Text
               className="description"
-              content="Pick one of our stock themes, or create your custom theme with the most advanced theme editor on any online survey building tool."
+              content="Somos un equipo de profesionales con más de 4 años de experiencia en desarrollo web. Nos apasiona transformar ideas en proyectos digitales efectivos y personalizados, siempre enfocados en la calidad y la satisfacción del cliente."
             />
-            <Link href="#" className="explore">
-              Explore details <Icon icon={arrowRight} />
+            <Link href="https://wa.me/56940676501?text=Hola,%20quiero%20saber%20más%20sobre%20su%20equipo" className="explore" target="_blank">
+              Conoce más <Icon icon={arrowRight} />
             </Link>
           </Content>
         </Grid>

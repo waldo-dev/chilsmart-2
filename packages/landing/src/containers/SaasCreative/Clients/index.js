@@ -22,6 +22,11 @@ const Clients = () => {
                 <Logo key={`slide1__key_1${index}`} href="#" logoSrc={item} />
               ))}
             </ImageSlide>
+            <ImageSlide>
+              {clients.map((item, index) => (
+                <Logo key={`slide1__key_2${index}`} href="#" logoSrc={item} />
+              ))}
+            </ImageSlide>
           </ImageSlider>
         </ClientWrapper>
       </Container>

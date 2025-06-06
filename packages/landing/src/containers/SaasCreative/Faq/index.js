@@ -37,7 +37,7 @@ const Faq = () => {
     <Section id="faq">
       <Container className="container">
         <SectionHeading>
-          <Heading content="Frequently Ask Question" />
+          <Heading content="Preguntas Frecuentes" />
         </SectionHeading>
         <AccordionWrapper>
           <Collapse collapsible={undefined} accordion={true} activeKey={activeKey} onChange={onChange} openMotion={motion}>

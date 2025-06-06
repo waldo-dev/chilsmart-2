@@ -3,9 +3,10 @@ import { rgba } from 'polished';
 import { themeGet } from '@styled-system/theme-get';
 
 const Section = styled.section`
-  background-color: #19202c;
+  background: linear-gradient(to bottom, #000 0%, #002037 100%);
   padding-top: 100px;
   padding-bottom: 100px;
+
   @media (max-width: 1024px) {
     padding-bottom: 70px;
   }
@@ -18,6 +19,7 @@ const Section = styled.section`
     padding-bottom: 60px;
   }
 `;
+
 
 export const SectionHeading = styled.div`
   text-align: center;
@@ -85,6 +87,25 @@ export const Item = styled.div`
     max-width: 260px;
     margin-left: auto;
     margin-right: auto;
+  }
+`;
+
+export const ExternalLink = styled.a`
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;  /* azul */
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3; /* azul más oscuro al pasar el mouse */
+  }
+
+  &:visited {
+    color: white;
   }
 `;
 

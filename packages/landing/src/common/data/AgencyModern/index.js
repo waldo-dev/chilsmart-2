@@ -1,6 +1,6 @@
-import serviceIcon1 from 'common/assets/image/agencyModern/services/1.png';
-import serviceIcon2 from 'common/assets/image/agencyModern/services/2.png';
-import serviceIcon3 from 'common/assets/image/agencyModern/services/3.png';
+import serviceIcon1 from 'common/assets/image/agencyModern/services/landing-page.png';
+import serviceIcon2 from 'common/assets/image/agencyModern/services/online-store.png';
+import serviceIcon3 from 'common/assets/image/agencyModern/services/settings.png';
 import featureIcon1 from 'common/assets/image/agencyModern/features/1.png';
 import featureIcon2 from 'common/assets/image/agencyModern/features/2.png';
 import featureIcon3 from 'common/assets/image/agencyModern/features/3.png';
@@ -96,20 +96,20 @@ const data = {
     {
       id: 1,
       icon: serviceIcon1,
-      title: 'Desarrollo paginas informativas',
-      description: `We are commited to provide proper business solutions with reasonable pricing.`,
+      title: 'Páginas Informativas que Conectan',
+      description: `Lleva tu negocio a otro nivel con una web clara, moderna y hecha a tu medida. Mostremos quienes son, qué hacen y cómo pueden encontrarlos. Fácil de navegar, rápida y lista para destacar.`,
     },
     {
       id: 2,
       icon: serviceIcon2,
-      title: 'Desarrollo de ecommerce',
-      description: `A day to day report about your ongoing business for proper understanding.`,
+      title: 'Tu Tienda Online, Lista para Vender',
+      description: `Vende 24/7 con una tienda online que se ve bien, carga rápido y es fácil de usar. Muestra tus productos, recibe pagos y gestiona pedidos todo desde un solo lugar. Simple, funcional y pensada para crecer contigo.`,
     },
     {
       id: 3,
       icon: serviceIcon3,
-      title: 'Desarrollo web a medida',
-      description: `Proper Content Management is important to find out the real clients for your agencies.`,
+      title: 'Desarrollo Web 100% a Medida',
+      description: `¿Tienes una idea? La hacemos realidad. Creamos sitios únicos, adaptados a lo que tu y tu proyecto necesitan. Desde lo visual hasta lo funcional, todo pensado para que tu web sea tan única como tu negocio.`,
     },
   ],
   accordion: [

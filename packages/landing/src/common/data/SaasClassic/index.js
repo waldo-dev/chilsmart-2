@@ -62,81 +62,90 @@ export const SERVICE_ITEMS = [
 
 export const MONTHLY_PRICING_TABLE = [
   {
-    name: 'Basic Account',
-    description: 'For Small teams or group who need to build website ',
-    price: '$0',
-    priceLabel: 'Only for first month',
-    buttonLabel: 'Start for free',
+    name: 'Pagina Informativa',
+    description: 'Ideal para presentar tu negocio o servicios de forma clara y profesional.',
+    price: '$130.000',
+    priceLabel: '',
+    buttonLabel: 'Cotizar',
     url: '#',
     listItems: [
       {
-        content: 'Drag & Drop Builder',
+        content: 'Diseño Adaptado a todos los dispositivos',
       },
       {
-        content: '1,000s of Templates Ready',
+        content: 'Hasta 5 secciones (Inicio, Nosotros, Servicios, Contacto, etc.)',
       },
       {
-        content: 'Blog Tools',
+        content: 'Formulario de contacto con envío a tu correo',
       },
       {
-        content: 'eCommerce Store ',
+        content: 'Integración con redes sociales',
       },
       {
-        content: '30+ Webmaster Tools',
+        content: 'Optimización básica SEO',
+      },
+      {
+        content: 'Carga rápida y diseño moderno',
+      },
+      {
+        content: 'Boton a whatsapp',
       },
     ],
   },
   {
-    name: 'Business Account',
-    description: 'For Mediums teams or group who need to build website ',
-    price: '$9.87',
-    priceLabel: 'Per month & subscription yearly',
-    buttonLabel: 'Register Now',
+    name: 'Tienda Online lista para vender',
+    description: 'Perfecta para comenzar a vender tus productos o servicios por Internet.',
+    price: '$150.000',
+    priceLabel: 'Precio hasta 20 productos',
+    buttonLabel: 'Cotizar',
     url: '#',
-    trialButtonLabel: 'Or Start 14 Days trail',
+    trialButtonLabel: '',
     trialURL: '#',
     listItems: [
       {
-        content: 'Drag & Drop Builder',
+        content: 'Carrito de compras y pasarela de pago (Webpay, Mercado Pago, Paypal)',
       },
       {
-        content: '1,000s of Templates Ready',
+        content: 'Gestión de productos (categorías, stock, precios, fotos)',
       },
       {
-        content: 'Blog Tools',
+        content: 'Panel de administración personalizado',
       },
       {
-        content: 'eCommerce Store ',
+        content: 'Página de agradecimiento y confirmación de compra',
       },
       {
-        content: '30+ Webmaster Tools',
+        content: 'Integración con WhatsApp o email de atención',
       },
     ],
   },
   {
-    name: 'Premium Account',
-    description: 'For Large teams or group who need to build website ',
-    price: '$12.98',
-    priceLabel: 'Per month & subscription yearly',
-    buttonLabel: 'Register Now',
+    name: 'Desarrollo web a la medida',
+    description: 'Para ideas únicas, funcionalidades especiales o proyectos personalizados.',
+    price: '$200.000',
+    priceLabel: '(Precio desde)',
+    buttonLabel: 'Cotizar',
     url: '#',
-    trialButtonLabel: 'Or Start 14 Days trail',
+    trialButtonLabel: '',
     trialURL: '#',
     listItems: [
       {
-        content: 'Drag & Drop Builder',
+        content: 'Desarrollo a medida en base a tus requerimientos',
       },
       {
-        content: '1,000s of Templates Ready',
+        content: 'Diseño personalizado según tu marca',
       },
       {
-        content: 'Blog Tools',
+        content: 'Backend escalable con base de datos',
       },
       {
-        content: 'eCommerce Store ',
+        content: 'Integración con APIs o servicios externos',
       },
       {
-        content: '30+ Webmaster Tools',
+        content: 'Panel administrativo avanzado',
+      },
+      {
+        content: 'Soporte extendido post-entrega',
       },
     ],
   },

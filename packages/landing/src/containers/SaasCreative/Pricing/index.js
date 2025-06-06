@@ -13,7 +13,7 @@ const Pricing = () => {
     <Section id="pricing">
       <Container width="1400px">
         <SectionHeading>
-          <Heading content="Simple pricing. No hidden fees." />
+          <Heading content="Nuestros Precios." style={{fontSize: "3rem"}}/>
         </SectionHeading>
         <Grid>
           {pricing.map((price) => (

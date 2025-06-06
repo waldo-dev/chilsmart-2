@@ -18,7 +18,7 @@ const Footer = () => {
           </Link>
           <Text as="p" content={`Copyright © ${new Date().getFullYear()}`} />
           <Link href="/" className="footerLink"> 
-            RedQ, Inc.
+            Chilsmart
           </Link>
         </Box>
         <Box className="menu">
@@ -31,8 +31,8 @@ const Footer = () => {
         <Box className="social">
           <Text as="span" content="Social:" />
           {social.map(({ icon, link }, index) => (
-            <Link href={link} key={`footer-social-link-${index}`} className="socialLink">
-              <Image src={icon} alt="social icon" />
+            <Link href={link} key={`footer-social-link-${index}`} className="socialLink" target='_blank'>
+              <Image src={icon} alt="social icon" width={50}/>
             </Link>
           ))}
         </Box>

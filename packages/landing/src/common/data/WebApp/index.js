@@ -56,9 +56,9 @@ import feature3 from 'common/assets/image/webApp/feature-3.png';
 import feature4 from 'common/assets/image/webApp/feature-4.png';
 import feature5 from 'common/assets/image/webApp/feature-5.png';
 import footerDribble from 'common/assets/image/webApp/footer-dribble.svg';
-import footerFacebook from 'common/assets/image/webApp/footer-facebook.svg';
-import footerTwitter from 'common/assets/image/webApp/footer-twitter.svg';
-import footerLogo from 'common/assets/image/webApp/logo-dark.svg';
+import footerFacebook from 'common/assets/image/saasCreative/tiktok-logo.webp';
+import footerTwitter from 'common/assets/image/saasCreative/ig-logo.webp';
+import footerLogo from 'common/assets/image/saasCreative/chilsmart-logo.png';
 import secure2 from 'common/assets/image/webApp/secure-1.png';
 import secure1 from 'common/assets/image/webApp/secure-2.png';
 import secureImage from 'common/assets/image/webApp/secure-dashboard.png';
@@ -483,33 +483,29 @@ export const FOOTER_DATA = {
   menu: [
     {
       link: '#',
-      label: 'Support',
+      label: 'Soporte',
     },
     {
       link: '#',
-      label: 'About Us',
+      label: 'Sobre Nosotros',
     },
     {
       link: '#',
-      label: 'Privacy',
+      label: 'Privacidad',
     },
     {
       link: '#',
-      label: 'Contact',
+      label: 'Contacto',
     },
   ],
   social: [
     {
       icon: footerFacebook,
-      link: '#',
+      link: 'https://www.tiktok.com/@chilsmart_solutions',
     },
     {
       icon: footerTwitter,
-      link: '#',
-    },
-    {
-      icon: footerDribble,
-      link: '#',
+      link: 'https://www.instagram.com/chilsmartsolutions/',
     },
   ],
 };

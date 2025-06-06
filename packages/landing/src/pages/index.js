@@ -13,20 +13,21 @@ import AdvancedAnalytics from 'containers/SaasCreative/AdvancedAnalytics';
 import Features from 'containers/SaasCreative/Features';
 import WalletExperience from 'containers/SaasCreative/WalletExperience';
 import Testimonial from 'containers/SaasCreative/Testimonial';
-import Pricing from 'containers/SaasCreative/Pricing';
+import Pricing from 'containers/SaasClassic/Pricing';
 import OurCommunity from 'containers/SaasCreative/OurCommunity';
 import Faq from 'containers/SaasCreative/Faq';
 import CallToAction from 'containers/SaasCreative/CallToAction';
-import Footer from 'containers/SaasCreative/Footer';
+import Footer from 'containers/WebApp/Footer';
 import { GlobalStyle, ContentWrapper } from 'containers/SaasCreative/saasCreative.style';
 import 'animate.css';
+import wspLogo from 'common/assets/image/saasCreative/wsp-logo.png'
 
 const SaasCreative = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<Fragment>
 				<Head>
-					<title>SaaS Creative | A react next landing page</title>
+					<title>Chilsmart Solutions | soluciones tecnologicas</title>
 					<meta name="Description" content="React next landing page" />
 					<meta name="theme-color" content="#ec5555" />
 					{/* Load google fonts */}
@@ -47,14 +48,40 @@ const SaasCreative = () => {
 					<Clients />
 					<HowItWorks />
 					<AdvancedAnalytics />
+					<Clients />
 					<Features />
-					<WalletExperience />
+					{/* <WalletExperience />
 					<Testimonial />
+					<OurCommunity /> */}
 					<Pricing />
-					<OurCommunity />
 					<Faq />
-					<CallToAction />
+					{/* <CallToAction /> */}
 					<Footer />
+					<a
+            href="https://wa.me/56940676501?text=Hola,%20quiero%20cotizar"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              position: "fixed",
+              width: "60px",
+              height: "60px",
+              bottom: "20px",
+              right: "20px",
+              // backgroundColor: "#25D366",
+              color: "white",
+              borderRadius: "50%",
+              textAlign: "center",
+              fontSize: "30px",
+              boxShadow: "0 2px 10px rgba(0,0,0,0.3)",
+              zIndex: 1000,
+            }}
+          >
+            <img
+              src={wspLogo.src}
+              alt="WhatsApp"
+              style={{ width: "50px", height: "55px" }}
+            />
+          </a>
 				</ContentWrapper>
 			</Fragment>
 		</ThemeProvider>

@@ -1,19 +1,22 @@
-import React from 'react';
-import Container from 'common/components/UI/ContainerTwo';
-import NextImage from 'common/components/NextImage';
-import Text from 'common/components/Text';
-import Heading from 'common/components/Heading';
-import FeatureBlock from 'common/components/FeatureBlock';
-import SectionWrapper, { SectionHeader, ServiceWrapper } from './services.style';
-import data from 'common/data/AgencyModern';
-import { Fade } from 'react-awesome-reveal';
-import { fontSize } from 'styled-system';
+import React from "react";
+import Container from "common/components/UI/ContainerTwo";
+import NextImage from "common/components/NextImage";
+import Text from "common/components/Text";
+import Heading from "common/components/Heading";
+import FeatureBlock from "common/components/FeatureBlock";
+import SectionWrapper, {
+  SectionHeader,
+  ServiceWrapper,
+} from "./services.style";
+import data from "common/data/AgencyModern";
+import { Fade } from "react-awesome-reveal";
+import { fontSize } from "styled-system";
 
 const Services = () => {
   return (
     <SectionWrapper id="services">
       <Container>
-        <Fade direction='up' triggerOnce delay={100}>
+        <Fade direction="up" triggerOnce delay={100}>
           <SectionHeader>
             <Heading content="Nuestros Servicios" />
             <Text content="Llevemos tu negocio al siguiente nivel con nuestras soluciones digitales." />
@@ -21,7 +24,12 @@ const Services = () => {
         </Fade>
         <ServiceWrapper>
           {data.services.map((item, index) => (
-            <Fade direction='up' triggerOnce delay={130 * item.id} key={`service-key-${item.id}`}>
+            <Fade
+              direction="up"
+              triggerOnce
+              delay={130 * item.id}
+              key={`service-key-${item.id}`}
+            >
               <FeatureBlock
                 key={`post_key-${index}`}
                 id={`post_id-${item.id}`}
@@ -41,6 +49,14 @@ const Services = () => {
           ))}
         </ServiceWrapper>
       </Container>
+          <div className="sparkle" />
+          <div className="sparkle" />
+          <div className="sparkle" />
+          <div className="sparkle" />
+          <div className="sparkle" />
+          <div className="sparkle" />
+          <div className="sparkle" />
+          <div className="sparkle" />
     </SectionWrapper>
   );
 };

@@ -8,33 +8,44 @@ const Section = styled.section`
   position: relative;
   min-height: 120vh;
   z-index: 0;
+  overflow: hidden;
+
   ::before,
   ::after {
     content: "";
     position: absolute;
-    width: 100%;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
     z-index: -1;
+    pointer-events: none;
   }
+
   ::before {
-    background: transparent url(${shape?.src}) no-repeat;
-    bottom: 147px;
-    height: 232px;
-    @media (max-width: 768px) {
-      bottom: -30px;
-    }
-    @media (max-width: 480px) {
-      bottom: -80px;
-    }
+    background: radial-gradient(circle at 30% 30%, rgba(0, 153, 255, 0.2), transparent 60%),
+                radial-gradient(circle at 70% 60%, rgba(0, 102, 255, 0.15), transparent 70%),
+                radial-gradient(circle at 50% 90%, rgba(0, 204, 255, 0.1), transparent 80%);
+    animation: pulseLights 8s ease-in-out infinite;
+    filter: blur(60px);
   }
+
   ::after {
-    background-color: #fff;
-    bottom: 0;
-    height: 150px;
-    @media (max-width: 768px) {
-      height: 0;
+    background: none; // ya no necesitamos el color blanco de fondo
+  }
+
+  @keyframes pulseLights {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
     }
   }
 `;
+
 
 export const BannerContentWrapper = styled.div`
 display: flex;

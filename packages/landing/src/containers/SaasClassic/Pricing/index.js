@@ -11,7 +11,6 @@ import GlideSlide from 'common/components/GlideCarousel/glideSlide';
 
 import {
   MONTHLY_PRICING_TABLE,
-  YEARLY_PRICING_TABLE,
 } from 'common/data/SaasClassic';
 
 import PricingTable, {
@@ -97,12 +96,12 @@ const PricingSection = ({
     <Box {...sectionWrapper} id="pricing_section">
       <Container>
         <Box {...secTitleWrapper}>
-          <Text {...secText} content="PRICING PLAN" />
           <Heading
             {...secHeading}
-            content="Choose your pricing policy which affordable"
+            style={{ fontSize: "3rem" }}
+            content="Nuestros Precios Web"
           />
-          <PricingButtonWrapper>
+          {/* <PricingButtonWrapper>
             <Button
               title="Monthly Pricing"
               className={activeStatus ? 'active-item' : ''}
@@ -120,7 +119,7 @@ const PricingSection = ({
             <Link href="#">
               + Custom Plan
             </Link>
-          </PricingButtonWrapper>
+          </PricingButtonWrapper> */}
         </Box>
         <PricingTableWrapper>
           <GlideCarousel
@@ -157,15 +156,15 @@ const PricingSection = ({
                       ))}
                     </PricingList>
                     <PricingButton>
-                      <Link href={pricingTable.url}>
+                      <Link href={`https://wa.me/56940676501?text=Hola,%20quiero%20cotizar%20${pricingTable.name}`} target='_blank'>
                         <Button
                           title={pricingTable.buttonLabel}
                           {...buttonFillStyle}
                         />
                       </Link>
                       {pricingTable.trialButtonLabel ? (
-                        <Link href={pricingTable.trialURL || '#'} className="trial_button">
-                          {pricingTable.trialButtonLabel}
+                        <Link href={`https://wa.me/56940676501?text=Hola,%20quiero%20cotizar%20${pricingTable.name}`} className="trial_button">
+                          {/* {pricingTable.trialButtonLabel} */}
                         </Link>
                       ) : (
                         ''
