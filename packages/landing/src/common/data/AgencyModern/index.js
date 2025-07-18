@@ -96,20 +96,20 @@ const data = {
     {
       id: 1,
       icon: serviceIcon1,
-      title: 'Páginas Informativas que Conectan',
-      description: `Lleva tu negocio a otro nivel con una web clara, moderna y hecha a tu medida. Mostremos quienes son, qué hacen y cómo pueden encontrarlos. Fácil de navegar, rápida y lista para destacar.`,
+      title: 'Asistente de atención al cliente',
+      description: `Un chatbot personalizado que responde en tiempo real, agenda citas y mejora la experiencia de tus clientes 24/7.`,
     },
     {
       id: 2,
       icon: serviceIcon2,
-      title: 'Tu Tienda Online, Lista para Vender',
-      description: `Vende 24/7 con una tienda online que se ve bien, carga rápido y es fácil de usar. Muestra tus productos, recibe pagos y gestiona pedidos todo desde un solo lugar. Simple, funcional y pensada para crecer contigo.`,
+      title: 'Generador de campañas de marketing',
+      description: `Genera promociones, copys e imágenes para redes sociales en minutos. Aumenta tu alcance con automatización creativa.`,
     },
     {
       id: 3,
       icon: serviceIcon3,
-      title: 'Desarrollo Web 100% a Medida',
-      description: `¿Tienes una idea? La hacemos realidad. Creamos sitios únicos, adaptados a lo que tu y tu proyecto necesitan. Desde lo visual hasta lo funcional, todo pensado para que tu web sea tan única como tu negocio.`,
+      title: 'Dashboard de reportes automatizados',
+      description: `Recibe reportes semanales por WhatsApp o correo, conectados a tus sistemas (Google Sheets, ERP, CRM, etc.).`,
     },
   ],
   accordion: [

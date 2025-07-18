@@ -8,11 +8,7 @@ import Button from 'common/components/Button';
 import Container from 'common/components/UI/Container';
 import GlideCarousel from 'common/components/GlideCarousel';
 import GlideSlide from 'common/components/GlideCarousel/glideSlide';
-
-import {
-  MONTHLY_PRICING_TABLE,
-} from 'common/data/SaasClassic';
-
+import { MONTHLY_PRICING_TABLE } from 'common/data/SaasClassic';
 import PricingTable, {
   PricingHead,
   PricingPrice,
@@ -39,17 +35,17 @@ const PricingSection = ({
     data: MONTHLY_PRICING_TABLE,
     active: true,
   });
-
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    setTimeout(function () {
+    const timer = setTimeout(() => {
       setLoading(true);
     }, 500);
-  });
+    return () => clearTimeout(timer); // Cleanup the timer
+  }, []);
 
   const data = state.data;
   const activeStatus = state.active;
-
   const pricingCarouselOptions = {
     type: 'slider',
     perView: 3,
@@ -93,43 +89,28 @@ const PricingSection = ({
   };
 
   return (
-    <Box {...sectionWrapper} id="pricing_section">
+    <Box {...sectionWrapper} id="products_section">
       <Container>
         <Box {...secTitleWrapper}>
           <Heading
             {...secHeading}
             style={{ fontSize: "3rem" }}
-            content="Nuestros Precios Web"
+            content="Nuestros Productos"
           />
-          {/* <PricingButtonWrapper>
-            <Button
-              title="Monthly Pricing"
-              className={activeStatus ? 'active-item' : ''}
-              onClick={() =>
-                setState({ data: MONTHLY_PRICING_TABLE, active: true })
-              }
-            />
-            <Button
-              title="Annual Pricing"
-              className={activeStatus === false ? 'active-item' : ''}
-              onClick={() =>
-                setState({ data: YEARLY_PRICING_TABLE, active: false })
-              }
-            />
-            <Link href="#">
-              + Custom Plan
-            </Link>
-          </PricingButtonWrapper> */}
+          <Text
+            {...secText}
+            content="Descubre nuestras soluciones de automatización diseñadas para mejorar la eficiencia de tu negocio."
+          />
         </Box>
         <PricingTableWrapper>
           <GlideCarousel
-            carouselSelector="pricing-carousel"
+            carouselSelector="products-carousel"
             options={pricingCarouselOptions}
             controls={false}
           >
             <>
               {data.map((pricingTable, index) => (
-                <GlideSlide key={`pricing-table-${index}`}>
+                <GlideSlide key={`product-table-${index}`}>
                   <PricingTable
                     freePlan={pricingTable.freePlan}
                     className="pricing_table"
@@ -150,7 +131,7 @@ const PricingSection = ({
                     </PricingPrice>
                     <PricingList>
                       {pricingTable.listItems.map((item, index) => (
-                        <ListItem key={`pricing-table-list-${index}`}>
+                        <ListItem key={`product-table-list-${index}`}>
                           <Text content={item.content} {...listContentStyle} />
                         </ListItem>
                       ))}
@@ -162,13 +143,6 @@ const PricingSection = ({
                           {...buttonFillStyle}
                         />
                       </Link>
-                      {pricingTable.trialButtonLabel ? (
-                        <Link href={`https://wa.me/56940676501?text=Hola,%20quiero%20cotizar%20${pricingTable.name}`} className="trial_button">
-                          {/* {pricingTable.trialButtonLabel} */}
-                        </Link>
-                      ) : (
-                        ''
-                      )}
                     </PricingButton>
                   </PricingTable>
                 </GlideSlide>
@@ -181,18 +155,6 @@ const PricingSection = ({
   );
 };
 
-PricingSection.propTypes = {
-  sectionWrapper: PropTypes.object,
-  row: PropTypes.object,
-  secTitleWrapper: PropTypes.object,
-  secHeading: PropTypes.object,
-  secText: PropTypes.object,
-  nameStyle: PropTypes.object,
-  descriptionStyle: PropTypes.object,
-  priceStyle: PropTypes.object,
-  priceLabelStyle: PropTypes.object,
-  listContentStyle: PropTypes.object,
-};
 
 PricingSection.defaultProps = {
   sectionWrapper: {
@@ -226,11 +188,6 @@ PricingSection.defaultProps = {
     width: '500px',
     maxWidth: '100%',
   },
-  col: {
-    width: [1, 1 / 2, 1 / 2, 1 / 3],
-    pr: '15px',
-    pl: '15px',
-  },
   nameStyle: {
     fontSize: ['20px', '20px', '22px', '22px', '22px'],
     fontWeight: '700',
@@ -249,8 +206,7 @@ PricingSection.defaultProps = {
   priceStyle: {
     as: 'span',
     display: 'block',
-    fontSize: ['36px', '36px', '40px', '40px', '40px'],
-    color: '#0f2137',
+    fontSize: ['36px', '36px', '40px', '40px', '40px'],    color: '#0f2137',
     textAlign: 'center',
     mb: '5px',
     letterSpacing: '-0.025em',

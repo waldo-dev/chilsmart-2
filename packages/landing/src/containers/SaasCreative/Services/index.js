@@ -18,8 +18,9 @@ const Services = () => {
       <Container>
         <Fade direction="up" triggerOnce delay={100}>
           <SectionHeader>
-            <Heading content="Nuestros Servicios" />
-            <Text content="Llevemos tu negocio al siguiente nivel con nuestras soluciones digitales." />
+            <Heading content="¿Qué hacemos?" />
+            <Text content="Soluciones de automatización que se adaptan a tu negocio" />
+            <Text content="Desde bots que responden automáticamente a tus clientes, hasta sistemas que integran tus ventas, reportes y marketing: diseñamos e implementamos soluciones a medida usando IA, APIs y herramientas líderes como n8n, OpenAi" />
           </SectionHeader>
         </Fade>
         <ServiceWrapper>

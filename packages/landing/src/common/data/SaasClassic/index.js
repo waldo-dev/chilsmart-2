@@ -62,90 +62,87 @@ export const SERVICE_ITEMS = [
 
 export const MONTHLY_PRICING_TABLE = [
   {
-    name: 'Pagina Informativa',
-    description: 'Ideal para presentar tu negocio o servicios de forma clara y profesional.',
-    price: '$130.000',
+    name: 'Atención al Cliente y Agendamiento Automático',
+    description: 'Optimiza la experiencia del cliente con atención instantánea por WhatsApp o web. Facilita la gestión de citas con nuestro sistema automático, permitiendo programar y cancelar fácilmente.',
+    price: '$100.000',
     priceLabel: '',
-    buttonLabel: 'Cotizar',
+    buttonLabel: 'Solicitar Cotización',
     url: '#',
     listItems: [
-      {
-        content: 'Diseño Adaptado a todos los dispositivos',
+         {
+        content: 'Respuestas automáticas para consultas frecuentes',
       },
       {
-        content: 'Hasta 5 secciones (Inicio, Nosotros, Servicios, Contacto, etc.)',
+        content: 'Integración con WhatsApp Business',
       },
       {
-        content: 'Formulario de contacto con envío a tu correo',
+        content: 'Sistema de notificaciones para recordatorios de citas',
       },
       {
-        content: 'Integración con redes sociales',
+        content: 'Historial de interacciones con los clientes',
       },
       {
-        content: 'Optimización básica SEO',
+        content: 'Configuración de horarios y disponibilidad',
       },
       {
-        content: 'Carga rápida y diseño moderno',
+        content: 'Análisis de satisfacción del cliente',
       },
       {
-        content: 'Boton a whatsapp',
+        content: 'Interacción multicanal (web, móvil, etc.)',
       },
     ],
   },
   {
-    name: 'Tienda Online lista para vender',
-    description: 'Perfecta para comenzar a vender tus productos o servicios por Internet.',
-    price: '$150.000',
-    priceLabel: 'Precio hasta 20 productos',
-    buttonLabel: 'Cotizar',
+    name: 'Creación de Contenido para Redes Sociales',
+    description: 'Mejora tu presencia online con nuestro servicio de generación de contenido para redes sociales. Creamos publicaciones atractivas que impulsan la interacción de tu audiencia.',
+    price: '$120.000',
+    priceLabel: 'Hasta 20 publicaciones',
+    buttonLabel: 'Solicitar Cotización',
+    url: '#',
+    trialButtonLabel: '',
+    trialURL: '#',
+    listItems: [
+       {
+        content: 'Publicaciones gráficas personalizadas',
+      },
+      {
+        content: 'Calendario de contenido para programación',
+      },
+      {
+        content: 'Utilización de hashtags estratégicos',
+      },
+      {
+        content: 'Análisis de rendimiento de las publicaciones',
+      },
+      {
+        content: 'Interacción con seguidores y respuesta a comentarios',
+      },
+    ],
+  },
+  {
+    name: 'Reportes Personalizados de Negocio',
+    description: 'Recibe informes detallados directamente en tu chat preferido. Mantente al tanto del rendimiento de tu negocio con análisis rápidos y accesibles.',
+    price: '$180.000',
+    priceLabel: '(Desde)',
+    buttonLabel: 'Solicitar Cotización',
     url: '#',
     trialButtonLabel: '',
     trialURL: '#',
     listItems: [
       {
-        content: 'Carrito de compras y pasarela de pago (Webpay, Mercado Pago, Paypal)',
+        content: 'Reportes de desempeño semanal y mensual',
       },
       {
-        content: 'Gestión de productos (categorías, stock, precios, fotos)',
+        content: 'Analítica de clientes y tendencias de compra',
       },
       {
-        content: 'Panel de administración personalizado',
+        content: 'Gráficos visuales sobre métricas clave',
       },
       {
-        content: 'Página de agradecimiento y confirmación de compra',
+        content: 'Alertas sobre cambios significativos en el rendimiento',
       },
       {
-        content: 'Integración con WhatsApp o email de atención',
-      },
-    ],
-  },
-  {
-    name: 'Desarrollo web a la medida',
-    description: 'Para ideas únicas, funcionalidades especiales o proyectos personalizados.',
-    price: '$200.000',
-    priceLabel: '(Precio desde)',
-    buttonLabel: 'Cotizar',
-    url: '#',
-    trialButtonLabel: '',
-    trialURL: '#',
-    listItems: [
-      {
-        content: 'Desarrollo a medida en base a tus requerimientos',
-      },
-      {
-        content: 'Diseño personalizado según tu marca',
-      },
-      {
-        content: 'Backend escalable con base de datos',
-      },
-      {
-        content: 'Integración con APIs o servicios externos',
-      },
-      {
-        content: 'Panel administrativo avanzado',
-      },
-      {
-        content: 'Soporte extendido post-entrega',
+        content: 'Informes sobre efectividad de campañas',
       },
     ],
   },

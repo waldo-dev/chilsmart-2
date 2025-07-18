@@ -34,7 +34,7 @@ const AdvancedAnalytics = () => {
             <Heading as="h2" content="Quiénes Somos" />
             <Text
               className="description"
-              content="Somos un equipo de profesionales con más de 4 años de experiencia en desarrollo web. Nos apasiona transformar ideas en proyectos digitales efectivos y personalizados, siempre enfocados en la calidad y la satisfacción del cliente."
+              content="Somos un equipo de tres profesionales dedicados al desarrollo de soluciones de automatización. Nos apasiona transformar ideas en proyectos digitales efectivos y personalizados, siempre enfocados en la calidad y la satisfacción del cliente. Trabajamos juntos para impulsar la innovación y mejorar la eficiencia a través de la automatización"
             />
             <Link href="https://wa.me/56940676501?text=Hola,%20quiero%20saber%20más%20sobre%20su%20equipo" className="explore" target="_blank">
               Conoce más <Icon icon={arrowRight} />

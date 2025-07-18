@@ -29,13 +29,12 @@ const Banner = () => {
         <BannerContentWrapper>
           <BannerContent>
             <Heading
-              content="Tu negocio necesita más que solo presencia digital"
+              content="Automatización inteligente para escalar tu negocio sin esfuerzo"
               className="animate__animated animate__fadeInUp"
             />
             <Text
               className="animate__animated animate__fadeInUp"
-              content="Diseñamos experiencias digitales a medida: sitios, tiendas y software que funcionan.
-            Desde una landing atractiva hasta un sistema a medida, te acompañamos en cada paso."
+              content="En Chilsmart Automatizaciones, desarrollamos herramientas digitales personalizadas que automatizan tareas repetitivas, mejoran tu productividad y te permiten enfocarte en lo que realmente importa: hacer crecer tu negocio."
             />
             <Subscribe className="animate__animated animate__fadeInUp">
               <Button title="¡Transforma tu negocio hoy!" onClick={handleOnClick} />
