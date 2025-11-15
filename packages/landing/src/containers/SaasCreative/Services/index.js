@@ -8,27 +8,52 @@ import SectionWrapper, {
   SectionHeader,
   ServiceWrapper,
 } from "./services.style";
-import data from "common/data/AgencyModern";
 import { Fade } from "react-awesome-reveal";
-import { fontSize } from "styled-system";
+import serviceIcon1 from "common/assets/image/agencyModern/services/landing-page.png";
+import serviceIcon2 from "common/assets/image/agencyModern/services/online-store.png";
+import serviceIcon3 from "common/assets/image/agencyModern/services/settings.png";
 
 const Services = () => {
+  const services = [
+    {
+      id: "erp",
+      icon: serviceIcon1,
+      title: "ERP para talleres mecánicos",
+      description:
+        "Gestión completa de órdenes de servicio, cotizaciones, inventario y facturación electrónica, con reportes automáticos y acceso para cada rol del taller.",
+    },
+    {
+      id: "gyms",
+      icon: serviceIcon2,
+      title: "Automatizaciones para gimnasios y clubes",
+      description:
+        "Sistemas de membresías, control de asistencia, cobros recurrentes e integraciones con WhatsApp y pasarelas de pago para escalar la experiencia fitness.",
+    },
+    {
+      id: "custom",
+      icon: serviceIcon3,
+      title: "Desarrollos e integraciones a medida",
+      description:
+        "Aplicaciones web, APIs y flujos con IA para digitalizar operaciones comerciales, soporte y logística en distintas industrias.",
+    },
+  ];
+
   return (
     <SectionWrapper id="services">
       <Container>
         <Fade direction="up" triggerOnce delay={100}>
           <SectionHeader>
             <Heading content="¿Qué hacemos?" />
-            <Text content="Soluciones de automatización que se adaptan a tu negocio" />
-            <Text content="Desde bots que responden automáticamente a tus clientes, hasta sistemas que integran tus ventas, reportes y marketing: diseñamos e implementamos soluciones a medida usando IA, APIs y herramientas líderes como n8n, OpenAi" />
+            <Text content="Construimos plataformas y automatizaciones que resuelven procesos críticos." />
+            <Text content="Nuestro ERP impulsa talleres mecánicos y nuestras soluciones a medida optimizan gimnasios y otras industrias, combinando desarrollos propios con integraciones e IA aplicada." />
           </SectionHeader>
         </Fade>
         <ServiceWrapper>
-          {data.services.map((item, index) => (
+          {services.map((item, index) => (
             <Fade
               direction="up"
               triggerOnce
-              delay={130 * item.id}
+              delay={150 * (index + 1)}
               key={`service-key-${item.id}`}
             >
               <FeatureBlock

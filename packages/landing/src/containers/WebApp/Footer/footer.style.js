@@ -1,94 +1,129 @@
-import themeGet from '@styled-system/theme-get';
-import styled from 'styled-components';
+import themeGet from "@styled-system/theme-get";
+import styled from "styled-components";
 
 const FooterArea = styled.footer`
-  .container {
+  background: linear-gradient(180deg, #0f172a 0%, #020b17 100%);
+  padding: 80px 0 50px;
+  color: rgba(226, 232, 240, 0.85);
+
+  .footerContainer {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    border-top: 1px solid #dfe4ed;
-    padding-top: 35px;
-    padding-bottom: 50px;
+    align-items: flex-start;
     justify-content: space-between;
-    @media (max-width: 1600px) {
-      padding-bottom: 40px;
-    }
-    @media (max-width: 991px) {
-      flex-direction: column;
-    }
+    gap: 40px;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(226, 232, 240, 0.15);
+    padding-top: 40px;
   }
-  .logoBox {
+
+  .brand {
+    max-width: 320px;
     display: flex;
-    align-items: center;
-    @media (max-width: 425px) {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+    flex-direction: column;
+    gap: 14px;
     .logo {
-      @media (max-width: 425px) {
-        flex: 0 0 100%;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 15px;
+      display: inline-flex;
+      align-items: center;
+      img {
+        max-width: 180px;
+        height: auto;
       }
     }
-    p {
+    .tagline {
       margin: 0;
-      color: #09131f;
-      margin-left: 15px;
-      margin-right: 5px;
-      @media (max-width: 1600px) {
-        font-size: 15px;
-      }
+      color: rgba(226, 232, 240, 0.75);
+      line-height: 1.6;
+    }
+    .copyright {
+      font-size: 14px;
+      color: rgba(148, 163, 184, 0.8);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
   }
-  .footerLink {
-    line-height: 1;
-    color: ${themeGet('colors.primary')};
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid currentColor;
-  }
+
   .menu {
     display: flex;
-    align-items: center;
-    @media (max-width: 991px) {
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-    a {
+    flex-direction: column;
+    gap: 12px;
+    min-width: 180px;
+    .menuLink {
       font-size: 15px;
-      line-height: 1;
-      color: #0f2137;
-      transition: all 500ms ease;
+      color: rgba(226, 232, 240, 0.85);
+      transition: color 0.3s ease;
       &:hover {
-        color: ${themeGet('colors.primary')};
-      }
-      + a {
-        margin-left: 35px;
-
-        @media (max-width: 480px) {
-          margin-left: 16px;
-        }
+        color: ${themeGet("colors.primary", "#0ea5e9")};
       }
     }
   }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    .ctaLink {
+      text-decoration: none;
+    }
+    .ctaButton {
+      background: linear-gradient(120deg, #0ea5e9, #38bdf8);
+      box-shadow: 0 18px 36px rgba(14, 165, 233, 0.35);
+      border-radius: 999px;
+      padding: 0 28px;
+      min-height: 52px;
+    }
+  }
+
   .social {
     display: flex;
     align-items: center;
+    gap: 12px;
     span {
-      color: #0f2137;
-      line-height: 1;
-      margin-bottom: 0;
-      font-size: 15px;
-      display: block;
+      font-size: 14px;
+      color: rgba(226, 232, 240, 0.75);
     }
-    a {
-      margin-left: 15px;
-      transition: opacity 0.4s ease;
+    .socialLink {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.6);
+      transition: transform 0.3s ease, background 0.3s ease;
+      img {
+        max-width: 18px;
+      }
       &:hover {
-        opacity: .8;
+        background: rgba(14, 165, 233, 0.2);
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    .footerContainer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .menu {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    .actions {
+      width: 100%;
+      .ctaLink {
+        width: 100%;
+        .ctaButton {
+          width: 100%;
+          text-align: center;
+        }
+      }
+      .social {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
       }
     }
   }

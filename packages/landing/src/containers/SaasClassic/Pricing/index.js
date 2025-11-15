@@ -17,7 +17,9 @@ import PricingTable, {
   ListItem,
   PricingButtonWrapper,
   PricingTableWrapper,
-} from './pricing.style';
+  SectionBadge,
+  SectionDescription,
+} from "./pricing.style";
 
 const PricingSection = ({
   sectionWrapper,
@@ -48,7 +50,7 @@ const PricingSection = ({
   const activeStatus = state.active;
   const pricingCarouselOptions = {
     type: 'slider',
-    perView: 3,
+    perView: 2,
     gap: 30,
     bound: true,
     breakpoints: {
@@ -92,15 +94,16 @@ const PricingSection = ({
     <Box {...sectionWrapper} id="products_section">
       <Container>
         <Box {...secTitleWrapper}>
+          <SectionBadge>Soluciones principales</SectionBadge>
           <Heading
             {...secHeading}
             style={{ fontSize: "3rem" }}
             content="Nuestros Productos"
           />
-          <Text
-            {...secText}
-            content="Descubre nuestras soluciones de automatización diseñadas para mejorar la eficiencia de tu negocio."
-          />
+          <SectionDescription>
+            Desarrollamos plataformas a la medida y un ERP especializado para talleres mecánicos. Cada
+            entrega incluye discovery, despliegue guiado y soporte continuo del equipo fundador.
+          </SectionDescription>
         </Box>
         <PricingTableWrapper>
           <GlideCarousel
@@ -123,9 +126,15 @@ const PricingSection = ({
                       />
                     </PricingHead>
                     <PricingPrice>
-                      <Text content={pricingTable.price} {...priceStyle} />
                       <Text
-                        content={pricingTable.priceLabel}
+                        content={pricingTable.price || "A medida"}
+                        {...priceStyle}
+                      />
+                      <Text
+                        content={
+                          pricingTable.priceLabel ||
+                          "Propuesta personalizada"
+                        }
                         {...priceLabelStyle}
                       />
                     </PricingPrice>
@@ -137,12 +146,18 @@ const PricingSection = ({
                       ))}
                     </PricingList>
                     <PricingButton>
-                      <Link href={`https://wa.me/56940676501?text=Hola,%20quiero%20cotizar%20${pricingTable.name}`} target='_blank'>
+                      <a
+                        href={`https://wa.me/56940676501?text=${encodeURIComponent(
+                          `Hola, quiero cotizar ${pricingTable.name}`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Button
                           title={pricingTable.buttonLabel}
                           {...buttonFillStyle}
                         />
-                      </Link>
+                      </a>
                     </PricingButton>
                   </PricingTable>
                 </GlideSlide>
@@ -161,6 +176,7 @@ PricingSection.defaultProps = {
     as: 'section',
     pt: ['60px', '80px', '80px', '80px', '100px'],
     pb: '20px',
+    background: 'linear-gradient(180deg, #f8fbff 0%, #e0f2ff 55%, #d9f0ff 100%)',
   },
   secTitleWrapper: {
     mb: ['30px', '40px'],
@@ -189,35 +205,36 @@ PricingSection.defaultProps = {
     maxWidth: '100%',
   },
   nameStyle: {
-    fontSize: ['20px', '20px', '22px', '22px', '22px'],
-    fontWeight: '700',
-    color: '#0f2137',
-    letterSpacing: '-0.025em',
-    textAlign: 'center',
-    mb: '12px',
+    fontSize: ["20px", "20px", "24px", "24px", "24px"],
+    fontWeight: "700",
+    color: "#0f172a",
+    letterSpacing: "-0.025em",
+    textAlign: "left",
+    mb: "12px",
   },
   descriptionStyle: {
-    fontSize: ['15px', '16px', '16px', '16px', '16px'],
-    color: '#6e7379',
-    lineHeight: '1.75',
-    textAlign: 'center',
-    mb: '0',
+    fontSize: ["15px", "16px", "16px", "16px", "16px"],
+    color: "#475569",
+    lineHeight: "1.7",
+    textAlign: "left",
+    mb: "0",
   },
   priceStyle: {
-    as: 'span',
-    display: 'block',
-    fontSize: ['36px', '36px', '40px', '40px', '40px'],    color: '#0f2137',
-    textAlign: 'center',
-    mb: '5px',
-    letterSpacing: '-0.025em',
-    fontWeight: '500',
+    as: "span",
+    display: "block",
+    fontSize: ["34px", "36px", "40px", "40px", "40px"],
+    color: "#0f172a",
+    textAlign: "left",
+    mb: "5px",
+    letterSpacing: "-0.025em",
+    fontWeight: "600",
   },
   priceLabelStyle: {
-    fontSize: ['13px', '14px', '14px', '14px', '14px'],
-    color: '#6e7379',
-    lineHeight: '1.75',
-    textAlign: 'center',
-    mb: '0',
+    fontSize: ["13px", "14px", "14px", "14px", "14px"],
+    color: "#64748b",
+    lineHeight: "1.6",
+    textAlign: "left",
+    mb: "0",
   },
   buttonStyle: {
     type: 'button',
@@ -233,22 +250,24 @@ PricingSection.defaultProps = {
     maxWidth: '100%',
   },
   buttonFillStyle: {
-    type: 'button',
-    fontSize: '15px',
-    fontWeight: '700',
-    color: 'white',
-    borderRadius: '4px',
-    pl: '10px',
-    pr: '10px',
-    colors: 'primaryWithBg',
-    minWidth: ['160px', '190px'],
-    maxWidth: '100%',
-    height: '48px',
+    type: "button",
+    fontSize: "15px",
+    fontWeight: "700",
+    color: "#fff",
+    borderRadius: "999px",
+    pl: "24px",
+    pr: "24px",
+    bg: "#0ea5e9",
+    minWidth: ["180px", "210px"],
+    maxWidth: "100%",
+    height: "52px",
+    boxShadow: "0 18px 30px rgba(14, 165, 233, 0.35)",
   },
   listContentStyle: {
-    fontSize: ['15px', '16px', '16px', '16px', '16px'],
-    color: '#6e7379',
-    mb: '0',
+    fontSize: ["15px", "16px", "16px", "16px", "16px"],
+    color: "#475569",
+    mb: "0",
+    textAlign: "left",
   },
 };
 

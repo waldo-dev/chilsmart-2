@@ -7,7 +7,15 @@ import Text from 'common/components/Text';
 import Link from 'common/components/Link';
 import Heading from 'common/components/Heading';
 import analytics from 'common/assets/image/saasCreative/quienes-somos.jpg';
-import Section, { Grid, Figure, Content } from './analytics.style';
+import Section, {
+  Grid,
+  Figure,
+  Content,
+  HighlightPill,
+  BulletList,
+  BulletItem,
+  Signature,
+} from "./analytics.style";
 import { Fade } from 'react-awesome-reveal';
 
 const AdvancedAnalytics = () => {
@@ -31,13 +39,20 @@ const AdvancedAnalytics = () => {
             </Figure>
           </Fade>
           <Content>
-            <Heading as="h2" content="Quiénes Somos" />
+            <HighlightPill>Equipo Chilsmart</HighlightPill>
+            <Heading as="h2" content="Construimos productos y automatizaciones con foco en negocio" />
             <Text
               className="description"
-              content="Somos un equipo de tres profesionales dedicados al desarrollo de soluciones de automatización. Nos apasiona transformar ideas en proyectos digitales efectivos y personalizados, siempre enfocados en la calidad y la satisfacción del cliente. Trabajamos juntos para impulsar la innovación y mejorar la eficiencia a través de la automatización"
+              content="Somos un equipo compacto de founders técnicos que diseña, desarrolla y acompaña soluciones a medida: desde nuestro ERP para talleres mecánicos hasta automatizaciones para gimnasios y compañías que necesitan escalar sin fricción."
             />
+            <BulletList>
+              <BulletItem>Discovery y roadmap compartido con tus líderes de operación y tecnología.</BulletItem>
+              <BulletItem>Construcción end-to-end: producto, integraciones y soporte continuo.</BulletItem>
+              <BulletItem>Implementaciones rápidas gracias a componentes propios probados en LatAm.</BulletItem>
+            </BulletList>
+            <Signature>“Aliados cercanos, entregas rápidas y foco en métricas del negocio.”</Signature>
             <Link href="https://wa.me/56940676501?text=Hola,%20quiero%20saber%20más%20sobre%20su%20equipo" className="explore" target="_blank">
-              Conoce más <Icon icon={arrowRight} />
+              Agenda una conversación <Icon icon={arrowRight} />
             </Link>
           </Content>
         </Grid>

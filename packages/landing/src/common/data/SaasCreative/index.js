@@ -108,9 +108,9 @@ export const features = [
   {
     id: 3,
     // icon: icon7,
-    title: "Salfa-ing (Sitio en construccion)",
-    description: `Empresa dedicada a los servicios de ingenieria electrica, necesitaban de una pagina informativa,
-    que cumpliera con especificar todos sus proyectos y servicios de una manera detallada y simple.`,
+    title: "Secco Automotriz",
+    description: `Empresa dedicada a los servicios de revisiones pre compra para vehiculos, necesitaban de un sistema para la gestion de sus clientes y reservas.`,
+    url: "https://www.seccoautomotriz.cl",
   },
 ];
 
@@ -167,31 +167,28 @@ export const faqs = [
   {
     id: 1,
     expend: true,
-    title: "01. ¿Cuánto tiempo tarda en estar lista mi página web?",
-    description: `Depende del tipo de proyecto. Una página informativa puede estar lista en 2 a 4 días hábiles. 
-    Una tienda online toma entre 2 a 3 semanas. 
-    Los desarrollos a medida requieren más planificación, por lo que el plazo se estima según la complejidad, usualmente entre 3 a 8 semanas.`,
+    title: "01. ¿Cómo funciona un proyecto de software a medida con Chilsmart?",
+    description: `Arrancamos con workshops de discovery para mapear procesos, métricas y stakeholders. Luego definimos roadmap y prototipos, avanzamos en sprints semanales con entregas continuas y cerramos con despliegue + soporte acompañando a tus equipos.`,
   },
   {
     id: 2,
-    title:
-      "02. ¿Necesito tener conocimientos técnicos para administrar mi sitio?",
-    description: `No. Todos nuestros sitios incluyen una capacitación básica para que puedas administrar tu contenido (productos, textos, imágenes) de forma fácil. Además, entregamos una guía escrita y soporte inicial post-entrega.`,
+    title: "02. ¿Cuánto tarda implementar el ERP para talleres mecánicos?",
+    description: `El onboarding base toma entre 2 y 4 semanas: migramos catálogos, configuramos órdenes, inventario y facturación electrónica. Ajustes más avanzados (integraciones o módulos extra) pueden extender el proyecto entre 6 y 8 semanas.`,
   },
   {
     id: 3,
-    title: "03. ¿Qué necesito para comenzar?",
-    description: `Solo necesitas tener claro qué tipo de sitio deseas, y enviarnos algunos elementos como el logo, colores de tu marca, textos e imágenes si ya los tienes. Si no cuentas con eso, también podemos ayudarte a desarrollarlos.`,
+    title: "03. ¿Qué nivel de acompañamiento ofrecen post-lanzamiento?",
+    description: `Los founders seguimos involucrados. Incluimos soporte evolutivo, mejoras priorizadas y monitoreo de métricas clave para asegurarnos de que las automatizaciones sigan aportando valor operativo.`,
   },
   {
     id: 4,
-    title: "04. ¿Mi sitio aparecerá en Google?",
-    description: `Sí. Todos los sitios incluyen una optimización SEO básica para que sean indexados por buscadores como Google. También podemos ofrecer servicios de posicionamiento más avanzado si lo deseas.`,
+    title: "04. ¿Se pueden integrar sistemas existentes (ERP, CRM, WhatsApp, pasarelas)?",
+    description: `Sí. Trabajamos con APIs, conectores nativos y herramientas como n8n para unir ERP/CRM, WhatsApp Business, pasarelas de pago o BI. Evaluamos cada stack antes de proponer la arquitectura.`,
   },
   {
     id: 5,
-    title: "05.  ¿Ofrecen mantención y hosting después de entregar el sitio?",
-    description: `Sí. Contamos con un plan de hosting + mantención por $20.000 CLP mensuales. Este servicio incluye alojamiento rápido y seguro con certificado SSL, actualizaciones mensuales del sitio, ajustes menores, respaldo periódico y soporte técnico ante cualquier problema. Es ideal para que no tengas que preocuparte por nada técnico después de la entrega.`,
+    title: "05. ¿Qué necesito para comenzar el proyecto?",
+    description: `Una sesión de descubrimiento con tus líderes de operación/comercial, acceso a la información del proceso actual y definir responsables internos. Nosotros guiamos el resto: alcance, backlog y plan de implementación.`,
   },
 ];
 

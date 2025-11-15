@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
+import styled from "styled-components";
+import { themeGet } from "@styled-system/theme-get";
 
 export const PricingTableWrapper = styled.div`
   .glide__slides {
@@ -11,34 +11,51 @@ export const PricingTableWrapper = styled.div`
 `;
 
 const PricingTable = styled.div`
-  border: 1px solid #f9fafb;
-  border-radius: 5px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 28px;
   padding: 45px 45px 50px 45px;
-  border-radius: 15px;
-  background-color: #f9fafb;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 35px 70px rgba(15, 23, 42, 0.12);
   height: 100%;
-  transition: 0.25s ease-in-out;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+  position: relative;
   @media (max-width: 767px) {
     padding: 45px 35px;
   }
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at top right,
+      rgba(14, 165, 233, 0.15),
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
   &:hover {
-    background-color: #fff;
-    border-color: #f2f4f7;
+    transform: translateY(-6px);
+    box-shadow: 0 45px 100px rgba(15, 23, 42, 0.18);
+    &:before {
+      opacity: 1;
+    }
   }
 `;
 
 const PricingHead = styled.div`
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 `;
 
 const PricingPrice = styled.div`
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 `;
 
 const PricingButton = styled.div`
-  text-align: center;
+  text-align: left;
   .reusecore__button {
-    border-radius: 4px;
+    border-radius: 999px;
   }
   .trial_button {
     font-size: 15px;
@@ -54,19 +71,29 @@ const PricingButton = styled.div`
 `;
 
 const PricingList = styled.div`
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 `;
 
 const ListItem = styled.div`
   display: flex;
-  margin-bottom: 23px;
-  justify-content: center;
+  margin-bottom: 16px;
+  align-items: flex-start;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.6;
   &:last-child {
     margin-bottom: 0;
   }
-  .price_list_icon {
-    color: #18d379;
-    margin-right: 10px;
+  &::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 12px;
+    margin-top: 6px;
+    background: linear-gradient(145deg, #0ea5e9, #38bdf8);
+    flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
   }
 `;
 
@@ -203,3 +230,28 @@ export {
   PricingButtonWrapper,
 };
 export default PricingTable;
+
+export const SectionBadge = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(14, 165, 233, 0.35);
+  background: rgba(14, 165, 233, 0.12);
+  color: #0f172a;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+`;
+
+export const SectionDescription = styled.p`
+  font-size: 16px;
+  line-height: 1.8;
+  color: #475569;
+  margin-top: 18px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+`;

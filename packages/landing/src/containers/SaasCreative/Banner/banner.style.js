@@ -1,14 +1,14 @@
 import { rgba } from "polished";
 import styled from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
-import shape from "common/assets/image/saasCreative/shape.svg";
 
 const Section = styled.section`
-  background-color: #000;
+  background: radial-gradient(circle at top, #f8fbff 0%, #e0f2ff 55%, #d9f0ff 100%);
   position: relative;
   min-height: 120vh;
   z-index: 0;
   overflow: hidden;
+  padding-bottom: 80px;
 
   ::before,
   ::after {
@@ -23,15 +23,32 @@ const Section = styled.section`
   }
 
   ::before {
-    background: radial-gradient(circle at 30% 30%, rgba(0, 153, 255, 0.2), transparent 60%),
-                radial-gradient(circle at 70% 60%, rgba(0, 102, 255, 0.15), transparent 70%),
-                radial-gradient(circle at 50% 90%, rgba(0, 204, 255, 0.1), transparent 80%);
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(14, 165, 233, 0.35),
+        transparent 55%
+      ),
+      radial-gradient(
+        circle at 70% 60%,
+        rgba(59, 130, 246, 0.2),
+        transparent 65%
+      ),
+      radial-gradient(
+        circle at 50% 90%,
+        rgba(14, 165, 233, 0.18),
+        transparent 75%
+      );
     animation: pulseLights 8s ease-in-out infinite;
     filter: blur(60px);
   }
 
   ::after {
-    background: none; // ya no necesitamos el color blanco de fondo
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.55) 65%,
+      rgba(255, 255, 255, 0.85) 100%
+    );
   }
 
   @keyframes pulseLights {
@@ -48,13 +65,19 @@ const Section = styled.section`
 
 
 export const BannerContentWrapper = styled.div`
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: space-between;
-align-items: flex-start;
- @media (max-width: 768px) {
-    flex-direction: column; /* en columnas en móvil */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  @media (max-width: 1024px) {
+    gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 
   @media (min-width: 1280px) {
@@ -65,26 +88,26 @@ align-items: flex-start;
 export const BannerContent = styled.div`
   flex: 1 1 50%;
   padding-top: 210px;
-  max-width: 870px;
-  margin: 0 auto;
-  text-align: center;
+  max-width: 720px;
+  margin: 0;
+  text-align: left;
   @media (max-width: 1024px) {
-    max-width: 660px;
+    max-width: 600px;
     padding-top: 170px;
   }
   @media (max-width: 768px) {
-    max-width: 550px;
+    max-width: 100%;
     padding-top: 150px;
+    text-align: center;
   }
   @media (max-width: 480px) {
     padding-top: 100px;
   }
   h2 {
-    color: ${themeGet("colors.white")};
+    color: #0f172a;
     font-weight: 700;
     font-size: 54px;
-    line-height: 1.3;
-    text-align: center;
+    line-height: 1.15;
     letter-spacing: -1px;
     @media (max-width: 1024px) {
       font-size: 40px;
@@ -99,10 +122,10 @@ export const BannerContent = styled.div`
   p {
     font-weight: 500;
     font-size: 18px;
-    line-height: 2.11;
-    color: ${themeGet("colors.textColorLight")};
-    max-width: 600px;
-    margin: 0 auto;
+    line-height: 1.8;
+    color: #475569;
+    max-width: 100%;
+    margin: 0;
 
     @media (max-width: 480px) {
       font-size: 16px;
@@ -113,104 +136,48 @@ export const BannerContent = styled.div`
 
 export const Subscribe = styled.div`
   display: flex;
-  justify-content: center;
-  max-width: 540px;
-  margin: 28px auto 0;
-  @media screen and (max-width: 1366px) {
-    max-width: 80%;
-  }
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 36px 0 12px;
+
   @media only screen and (max-width: 768px) {
-    max-width: 80%;
-    margin: 30px auto 0;
+    justify-content: center;
   }
-  @media only screen and (max-width: 480px) {
-    max-width: initial;
-    display: block;
-  }
-  .reusecore__input {
-    width: 100%;
-  }
-  .field-wrapper {
-    margin-right: 15px;
-    @media only screen and (max-width: 480px) {
-      margin-right: 0;
-    }
-    input {
-      border-color: #e9edf5;
-      border-radius: 8px;
-      font-size: 16px;
-      min-height: 60px;
-      padding: 0 24px;
-      &::placeholder {
-        color: ${rgba("#02073E", 0.4)};
-        opacity: 1; /* Firefox */
-      }
-      @media only screen and (max-width: 1280px) {
-        min-height: 50px;
-      }
-    }
-  }
-  button {
-    border-radius: 8px;
-    white-space: nowrap;
-    padding: 0 30px;
+
+  .reusecore__button {
+    border-radius: 12px;
+    padding: 0 36px;
     min-height: 60px;
-    background: linear-gradient(145deg, #00bfff, #0077b6);
-    color: white;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  }
+
+  .primary-cta {
+    background: linear-gradient(120deg, #0ea5e9, #38bdf8);
+    box-shadow: 0 12px 30px rgba(14, 165, 233, 0.35);
     border: none;
-    cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0, 191, 255, 0.3),
-      inset 0 0 0 rgba(255, 255, 255, 0);
-    transition: all 0.3s ease;
-
-    position: relative;
-    overflow: hidden;
-  }
-
-  button::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.2) 0%,
-      transparent 70%
-    );
-    transform: rotate(45deg);
-    animation: glowMove 3s linear infinite;
-    pointer-events: none;
-  }
-
-  @keyframes glowMove {
-    0% {
-      transform: translate(-100%, -100%) rotate(45deg);
-    }
-    100% {
-      transform: translate(100%, 100%) rotate(45deg);
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 36px rgba(14, 165, 233, 0.45);
     }
   }
 
-  button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(0, 191, 255, 0.4),
-      inset 0 0 8px rgba(255, 255, 255, 0.2);
-  }
-
-  @media only screen and (max-width: 1200px) {
-    button {
-      min-height: 50px;
+  .secondary-cta {
+    background: transparent;
+    border: 1px solid rgba(15, 23, 42, 0.15);
+    color: #0f172a;
+    box-shadow: none;
+    &:hover {
+      background: rgba(148, 163, 184, 0.15);
+      border-color: rgba(15, 23, 42, 0.25);
     }
   }
 
   @media only screen and (max-width: 480px) {
-    button {
-      margin-top: 15px;
-      min-height: 45px;
+    .reusecore__button {
       width: 100%;
+      min-height: 52px;
     }
   }
 `;
@@ -218,8 +185,89 @@ export const Subscribe = styled.div`
 export const Figure = styled.figure`
   flex: 1 1 50%;
   margin: 80px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
+  backdrop-filter: blur(12px);
   @media (max-width: 1024px) {
     margin-top: 50px;
+    width: 100%;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+`;
+
+export const HighlightPill = styled.span`
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(14, 165, 233, 0.4);
+  background: rgba(14, 165, 233, 0.15);
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  backdrop-filter: blur(6px);
+`;
+
+export const FeatureList = styled.ul`
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+`;
+
+export const FeatureItem = styled.li`
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(8px);
+
+  &::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 6px;
+    background: linear-gradient(145deg, #0ea5e9, #38bdf8);
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.6);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+`;
+
+export const TrustSignal = styled.p`
+  font-size: 14px;
+  color: rgba(15, 23, 42, 0.6);
+  margin: 12px 0 0;
+  letter-spacing: 0.03em;
+  max-width: 520px;
+  @media (max-width: 768px) {
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 

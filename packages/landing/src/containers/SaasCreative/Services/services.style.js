@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
 
 const SectionWrapper = styled.section`
-  background-color: #000;
-  color: #fff;
+  background: linear-gradient(180deg, #f8fafc 0%, #e0f2ff 55%, #f5fbff 100%);
+  color: #0f172a;
   width: 100%;
   padding: 100px 0 60px;
   position: relative;
@@ -14,16 +14,16 @@ const SectionWrapper = styled.section`
   ::before {
     content: "";
     position: absolute;
-    top: 20%;
-    left: 10%;
-    width: 300px;
-    height: 300px;
+    top: 15%;
+    left: 5%;
+    width: 360px;
+    height: 360px;
     background: radial-gradient(
       circle,
-      rgba(0, 150, 255, 0.3) 0%,
+      rgba(56, 189, 248, 0.25) 0%,
       transparent 70%
     );
-    filter: blur(80px);
+    filter: blur(90px);
     animation: pulseLightLarge 6s ease-in-out infinite;
     z-index: -1;
     pointer-events: none;
@@ -35,14 +35,14 @@ const SectionWrapper = styled.section`
     position: absolute;
     top: 60%;
     right: 15%;
-    width: 200px;
-    height: 200px;
+    width: 260px;
+    height: 260px;
     background: radial-gradient(
       circle,
-      rgba(0, 200, 255, 0.25) 0%,
+      rgba(14, 165, 233, 0.2) 0%,
       transparent 80%
     );
-    filter: blur(60px);
+    filter: blur(80px);
     animation: pulseLightMedium 5s ease-in-out infinite alternate;
     z-index: -1;
     pointer-events: none;
@@ -53,9 +53,9 @@ const SectionWrapper = styled.section`
     position: absolute;
     width: 6px;
     height: 6px;
-    background: rgba(0, 180, 255, 0.8);
+    background: rgba(14, 165, 233, 0.9);
     border-radius: 50%;
-    filter: drop-shadow(0 0 6px rgba(0, 180, 255, 0.8));
+    filter: drop-shadow(0 0 6px rgba(14, 165, 233, 0.5));
     animation: sparkleAnim 3s ease-in-out infinite;
   }
 
@@ -144,10 +144,11 @@ export const SectionHeader = styled.header`
   }
 
   h2 {
-    font-size: 4rem;
+    font-size: 3.4rem;
     font-weight: 700;
-    line-height: 1.9;
-    margin-bottom: 7px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    color: #0f172a;
 
     @media only screen and (max-width: 991px) {
       font-size: 4rem;
@@ -165,12 +166,13 @@ export const SectionHeader = styled.header`
 
   p {
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 2;
+    font-size: 1.05rem;
+    line-height: 1.9;
     margin-bottom: 0;
-    max-width: 500px;
+    max-width: 640px;
     margin: 0 auto;
     width: 100%;
+    color: #334155;
     @media only screen and (max-width: 1440px) {
       font-size: 16px;
       line-height: 1.6;
@@ -193,17 +195,24 @@ export const ServiceWrapper = styled.div`
   .service__item {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 30px;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 32px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    backdrop-filter: blur(6px);
 
     @media only screen and (max-width: 768px) {
       align-items: center;
       gap: 15px;
       text-align: center;
+      padding: 28px;
     }
 
     img {
-      max-width: 70px;
+      max-width: 64px;
       height: auto;
       object-fit: contain;
     }
@@ -218,12 +227,12 @@ export const ServiceWrapper = styled.div`
     }
 
     h4 {
-      margin: 0 0 14px;
+      margin: 0 0 10px;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 20px;
       line-height: 30px;
-      text-align: center;
-      color: #e0e6f3;
+      text-align: left;
+      color: #0f172a;
 
       @media only screen and (max-width: 1440px) {
         margin: 0 0 5px;
@@ -237,10 +246,10 @@ export const ServiceWrapper = styled.div`
     }
 
     p {
-      font-size: 15px;
-      line-height: 30px;
-      text-align: center;
-      color: #a3b1c6;
+      font-size: 16px;
+      line-height: 28px;
+      text-align: left;
+      color: #475569;
       @media only screen and (max-width: 1440px) {
         font-size: 16px;
       }

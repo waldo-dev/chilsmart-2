@@ -26,22 +26,61 @@ import "animate.css";
 import wspLogo from "common/assets/image/saasCreative/wsp-logo.png";
 
 const SaasCreative = () => {
+  const siteUrl = "https://www.chilsmart.cl";
+  const title = "Chilsmart | Desarrollo de software a medida y ERP para talleres";
+  const description =
+    "Diseñamos software personalizado, automatizaciones e implementamos nuestro ERP para talleres mecánicos. Aceleramos operaciones, ventas y soporte con IA e integraciones.";
+  const previewImage = `${siteUrl}/preview.jpg`;
+
   return (
     <ThemeProvider theme={theme}>
       <Fragment>
         <Head>
-          <title>
-            Automatización de Procesos para Empresas | Chilsmart Solutions
-          </title>
-          <meta
-            name="description"
-            content="Automatiza tareas repetitivas, mejora la atención al cliente y recibe reportes automáticos con nuestras soluciones personalizadas. Agenda tu demo gratuita."
-          />
+          <title>{title}</title>
+          <meta name="description" content={description} />
           <meta
             name="keywords"
-            content="automatización de procesos, chatbot, dashboard automatizado, automatización de negocios, herramientas IA para empresas, Chilsmart"
+            content="desarrollo de software a medida, ERP talleres mecánicos, automatizaciones para empresas, integraciones con IA, Chilsmart"
           />
-          <meta name="theme-color" content="#ec5555" />
+          <meta name="theme-color" content="#0ea5e9" />
+          <meta name="robots" content="index,follow" />
+          <link rel="canonical" href={siteUrl} />
+          {/* Open Graph */}
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={siteUrl} />
+          <meta property="og:image" content={previewImage} />
+          <meta property="og:site_name" content="Chilsmart" />
+          {/* Twitter */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={title} />
+          <meta name="twitter:description" content={description} />
+          <meta name="twitter:image" content={previewImage} />
+          {/* Structured data */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                name: "Chilsmart",
+                url: siteUrl,
+                logo: `${siteUrl}/logo.png`,
+                description,
+                sameAs: [
+                  "https://www.linkedin.com/company/chilsmart",
+                  "https://www.instagram.com/chilsmart"
+                ],
+                contactPoint: {
+                  "@type": "ContactPoint",
+                  contactType: "sales",
+                  availableLanguage: ["Spanish"],
+                  telephone: "+56 9 6406 76501"
+                }
+              })
+            }}
+          />
           {/* Load google fonts */}
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link

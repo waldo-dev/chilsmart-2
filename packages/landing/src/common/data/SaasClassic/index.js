@@ -62,87 +62,54 @@ export const SERVICE_ITEMS = [
 
 export const MONTHLY_PRICING_TABLE = [
   {
-    name: 'Atención al Cliente y Agendamiento Automático',
-    description: 'Optimiza la experiencia del cliente con atención instantánea por WhatsApp o web. Facilita la gestión de citas con nuestro sistema automático, permitiendo programar y cancelar fácilmente.',
-    price: '$100.000',
-    priceLabel: '',
-    buttonLabel: 'Solicitar Cotización',
-    url: '#',
+    name: "Desarrollo de software a la medida",
+    description:
+      "Ideamos y construimos plataformas, integraciones e IA aplicada según tus procesos. Cada proyecto incluye discovery con tus equipos, roadmap y soporte continuo.",
+    price: "",
+    priceLabel: "Propuesta personalizada",
+    buttonLabel: "Solicitar Cotización",
+    url: "#",
     listItems: [
-         {
-        content: 'Respuestas automáticas para consultas frecuentes',
+      {
+        content: "Workshops de descubrimiento y definición de métricas",
       },
       {
-        content: 'Integración con WhatsApp Business',
+        content: "Desarrollo end-to-end (producto, APIs, automatizaciones)",
       },
       {
-        content: 'Sistema de notificaciones para recordatorios de citas',
+        content: "Integraciones con ERP, CRM, WhatsApp y pasarelas",
       },
       {
-        content: 'Historial de interacciones con los clientes',
+        content: "Soporte evolutivo y acompañamiento post-lanzamiento",
       },
       {
-        content: 'Configuración de horarios y disponibilidad',
-      },
-      {
-        content: 'Análisis de satisfacción del cliente',
-      },
-      {
-        content: 'Interacción multicanal (web, móvil, etc.)',
+        content: "Equipo fundador involucrado en todo el ciclo",
       },
     ],
   },
   {
-    name: 'Creación de Contenido para Redes Sociales',
-    description: 'Mejora tu presencia online con nuestro servicio de generación de contenido para redes sociales. Creamos publicaciones atractivas que impulsan la interacción de tu audiencia.',
-    price: '$120.000',
-    priceLabel: 'Hasta 20 publicaciones',
-    buttonLabel: 'Solicitar Cotización',
-    url: '#',
-    trialButtonLabel: '',
-    trialURL: '#',
-    listItems: [
-       {
-        content: 'Publicaciones gráficas personalizadas',
-      },
-      {
-        content: 'Calendario de contenido para programación',
-      },
-      {
-        content: 'Utilización de hashtags estratégicos',
-      },
-      {
-        content: 'Análisis de rendimiento de las publicaciones',
-      },
-      {
-        content: 'Interacción con seguidores y respuesta a comentarios',
-      },
-    ],
-  },
-  {
-    name: 'Reportes Personalizados de Negocio',
-    description: 'Recibe informes detallados directamente en tu chat preferido. Mantente al tanto del rendimiento de tu negocio con análisis rápidos y accesibles.',
-    price: '$180.000',
-    priceLabel: '(Desde)',
-    buttonLabel: 'Solicitar Cotización',
-    url: '#',
-    trialButtonLabel: '',
-    trialURL: '#',
+    name: "ERP para talleres mecánicos",
+    description:
+      "Suite que centraliza órdenes de servicio, inventario, agenda y facturación electrónica para talleres y servicios automotrices. Configuramos la plataforma según tu operación.",
+    price: "$120.000",
+    priceLabel: "Mensual",
+    buttonLabel: "Hablar con un experto",
+    url: "#",
     listItems: [
       {
-        content: 'Reportes de desempeño semanal y mensual',
+        content: "Gestión completa de órdenes, cotizaciones y entregas",
       },
       {
-        content: 'Analítica de clientes y tendencias de compra',
+        content: "Control de inventario y alertas de stock",
       },
       {
-        content: 'Gráficos visuales sobre métricas clave',
+        content: "Portal de clientes con notificaciones y seguimiento",
       },
       {
-        content: 'Alertas sobre cambios significativos en el rendimiento',
+        content: "Facturación electrónica y reportes automáticos",
       },
       {
-        content: 'Informes sobre efectividad de campañas',
+        content: "Onboarding, soporte y mejoras continuas",
       },
     ],
   },

@@ -2,7 +2,6 @@ import React from "react";
 import Container from "common/components/UI/Container";
 import Heading from "common/components/Heading";
 import Text from "common/components/Text";
-import Input from "common/components/Input";
 import Button from "common/components/Button";
 import NextImage from "common/components/NextImage";
 import Section, {
@@ -10,17 +9,31 @@ import Section, {
   BannerContent,
   Subscribe,
   Figure,
+  HighlightPill,
+  FeatureList,
+  FeatureItem,
+  TrustSignal,
 } from "./banner.style";
 import dashboard from "common/assets/image/saasCreative/banner.webp";
-import { redirect } from "next/navigation";
 
 const Banner = () => {
   const handleOnClick = () => {
-    window.open(
-      "https://wa.me/56940676501?text=Hola,%20quiero%20cotizar",
-      // "_blank",
-      // "noopener,noreferrer,width=500,height=700"
-    );
+    if (typeof window !== "undefined") {
+      window.open(
+        "https://wa.me/56940676501?text=Hola,%20quiero%20cotizar"
+      );
+    }
+  };
+
+  const handleProductsClick = () => {
+    if (typeof window !== "undefined") {
+      const element = document.querySelector("#solutions");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+      window.location.hash = "#solutions";
+    }
   };
 
   return (
@@ -28,19 +41,39 @@ const Banner = () => {
       <Container width="1400px">
         <BannerContentWrapper>
           <BannerContent>
+            <HighlightPill>
+              Partner tecnológico para empresas ambiciosas
+            </HighlightPill>
             <Heading
-              content="Automatización inteligente para escalar tu negocio sin esfuerzo"
+              content="Software a medida y productos listos para impulsar tu crecimiento"
               className="animate__animated animate__fadeInUp"
             />
             <Text
               className="animate__animated animate__fadeInUp"
-              content="En Chilsmart Automatizaciones, desarrollamos herramientas digitales personalizadas que automatizan tareas repetitivas, mejoran tu productividad y te permiten enfocarte en lo que realmente importa: hacer crecer tu negocio."
+              content="Diseñamos plataformas, integraciones según tus procesos, además de productos propios que puedes implementar hoy mismo para acelerar operaciones, ventas y soporte."
             />
+            <FeatureList className="animate__animated animate__fadeInUp">
+              <FeatureItem>Desarrollo end-to-end, desde discovery hasta soporte.</FeatureItem>
+              <FeatureItem>Suite de productos SaaS lista para operar desde el día uno.</FeatureItem>
+            </FeatureList>
             <Subscribe className="animate__animated animate__fadeInUp">
-              <Button title="¡Transforma tu negocio hoy!" onClick={handleOnClick} />
+              <Button
+                title="Agenda una llamada"
+                onClick={handleOnClick}
+                className="primary-cta"
+              />
+              <Button
+                title="Conoce nuestros productos"
+                onClick={handleProductsClick}
+                className="secondary-cta"
+                variant="textButton"
+              />
             </Subscribe>
+            <TrustSignal className="animate__animated animate__fadeInUp">
+              Más de 6 años construyendo soluciones para retail, logística, educación y servicios financieros en LatAm.
+            </TrustSignal>
           </BannerContent>
-          <Figure className="animate__animated animate__fadeInUp animate__fast shadow-2xl rounded-xl">
+          {/*<Figure className="animate__animated animate__fadeInUp animate__fast shadow-2xl rounded-xl">
             <NextImage
               src={dashboard}
               alt="dashboard"
@@ -48,7 +81,7 @@ const Banner = () => {
               height={800}
               quality={100}
             />
-          </Figure>
+          </Figure>*/}
         </BannerContentWrapper>
       </Container>
     </Section>

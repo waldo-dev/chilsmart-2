@@ -8,6 +8,8 @@ import Section, {
   Grid,
   Item,
   ExternalLink,
+  HighlightPill,
+  Description,
 } from "./features.style";
 
 import { features } from "common/data/SaasCreative";
@@ -18,10 +20,12 @@ const Features = () => {
     <Section id="testimonial">
       <Container width="1400px">
         <SectionHeading>
-          <Heading
-            style={{ fontSize: "3rem" }}
-            content="Quienes han confiado en nosotros"
-          />
+          <HighlightPill>Casos reales</HighlightPill>
+          <Heading content="Implementaciones que respaldan nuestra experiencia" />
+          <Description>
+            Cada proyecto combina descubrimiento, desarrollo y soporte continuo. Así se han
+            digitalizado talleres, gimnasios y servicios profesionales de la región.
+          </Description>
         </SectionHeading>
         <Grid>
           {features.map((feature) => (
