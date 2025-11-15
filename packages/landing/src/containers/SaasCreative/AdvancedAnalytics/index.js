@@ -40,7 +40,7 @@ const AdvancedAnalytics = () => {
           </Fade>
           <Content>
             <HighlightPill>Equipo Chilsmart</HighlightPill>
-            <Heading as="h2" content="Construimos productos y automatizaciones con foco en negocio" />
+            <Heading as="h2" content="Construimos productos con foco en tu negocio y métricas" />
             <Text
               className="description"
               content="Somos un equipo compacto de founders técnicos que diseña, desarrolla y acompaña soluciones a medida: desde nuestro ERP para talleres mecánicos hasta automatizaciones para gimnasios y compañías que necesitan escalar sin fricción."
