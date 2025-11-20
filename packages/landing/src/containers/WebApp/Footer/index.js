@@ -15,7 +15,7 @@ const Footer = () => {
       <Container className="footerContainer">
         <Box className="brand">
           <Link href="/" className="logo">
-            <Image src={logo} alt="logo footer" />
+            <Image src={logo} alt="Chilsmart - Desarrollo de software a medida" />
           </Link>
           <Text
             as="p"
@@ -50,16 +50,24 @@ const Footer = () => {
           </a>
           <Box className="social">
             <Text as="span" content="Síguenos:" />
-            {social.map(({ icon, link }, index) => (
-              <Link
-                href={link}
-                key={`footer-social-link-${index}`}
-                className="socialLink"
-                target="_blank"
-              >
-                <Image src={icon} alt="social icon" width={32} height={32} />
-              </Link>
-            ))}
+            {social.map(({ icon, link }, index) => {
+              const socialName = link.includes('linkedin') ? 'LinkedIn' : 
+                                link.includes('instagram') ? 'Instagram' : 
+                                link.includes('twitter') ? 'Twitter' : 
+                                link.includes('facebook') ? 'Facebook' : 'Red social';
+              return (
+                <Link
+                  href={link}
+                  key={`footer-social-link-${index}`}
+                  className="socialLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Síguenos en ${socialName}`}
+                >
+                  <Image src={icon} alt={`${socialName} de Chilsmart`} width={32} height={32} />
+                </Link>
+              );
+            })}
           </Box>
         </Box>
       </Container>

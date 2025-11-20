@@ -46,13 +46,13 @@ const Testimonial = () => {
     <Section id="testimonial">
       <Container width="1400px">
         <SectionHeading>
-          <Image src={icon13?.src} alt="love icon" />
+          <Image src={icon13?.src} alt="Icono de testimonios de clientes" />
           <Heading content="What people say about our product" />
         </SectionHeading>
         <SlickCarousel {...settings}>
           {testimonials.map((testimonial) => (
             <Blockquote key={testimonial.id}>
-              <Image src={icon14?.src} alt="love icon" />
+              <Image src={icon14?.src} alt="Icono de cita testimonial" />
               {testimonial.quote}
             </Blockquote>
           ))}

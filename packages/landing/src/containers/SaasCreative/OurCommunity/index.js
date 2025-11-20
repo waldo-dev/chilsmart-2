@@ -21,7 +21,7 @@ const OurCommunity = () => {
         </SectionHeading>
         <Fade direction='up' triggerOnce>
           <Figure>
-            <NextImage src={users} alt="users" />
+            <NextImage src={users} alt="Comunidad de usuarios de Chilsmart" />
           </Figure>
         </Fade>
       </Container>

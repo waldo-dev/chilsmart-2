@@ -32,9 +32,9 @@ const Features = () => {
             <Item key={feature.id}>
               <figure>
                 {feature.icon ? (
-                  <NextImage src={feature.icon} alt="icon" />
+                  <NextImage src={feature.icon} alt={feature.title || "Característica de Chilsmart"} />
                 ) : (
-                  <i style={{fontSize: "7rem"}} className="flaticon-settings"></i>
+                  <i style={{fontSize: "7rem"}} className="flaticon-settings" aria-label="Configuración"></i>
                 )}
               </figure>
               <Heading as="h4" content={feature.title} />

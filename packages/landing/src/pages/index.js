@@ -40,24 +40,39 @@ const SaasCreative = () => {
           <meta name="description" content={description} />
           <meta
             name="keywords"
-            content="desarrollo de software a medida, ERP talleres mecánicos, automatizaciones para empresas, integraciones con IA, Chilsmart"
+            content="desarrollo de software a medida, ERP talleres mecánicos, automatizaciones para empresas, integraciones con IA, Chilsmart, software Chile, desarrollo web Chile, ERP Chile, automatización empresarial"
           />
+          <meta name="author" content="Chilsmart" />
           <meta name="theme-color" content="#0ea5e9" />
-          <meta name="robots" content="index,follow" />
+          <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+          <meta name="googlebot" content="index,follow" />
+          <meta name="language" content="Spanish" />
+          <meta name="geo.region" content="CL" />
+          <meta name="geo.placename" content="Chile" />
           <link rel="canonical" href={siteUrl} />
+          <link rel="alternate" hrefLang="es" href={siteUrl} />
+          <link rel="alternate" hrefLang="x-default" href={siteUrl} />
+          
           {/* Open Graph */}
           <meta property="og:title" content={title} />
           <meta property="og:description" content={description} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={siteUrl} />
           <meta property="og:image" content={previewImage} />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:image:alt" content="Chilsmart - Desarrollo de software a medida" />
           <meta property="og:site_name" content="Chilsmart" />
+          <meta property="og:locale" content="es_CL" />
+          
           {/* Twitter */}
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={previewImage} />
-          {/* Structured data */}
+          <meta name="twitter:image:alt" content="Chilsmart - Desarrollo de software a medida" />
+          
+          {/* Structured data - Organization */}
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -68,6 +83,11 @@ const SaasCreative = () => {
                 url: siteUrl,
                 logo: `${siteUrl}/logo.png`,
                 description,
+                foundingDate: "2020",
+                address: {
+                  "@type": "PostalAddress",
+                  addressCountry: "CL"
+                },
                 sameAs: [
                   "https://www.linkedin.com/company/chilsmart",
                   "https://www.instagram.com/chilsmart"
@@ -76,7 +96,65 @@ const SaasCreative = () => {
                   "@type": "ContactPoint",
                   contactType: "sales",
                   availableLanguage: ["Spanish"],
-                  telephone: "+56 9 6406 76501"
+                  telephone: "+56-9-6406-76501",
+                  areaServed: "CL",
+                  contactOption: "TollFree"
+                }
+              })
+            }}
+          />
+          
+          {/* Structured data - WebSite */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                name: "Chilsmart",
+                url: siteUrl,
+                description,
+                publisher: {
+                  "@type": "Organization",
+                  name: "Chilsmart",
+                  logo: {
+                    "@type": "ImageObject",
+                    url: `${siteUrl}/logo.png`
+                  }
+                },
+                potentialAction: {
+                  "@type": "SearchAction",
+                  target: {
+                    "@type": "EntryPoint",
+                    urlTemplate: `${siteUrl}/?s={search_term_string}`
+                  },
+                  "query-input": "required name=search_term_string"
+                }
+              })
+            }}
+          />
+          
+          {/* Structured data - Service */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Service",
+                serviceType: "Desarrollo de software a medida",
+                provider: {
+                  "@type": "Organization",
+                  name: "Chilsmart",
+                  url: siteUrl
+                },
+                areaServed: {
+                  "@type": "Country",
+                  name: "Chile"
+                },
+                description: "Desarrollo de software personalizado, ERP para talleres mecánicos, automatizaciones empresariales e integraciones con IA",
+                offers: {
+                  "@type": "Offer",
+                  description: "Servicios de desarrollo de software a medida"
                 }
               })
             }}
@@ -132,7 +210,7 @@ const SaasCreative = () => {
           >
             <img
               src={wspLogo.src}
-              alt="WhatsApp"
+              alt="Contactar por WhatsApp - Chilsmart"
               style={{ width: "50px", height: "55px" }}
             />
           </a>

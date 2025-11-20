@@ -63,7 +63,7 @@ const Services = () => {
                 icon={
                   <NextImage
                     src={item.icon}
-                    alt={`Blog Image ${item.id}`}
+                    alt={item.title || `Servicio ${item.id}`}
                     objectFit="cover"
                   />
                 }

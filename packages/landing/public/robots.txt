@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /404
+Disallow: /_error
+
+# Sitemap
+Sitemap: https://www.chilsmart.cl/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+

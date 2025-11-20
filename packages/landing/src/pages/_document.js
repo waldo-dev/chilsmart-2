@@ -33,13 +33,14 @@ export default class CustomDocument extends Document {
   }
   render() {
     return (
-      <Html lang="en">
+      <Html lang="es">
         <Head>
+          <meta charSet="utf-8" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.png" />
-          {/* <link
-            rel="icon"
-            href="https://react-next-landing.redq.io/_next/static/images/favicon-ec2551afb2782a53fb493269d1ba4efe.png"
-          /> */}
+          <link rel="apple-touch-icon" href="/favicon.png" />
+          <meta name="format-detection" content="telephone=no" />
           {/* Next and Styled components SSR styles */}
           {this.props.styles}
           {/* Mantine SSR styles */}

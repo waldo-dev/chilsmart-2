@@ -34,14 +34,14 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
           <Logo
             href="#"
             logoSrc={logoWhite}
-            title="SaaS Creative"
+            title="Chilsmart - Desarrollo de software a medida"
             logoStyle={logoStyle}
             className="main-logo"
           />
           <Logo
             href="#"
             logoSrc={logoDark}
-            title="SaaS Creative"
+            title="Chilsmart - Desarrollo de software a medida"
             logoStyle={logoStyle}
             className="sticky-logo"
           />
