@@ -1,40 +1,44 @@
 import React from "react";
 import Container from "common/components/UI/ContainerTwo";
-import NextImage from "common/components/NextImage";
 import Text from "common/components/Text";
 import Heading from "common/components/Heading";
 import FeatureBlock from "common/components/FeatureBlock";
 import SectionWrapper, {
   SectionHeader,
   ServiceWrapper,
+  IconWrapper,
 } from "./services.style";
 import { Fade } from "react-awesome-reveal";
-import serviceIcon1 from "common/assets/image/agencyModern/services/landing-page.png";
-import serviceIcon2 from "common/assets/image/agencyModern/services/online-store.png";
-import serviceIcon3 from "common/assets/image/agencyModern/services/settings.png";
+import { Icon } from "react-icons-kit";
+import { dollarSign } from "react-icons-kit/feather/dollarSign";
+import { trendingUp } from "react-icons-kit/feather/trendingUp";
+import { code } from "react-icons-kit/feather/code";
 
 const Services = () => {
   const services = [
     {
-      id: "erp",
-      icon: serviceIcon1,
-      title: "ERP para talleres mecánicos",
+      id: "cost-reduction",
+      icon: dollarSign,
+      iconColor: "#10b981",
+      title: "Sistemas que Reducen Costos Operativos",
       description:
-        "Gestión completa de órdenes de servicio, cotizaciones, inventario y facturación electrónica, con reportes automáticos y acceso para cada rol del taller.",
+        "Desarrollamos software a la medida que automatiza procesos, reduce errores y elimina tareas manuales. Esto se traduce en ahorro de tiempo y dinero, permitiendo que tu equipo se enfoque en actividades que generan valor.",
     },
     {
-      id: "gyms",
-      icon: serviceIcon2,
-      title: "Automatizaciones para gimnasios y clubes",
+      id: "revenue-increase",
+      icon: trendingUp,
+      iconColor: "#0ea5e9",
+      title: "Software que Aumenta tus Ingresos",
       description:
-        "Sistemas de membresías, control de asistencia, cobros recurrentes e integraciones con WhatsApp y pasarelas de pago para escalar la experiencia fitness.",
+        "Creamos sistemas personalizados que optimizan ventas, mejoran la experiencia del cliente y automatizan procesos comerciales. Software a medida que ayuda a tu empresa a generar más dinero mediante mejor conversión y retención de clientes.",
     },
     {
-      id: "custom",
-      icon: serviceIcon3,
+      id: "custom-development",
+      icon: code,
+      iconColor: "#8b5cf6",
       title: "Desarrollo de Software a la Medida e Integraciones",
       description:
-        "Desarrollamos software personalizado para empresas: aplicaciones web, APIs y flujos con IA para digitalizar operaciones comerciales, soporte y logística en distintas industrias. Software a medida adaptado a tus necesidades.",
+        "Desarrollamos software personalizado para empresas: aplicaciones web, APIs y automatizaciones con IA que digitalizan operaciones y optimizan procesos. Cada solución está diseñada para ayudarte a ahorrar dinero y aumentar tus ingresos.",
     },
   ];
 
@@ -43,9 +47,9 @@ const Services = () => {
       <Container>
         <Fade direction="up" triggerOnce delay={100}>
           <SectionHeader>
-            <Heading content="Desarrollo de Software para Empresas en Chile" />
-            <Text content="Somos especialistas en desarrollo de software a la medida. Construimos plataformas y automatizaciones que resuelven procesos críticos de tu empresa." />
-            <Text content="Ofrecemos desarrollo de software personalizado para empresas: desde nuestro ERP para talleres mecánicos hasta software a medida para gimnasios y otras industrias. Combinamos desarrollos propios con integraciones e IA aplicada." />
+            <Heading as="h2" content="Desarrollo de Software para Empresas que Ahorran Dinero y Generan Más Ingresos" />
+            <Text as="p" content="Somos especialistas en desarrollo de software a la medida. Construimos plataformas y automatizaciones que optimizan procesos, reducen costos operativos y aumentan los ingresos de tu empresa." />
+            <Text as="p" content="Ofrecemos desarrollo de software personalizado para empresas de todas las industrias. Cada solución está diseñada para ayudarte a ahorrar dinero en operaciones y generar más ingresos mediante mejoras en eficiencia, automatización de procesos y optimización de ventas." />
           </SectionHeader>
         </Fade>
         <ServiceWrapper>
@@ -61,15 +65,13 @@ const Services = () => {
                 id={`post_id-${item.id}`}
                 className="service__item"
                 icon={
-                  <NextImage
-                    src={item.icon}
-                    alt={item.title || `Servicio ${item.id}`}
-                    objectFit="cover"
-                  />
+                  <IconWrapper style={{ color: item.iconColor }}>
+                    <Icon icon={item.icon} size={56} />
+                  </IconWrapper>
                 }
-                iconPosition="left"
-                title={<Heading as="h4" content={item.title} />}
-                description={<Text content={item.description} />}
+                iconPosition="top"
+                title={<Heading as="h3" content={item.title} />}
+                description={<Text as="p" content={item.description} />}
               />
             </Fade>
           ))}

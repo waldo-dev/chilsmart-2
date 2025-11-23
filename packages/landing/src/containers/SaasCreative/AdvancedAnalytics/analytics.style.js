@@ -65,6 +65,7 @@ export const Figure = styled.figure`
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 
   img {
     border-radius: 24px;
@@ -76,6 +77,131 @@ export const Figure = styled.figure`
 
     @media (max-width: 768px) {
       max-width: 90%;
+    }
+  }
+`;
+
+export const IconContainer = styled.div`
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border-radius: 32px;
+  border: 2px solid rgba(14, 165, 233, 0.2);
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.15);
+  backdrop-filter: blur(10px);
+
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    height: 350px;
+  }
+
+  @media (max-width: 768px) {
+    height: 300px;
+    margin-bottom: 40px;
+  }
+`;
+
+export const IconGroup = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon-main {
+    position: relative;
+    z-index: 2;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
+    border-radius: 50%;
+    box-shadow: 0 20px 60px rgba(14, 165, 233, 0.4);
+    color: white;
+    animation: pulse 3s ease-in-out infinite;
+
+    @media (max-width: 768px) {
+      width: 120px;
+      height: 120px;
+    }
+
+    svg {
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+  }
+
+  .icon-secondary {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
+    border: 2px solid rgba(14, 165, 233, 0.2);
+    animation: float 4s ease-in-out infinite;
+
+    @media (max-width: 768px) {
+      width: 80px;
+      height: 80px;
+    }
+
+    svg {
+      color: #0ea5e9;
+    }
+  }
+
+  .icon-dollar {
+    top: 20%;
+    right: 10%;
+    animation-delay: 0s;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+    border-color: rgba(16, 185, 129, 0.3);
+
+    svg {
+      color: #10b981;
+    }
+  }
+
+  .icon-trend {
+    bottom: 20%;
+    left: 10%;
+    animation-delay: 1.5s;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(14, 165, 233, 0.05) 100%);
+    border-color: rgba(14, 165, 233, 0.3);
+
+    svg {
+      color: #0ea5e9;
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 20px 60px rgba(14, 165, 233, 0.4);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 25px 70px rgba(14, 165, 233, 0.5);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
     }
   }
 `;

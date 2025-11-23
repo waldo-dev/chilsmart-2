@@ -8,9 +8,9 @@ import icon1 from "common/assets/image/saasCreative/icons/1.png";
 import icon2 from "common/assets/image/saasCreative/icons/2.png";
 import icon3 from "common/assets/image/saasCreative/icons/3.png";
 import icon4 from "common/assets/image/saasCreative/icons/4.png";
-import icon5 from "common/assets/image/saasCreative/icons/captura-teslectrik.png";
+import icon5 from "common/assets/image/saasCreative/icons/mgi.png";
 import icon6 from "common/assets/image/saasCreative/icons/captura-connieedelai.png";
-import icon7 from "common/assets/image/saasCreative/icons/7.png";
+import icon7 from "common/assets/image/saasCreative/icons/secco.png";
 import icon8 from "common/assets/image/saasCreative/icons/8.png";
 import icon9 from "common/assets/image/saasCreative/icons/9.png";
 import icon10 from "common/assets/image/saasCreative/icons/10.png";
@@ -92,10 +92,9 @@ export const features = [
   {
     id: 1,
     icon: icon5,
-    title: "Teslectrik",
-    description: `Empresa dedicada a los servicios de paneles solares, necesitaban de una pagina informativa,
-    simple y que mejorara la que ya tenían.`,
-    url: "https://www.teslectrik.cl",
+    title: "MGI Asesorías",
+    description: `Empresa que presta servicios de auditorías a locales y comedores, principalmente en zonas mineras.`,
+    url: "https://foodsafe.mgiasesorias.com",
   },
   {
     id: 2,
@@ -107,7 +106,7 @@ export const features = [
   },
   {
     id: 3,
-    // icon: icon7,
+    icon: icon7,
     title: "Secco Automotriz",
     description: `Empresa dedicada a los servicios de revisiones pre compra para vehiculos, necesitaban de un sistema para la gestion de sus clientes y reservas.`,
     url: "https://www.seccoautomotriz.cl",

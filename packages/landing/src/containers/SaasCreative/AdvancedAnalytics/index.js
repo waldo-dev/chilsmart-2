@@ -1,12 +1,13 @@
 import React from 'react';
 import { Icon } from 'react-icons-kit';
 import { arrowRight } from 'react-icons-kit/feather/arrowRight';
+import { target } from 'react-icons-kit/feather/target';
+import { dollarSign } from 'react-icons-kit/feather/dollarSign';
+import { trendingUp } from 'react-icons-kit/feather/trendingUp';
 import Container from 'common/components/UI/Container';
-import NextImage from 'common/components/NextImage';
 import Text from 'common/components/Text';
 import Link from 'common/components/Link';
 import Heading from 'common/components/Heading';
-import analytics from 'common/assets/image/saasCreative/quienes-somos.jpg';
 import Section, {
   Grid,
   Figure,
@@ -15,6 +16,8 @@ import Section, {
   BulletList,
   BulletItem,
   Signature,
+  IconContainer,
+  IconGroup,
 } from "./analytics.style";
 import { Fade } from 'react-awesome-reveal';
 
@@ -25,32 +28,34 @@ const AdvancedAnalytics = () => {
         <Grid>
           <Fade direction="up" triggerOnce>
             <Figure>
-              <NextImage
-                src={analytics}
-                alt="Equipo de desarrollo de software a la medida - Chilsmart"
-                style={{
-                  borderRadius: '12px',
-                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
-                  maxWidth: '100%',
-                  height: 'auto',
-                  objectFit: 'cover',
-                }}
-              />
+              <IconContainer>
+                <IconGroup>
+                  <div className="icon-main">
+                    <Icon icon={target} size={80} />
+                  </div>
+                  <div className="icon-secondary icon-dollar">
+                    <Icon icon={dollarSign} size={40} />
+                  </div>
+                  <div className="icon-secondary icon-trend">
+                    <Icon icon={trendingUp} size={40} />
+                  </div>
+                </IconGroup>
+              </IconContainer>
             </Figure>
           </Fade>
           <Content>
             <HighlightPill>Equipo Chilsmart - Desarrollo de Software</HighlightPill>
-            <Heading as="h2" content="Desarrollo de Software a la Medida con Foco en tu Negocio y Métricas" />
+            <Heading as="h2" content="Software a la Medida que Ayuda a tu Empresa a Ahorrar y Generar Más Dinero" />
             <Text
               className="description"
-              content="Somos un equipo de desarrollo de software especializado en crear software a la medida para empresas. Diseñamos, desarrollamos y acompañamos soluciones de software personalizado: desde nuestro ERP para talleres mecánicos hasta software para empresas de gimnasios y compañías que necesitan escalar sin fricción."
+              content="Somos un equipo de desarrollo de software especializado en crear soluciones a la medida que impactan directamente en la rentabilidad de tu empresa. Cada proyecto está enfocado en ayudarte a ahorrar costos operativos y generar más ingresos mediante automatizaciones inteligentes, optimización de procesos y sistemas que impulsan tu negocio."
             />
             <BulletList>
-              <BulletItem>Discovery y roadmap compartido para desarrollo de software a la medida con tus líderes de operación y tecnología.</BulletItem>
-              <BulletItem>Construcción end-to-end de software para empresas: producto, integraciones y soporte continuo.</BulletItem>
-              <BulletItem>Desarrollo de software personalizado con implementaciones rápidas gracias a componentes propios probados en Chile y LatAm.</BulletItem>
+              <BulletItem>Análisis de procesos para identificar oportunidades de ahorro y generación de ingresos en tu empresa.</BulletItem>
+              <BulletItem>Desarrollo de software a medida que automatiza tareas repetitivas, reduce costos y aumenta la eficiencia operativa.</BulletItem>
+              <BulletItem>Soluciones personalizadas que optimizan ventas, mejoran la experiencia del cliente y generan más ingresos para tu negocio.</BulletItem>
             </BulletList>
-            <Signature>“Aliados cercanos, entregas rápidas y foco en métricas del negocio.”</Signature>
+            <Signature>"Aliados cercanos que desarrollan software que realmente impacta en tu rentabilidad: ahorras dinero y generas más ingresos."</Signature>
             <Link href="https://wa.me/56940676501?text=Hola,%20quiero%20saber%20más%20sobre%20su%20equipo" className="explore" target="_blank">
               Agenda una conversación <Icon icon={arrowRight} />
             </Link>

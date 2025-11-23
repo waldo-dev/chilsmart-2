@@ -27,9 +27,9 @@ import wspLogo from "common/assets/image/saasCreative/wsp-logo.png";
 
 const SaasCreative = () => {
   const siteUrl = "https://www.chilsmart.com";
-  const title = "Chilsmart | Desarrollo de Software a la Medida y Software para Empresas en Chile";
+  const title = "Chilsmart | Desarrollo de Software a la Medida que Ayuda a Ahorrar y Generar Más Dinero";
   const description =
-    "Chilsmart: Empresa de desarrollo de software a la medida en Chile. Creamos software personalizado para empresas, automatizaciones e integraciones. Soluciones de software para todo tipo de empresas.";
+    "Chilsmart: Empresa de desarrollo de software a la medida en Chile. Creamos software personalizado que ayuda a empresas a ahorrar costos operativos y generar más ingresos mediante automatizaciones, optimización de procesos y sistemas que impulsan la rentabilidad.";
   const previewImage = `${siteUrl}/preview.jpg`;
 
   return (
@@ -83,7 +83,6 @@ const SaasCreative = () => {
                 url: siteUrl,
                 logo: `${siteUrl}/logo.png`,
                 description,
-                foundingDate: "2020",
                 address: {
                   "@type": "PostalAddress",
                   addressCountry: "CL"
@@ -182,7 +181,6 @@ const SaasCreative = () => {
           <Clients />
           <HowItWorks />
           <AdvancedAnalytics />
-          <Clients />
           <Features />
           {/* <WalletExperience />
 					<Testimonial />

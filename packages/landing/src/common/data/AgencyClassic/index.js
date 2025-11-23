@@ -15,6 +15,8 @@ import dribble from '../../assets/image/agencyClassic/clients/dribble.svg';
 import microsoft from '../../assets/image/agencyClassic/clients/header-logo2.png';
 import paypal from '../../assets/image/agencyClassic/clients/header-logo.png';
 import uber from '../../assets/image/agencyClassic/clients/teselectrik-logo-oscuro.webp';
+import secco from '../../assets/image/agencyClassic/clients/secco.webp';
+import mgi from '../../assets/image/agencyClassic/clients/mgi.png';
 
 
 import coding from '../../assets/image/agencyClassic/services/coding.png';
@@ -67,7 +69,7 @@ export const MENU_ITEMS = [
   },
 ];
 
-export const clients = [uber, paypal, microsoft, google];
+export const clients = [uber, paypal, microsoft, google, secco, mgi];
 
 export const FEATURES = [
   {

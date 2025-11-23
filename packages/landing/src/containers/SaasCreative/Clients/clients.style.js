@@ -6,7 +6,7 @@ const slideShow = keyframes`
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-33.333%);
   }
 `;
 
@@ -97,19 +97,20 @@ export const ClientWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  padding: 40px 30px;
-  border-radius: 30px;
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 40px 80px rgba(15, 23, 42, 0.12);
+  padding: 50px 40px;
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
   overflow: hidden;
+  backdrop-filter: blur(10px);
 
   @media only screen and (max-width: 624px) {
-    padding: 30px 15px;
+    padding: 40px 20px;
   }
 
   @media only screen and (max-width: 480px) {
-    padding: 25px 12px;
+    padding: 35px 15px;
   }
 
   .client__text {
@@ -126,8 +127,8 @@ export const SliderMask = styled.div`
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(90deg, #f8fbff, transparent 15%, transparent 85%, #f8fbff);
-  opacity: 0.7;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), transparent 12%, transparent 88%, rgba(255, 255, 255, 0.95));
+  z-index: 1;
 `;
 
 export const ExperienceWrapper = styled.div`
@@ -200,6 +201,7 @@ export const ImageSlider = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: 0;
+  z-index: 0;
 
   @media only screen and (max-width: 991px) {
     padding-top: 65px;
@@ -220,13 +222,17 @@ export const ImageSlide = styled.div`
 
   a {
     transition: all 0.3s ease;
-    filter: grayscale(1) opacity(0.75);
+    filter: opacity(0.85);
     transform: scale(1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     img {
       max-height: 70px;
       max-width: 140px;
       transition: inherit;
+      object-fit: contain;
       @media only screen and (max-width: 1360px) {
         max-width: 90%;
       }
@@ -237,8 +243,8 @@ export const ImageSlide = styled.div`
     }
 
     &:hover {
-      filter: grayscale(0) opacity(0.95);
-      transform: scale(1.03);
+      filter: opacity(1);
+      transform: scale(1.05);
     }
   }
 `;
@@ -246,9 +252,10 @@ export const ImageSlide = styled.div`
 export const SliderTrack = styled.div`
   display: flex;
   align-items: center;
-  gap: 35px;
+  gap: 50px;
   min-width: max-content;
-  animation: ${slideShow} 30s linear infinite;
+  animation: ${slideShow} 40s linear infinite;
+  will-change: transform;
 `;
 
 export const ClientStats = styled.div`

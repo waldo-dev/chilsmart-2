@@ -64,52 +64,26 @@ export const MONTHLY_PRICING_TABLE = [
   {
     name: "Desarrollo de software a la medida",
     description:
-      "Ideamos y construimos plataformas, integraciones e IA aplicada según tus procesos. Cada proyecto incluye discovery con tus equipos, roadmap y soporte continuo.",
+      "Desarrollamos software personalizado que ayuda a tu empresa a ahorrar dinero y generar más ingresos. Analizamos tus procesos, identificamos oportunidades de optimización y creamos soluciones a medida que impactan directamente en tu rentabilidad.",
     price: "",
     priceLabel: "Propuesta personalizada",
     buttonLabel: "Solicitar Cotización",
     url: "#",
     listItems: [
       {
-        content: "Workshops de descubrimiento y definición de métricas",
+        content: "Análisis de procesos para identificar oportunidades de ahorro y generación de ingresos",
       },
       {
-        content: "Desarrollo end-to-end (producto, APIs, automatizaciones)",
+        content: "Desarrollo de software a medida que automatiza procesos y reduce costos operativos",
       },
       {
-        content: "Integraciones con ERP, CRM, WhatsApp y pasarelas",
+        content: "Sistemas que optimizan ventas y aumentan los ingresos de tu empresa",
       },
       {
-        content: "Soporte evolutivo y acompañamiento post-lanzamiento",
+        content: "Integraciones con sistemas existentes para maximizar eficiencia",
       },
       {
-        content: "Equipo fundador involucrado en todo el ciclo",
-      },
-    ],
-  },
-  {
-    name: "ERP para talleres mecánicos",
-    description:
-      "Suite que centraliza órdenes de servicio, inventario, agenda y facturación electrónica para talleres y servicios automotrices. Configuramos la plataforma según tu operación.",
-    price: "$120.000",
-    priceLabel: "Mensual",
-    buttonLabel: "Hablar con un experto",
-    url: "#",
-    listItems: [
-      {
-        content: "Gestión completa de órdenes, cotizaciones y entregas",
-      },
-      {
-        content: "Control de inventario y alertas de stock",
-      },
-      {
-        content: "Portal de clientes con notificaciones y seguimiento",
-      },
-      {
-        content: "Facturación electrónica y reportes automáticos",
-      },
-      {
-        content: "Onboarding, soporte y mejoras continuas",
+        content: "Soporte continuo y mejoras basadas en métricas de rentabilidad",
       },
     ],
   },

@@ -55,67 +55,144 @@ export const Grid = styled.div`
 
 export const Item = styled.div`
   color: #0f172a;
-  border-radius: 30px;
-  padding: 48px;
-  text-align: left;
+  border-radius: 24px;
+  padding: 32px;
+  text-align: center;
   transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(148, 163, 184, 0.2);
-  box-shadow: 0 35px 70px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: ${props => props.hasUrl ? 'pointer' : 'default'};
+  
   @media (max-width: 1024px) {
     padding: 28px;
   }
   @media (max-width: 768px) {
-    padding: 32px;
+    padding: 24px;
   }
   @media (max-width: 480px) {
-    padding: 28px;
+    padding: 20px;
   }
+  
   :hover {
-    transform: translateY(-8px);
-    box-shadow: 0 45px 90px rgba(15, 23, 42, 0.18);
+    transform: translateY(-6px);
+    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.15);
+    border-color: rgba(14, 165, 233, 0.3);
   }
+  
   figure {
-    margin: 0 0 30px;
+    margin: 0 0 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 120px;
-    background: rgba(14, 165, 233, 0.08);
-    border-radius: 24px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 200px;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.06) 0%, rgba(139, 92, 246, 0.06) 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    padding: 12px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    
+    @media (max-width: 1024px) {
+      min-height: 180px;
+    }
+    
+    @media (max-width: 768px) {
+      min-height: 160px;
+    }
+    
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: inherit;
+    }
+    
     img {
       margin: 0;
-      max-height: 80px;
-      @media (min-width: 769px) and (max-width: 1024px) {
-        max-width: 75px;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover {
+      border-color: rgba(14, 165, 233, 0.3);
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+      
+      img {
+        transform: scale(1.03);
       }
     }
   }
+  
+  h4 {
+    margin: 0 0 12px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    text-align: center;
+    
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+  }
+  
   p {
     color: #475569;
-    line-height: 1.75;
-    margin: 0;
+    line-height: 1.7;
+    margin: 0 0 20px;
+    font-size: 15px;
+    text-align: center;
+    flex-grow: 1;
+    
+    @media (max-width: 768px) {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
   }
 `;
 
 export const ExternalLink = styled.a`
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: rgba(14, 165, 233, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background-color: rgba(14, 165, 233, 0.1);
   color: #0ea5e9;
   text-decoration: none;
   border-radius: 999px;
   font-weight: 600;
+  font-size: 15px;
   transition: all 0.3s ease;
-  border: 1px solid rgba(14, 165, 233, 0.4);
+  border: 2px solid rgba(14, 165, 233, 0.3);
+  margin: 0 auto;
+  width: fit-content;
+  min-width: 140px;
 
   &:hover {
-    background-color: rgba(14, 165, 233, 0.2);
-    border-color: rgba(14, 165, 233, 0.6);
+    background-color: #0ea5e9;
+    color: white;
+    border-color: #0ea5e9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
   }
 
   &:visited {
     color: #0ea5e9;
+  }
+  
+  &:hover:visited {
+    color: white;
   }
 `;
 

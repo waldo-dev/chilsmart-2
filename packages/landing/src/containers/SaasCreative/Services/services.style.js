@@ -184,6 +184,27 @@ export const SectionHeader = styled.header`
   }
 `;
 
+export const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, ${props => props.style?.color || '#0ea5e9'}15, ${props => props.style?.color || '#0ea5e9'}05);
+  border: 2px solid ${props => props.style?.color || '#0ea5e9'}30;
+  transition: all 0.3s ease;
+  
+  svg {
+    transition: all 0.3s ease;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 70px;
+    height: 70px;
+  }
+`;
+
 export const ServiceWrapper = styled.div`
   gap: 40px;
   display: grid;
@@ -195,7 +216,7 @@ export const ServiceWrapper = styled.div`
   .service__item {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 24px;
     padding: 32px;
     border-radius: 28px;
@@ -203,6 +224,18 @@ export const ServiceWrapper = styled.div`
     box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
     border: 1px solid rgba(148, 163, 184, 0.2);
     backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+    text-align: center;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 70px rgba(15, 23, 42, 0.2);
+      
+      ${IconWrapper} {
+        transform: scale(1.1);
+        background: linear-gradient(135deg, ${props => props.theme?.primary || '#0ea5e9'}20, ${props => props.theme?.primary || '#0ea5e9'}10);
+      }
+    }
 
     @media only screen and (max-width: 768px) {
       align-items: center;
@@ -219,19 +252,16 @@ export const ServiceWrapper = styled.div`
 
     .icon__wrapper {
       display: inline-flex;
-      justify-content: flex-start;
-
-      @media only screen and (max-width: 768px) {
-        justify-content: center;
-      }
+      justify-content: center;
+      width: 100%;
     }
 
-    h4 {
+    h3 {
       margin: 0 0 10px;
       font-weight: 700;
       font-size: 20px;
       line-height: 30px;
-      text-align: left;
+      text-align: center;
       color: #0f172a;
 
       @media only screen and (max-width: 1440px) {
@@ -240,15 +270,28 @@ export const ServiceWrapper = styled.div`
       @media only screen and (max-width: 1360px) {
         font-size: 18px;
       }
-      @media only screen and (max-width: 768px) {
-        text-align: center;
+    }
+
+    h4 {
+      margin: 0 0 10px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: center;
+      color: #0f172a;
+
+      @media only screen and (max-width: 1440px) {
+        margin: 0 0 5px;
+      }
+      @media only screen and (max-width: 1360px) {
+        font-size: 18px;
       }
     }
 
     p {
       font-size: 16px;
       line-height: 28px;
-      text-align: left;
+      text-align: center;
       color: #475569;
       @media only screen and (max-width: 1440px) {
         font-size: 16px;
@@ -256,9 +299,6 @@ export const ServiceWrapper = styled.div`
       @media only screen and (max-width: 1360px) {
         font-size: 15px;
         line-height: 26px;
-      }
-      @media only screen and (max-width: 768px) {
-        text-align: center;
       }
     }
   }

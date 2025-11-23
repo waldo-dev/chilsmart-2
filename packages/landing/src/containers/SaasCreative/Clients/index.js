@@ -18,16 +18,17 @@ import SectionWrapper, {
 } from "./clients.style";
 
 const Clients = () => {
-  const carouselLogos = [...clients, ...clients];
+  // Duplicamos los logos 3 veces para un loop perfecto sin delay
+  const carouselLogos = [...clients, ...clients, ...clients];
 
   return (
     <SectionWrapper id="experience">
       <Container width="100%">
         <SectionHeader>
           <Highlight>Confían en Chilsmart</Highlight>
-          <Heading content="Empresas que Escalan con Nuestro Desarrollo de Software a la Medida" />
+          <Heading content="Empresas que Ahorran Dinero y Generan Más Ingresos con Nuestro Software a la Medida" />
           <Text
-            content="Acompañamos a empresas en Chile con desarrollo de software personalizado. Construimos software a la medida para áreas de tecnología, operaciones y comercial, además de ofrecer productos SaaS listos para implementar."
+            content="Acompañamos a empresas en Chile con desarrollo de software personalizado que impacta directamente en su rentabilidad. Construimos software a la medida que ayuda a reducir costos operativos y aumentar ingresos mediante automatizaciones, optimización de procesos y sistemas que impulsan el crecimiento."
           />
           <ClientStats>
             <StatItem>
@@ -35,8 +36,8 @@ const Clients = () => {
               <small>implementaciones activas</small>
             </StatItem>
             <StatItem>
-              <span>6</span>
-              <small>años impulsando compañías</small>
+              <span>100%</span>
+              <small>profesionales calificados</small>
             </StatItem>
             {/*<StatItem>
               <span>5</span>

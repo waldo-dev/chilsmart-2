@@ -21,21 +21,39 @@ const Features = () => {
       <Container width="1400px">
         <SectionHeading>
           <HighlightPill>Casos Reales de Desarrollo de Software</HighlightPill>
-          <Heading content="Software a la Medida: Implementaciones que Respaldan Nuestra Experiencia" />
+          <Heading content="Empresas que Ahorran Dinero y Generan Más Ingresos con Nuestro Software a la Medida" />
           <Description>
-            Cada proyecto de desarrollo de software para empresas combina descubrimiento, desarrollo personalizado y soporte continuo. Así hemos creado software a medida para talleres, gimnasios y servicios profesionales en Chile y la región.
+            Cada proyecto de desarrollo de software para empresas está enfocado en impactar la rentabilidad. Hemos ayudado a empresas en Chile y la región a reducir costos operativos y aumentar sus ingresos mediante software personalizado que automatiza procesos, optimiza ventas y mejora la eficiencia.
           </Description>
         </SectionHeading>
         <Grid>
           {features.map((feature) => (
-            <Item key={feature.id}>
-              <figure>
-                {feature.icon ? (
-                  <NextImage src={feature.icon} alt={feature.title || "Característica de Chilsmart"} />
-                ) : (
-                  <i style={{fontSize: "7rem"}} className="flaticon-settings" aria-label="Configuración"></i>
-                )}
-              </figure>
+            <Item key={feature.id} hasUrl={!!feature.url}>
+              {feature.url ? (
+                <a
+                  href={feature.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <figure>
+                    {feature.icon ? (
+                      <NextImage src={feature.icon} alt={`Pantallazo del software desarrollado para ${feature.title} - Chilsmart`} />
+                    ) : (
+                      <i style={{fontSize: "7rem"}} className="flaticon-settings" aria-label="Configuración"></i>
+                    )}
+                  </figure>
+                </a>
+              ) : (
+                <figure>
+                  {feature.icon ? (
+                    <NextImage src={feature.icon} alt={`Pantallazo del software desarrollado para ${feature.title} - Chilsmart`} />
+                  ) : (
+                    <i style={{fontSize: "7rem"}} className="flaticon-settings" aria-label="Configuración"></i>
+                  )}
+                </figure>
+              )}
               <Heading as="h4" content={feature.title} />
               <Text content={feature.description} />
               {feature.url ? (
@@ -46,9 +64,7 @@ const Features = () => {
                 >
                   Visitar Sitio
                 </ExternalLink>
-              ) : (
-                <></>
-              )}
+              ) : null}
             </Item>
           ))}
         </Grid>

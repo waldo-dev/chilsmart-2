@@ -1,273 +1,157 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
 import Box from 'common/components/Box';
 import Text from 'common/components/Text';
 import Heading from 'common/components/Heading';
 import Button from 'common/components/Button';
 import Container from 'common/components/UI/Container';
-import GlideCarousel from 'common/components/GlideCarousel';
-import GlideSlide from 'common/components/GlideCarousel/glideSlide';
-import { MONTHLY_PRICING_TABLE } from 'common/data/SaasClassic';
-import PricingTable, {
-  PricingHead,
-  PricingPrice,
-  PricingButton,
-  PricingList,
-  ListItem,
-  PricingButtonWrapper,
-  PricingTableWrapper,
+import { Icon } from 'react-icons-kit';
+import { PROCESS_STEPS } from 'common/data/SaasClassic/process';
+import {
+  ProcessWrapper,
+  ProcessGrid,
+  ProcessCard,
+  ProcessIcon,
+  ProcessNumber,
   SectionBadge,
   SectionDescription,
+  CTAWrapper,
 } from "./pricing.style";
 
-const PricingSection = ({
+const ProcessSection = ({
   sectionWrapper,
   secTitleWrapper,
   secHeading,
-  secText,
-  nameStyle,
-  descriptionStyle,
-  priceStyle,
-  priceLabelStyle,
   buttonFillStyle,
-  listContentStyle,
 }) => {
-  const [state, setState] = useState({
-    data: MONTHLY_PRICING_TABLE,
-    active: true,
-  });
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(true);
-    }, 500);
-    return () => clearTimeout(timer); // Cleanup the timer
-  }, []);
-
-  const data = state.data;
-  const activeStatus = state.active;
-  const pricingCarouselOptions = {
-    type: 'slider',
-    perView: 2,
-    gap: 30,
-    bound: true,
-    breakpoints: {
-      1199: {
-        perView: 2,
-        type: 'carousel',
-        peek: {
-          before: 100,
-          after: 100,
-        },
-      },
-      990: {
-        type: 'carousel',
-        perView: 1,
-        peek: {
-          before: 100,
-          after: 100,
-        },
-      },
-      767: {
-        type: 'carousel',
-        perView: 1,
-        peek: {
-          before: 80,
-          after: 80,
-        },
-      },
-      575: {
-        type: 'carousel',
-        perView: 1,
-        gap: 15,
-        peek: {
-          before: 20,
-          after: 20,
-        },
-      },
-    },
-  };
-
   return (
-    <Box {...sectionWrapper} id="products_section">
+    <Box {...sectionWrapper} id="process_section">
       <Container>
         <Box {...secTitleWrapper}>
-          <SectionBadge>Desarrollo de Software para Empresas</SectionBadge>
+          <SectionBadge>Nuestro Proceso de Trabajo</SectionBadge>
           <Heading
             {...secHeading}
-            style={{ fontSize: "3rem" }}
-            content="Software a la Medida y Soluciones para Empresas"
+            content="Cómo Desarrollamos Software que Ahorra Dinero y Genera Ingresos"
           />
           <SectionDescription>
-            Ofrecemos desarrollo de software a la medida y un ERP especializado para talleres mecánicos. Cada proyecto de software personalizado incluye discovery, despliegue guiado y soporte continuo del equipo fundador. Software para empresas diseñado para crecer contigo.
+            Trabajamos con un proceso estructurado y transparente que garantiza resultados medibles. Desde el análisis inicial hasta el soporte continuo, cada paso está diseñado para maximizar el impacto en la rentabilidad de tu empresa.
           </SectionDescription>
         </Box>
-        <PricingTableWrapper>
-          <GlideCarousel
-            carouselSelector="products-carousel"
-            options={pricingCarouselOptions}
-            controls={false}
-          >
-            <>
-              {data.map((pricingTable, index) => (
-                <GlideSlide key={`product-table-${index}`}>
-                  <PricingTable
-                    freePlan={pricingTable.freePlan}
-                    className="pricing_table"
-                  >
-                    <PricingHead>
-                      <Heading content={pricingTable.name} {...nameStyle} />
-                      <Text
-                        content={pricingTable.description}
-                        {...descriptionStyle}
-                      />
-                    </PricingHead>
-                    <PricingPrice>
-                      <Text
-                        content={pricingTable.price || "A medida"}
-                        {...priceStyle}
-                      />
-                      <Text
-                        content={
-                          pricingTable.priceLabel ||
-                          "Propuesta personalizada"
-                        }
-                        {...priceLabelStyle}
-                      />
-                    </PricingPrice>
-                    <PricingList>
-                      {pricingTable.listItems.map((item, index) => (
-                        <ListItem key={`product-table-list-${index}`}>
-                          <Text content={item.content} {...listContentStyle} />
-                        </ListItem>
-                      ))}
-                    </PricingList>
-                    <PricingButton>
-                      <a
-                        href={`https://wa.me/56940676501?text=${encodeURIComponent(
-                          `Hola, quiero cotizar ${pricingTable.name}`
-                        )}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Button
-                          title={pricingTable.buttonLabel}
-                          {...buttonFillStyle}
-                        />
-                      </a>
-                    </PricingButton>
-                  </PricingTable>
-                </GlideSlide>
-              ))}
-            </>
-          </GlideCarousel>
-        </PricingTableWrapper>
+        <ProcessWrapper>
+          <ProcessGrid>
+            {PROCESS_STEPS.map((step, index) => (
+              <ProcessCard key={`process-step-${step.id}`}>
+                <ProcessNumber>{step.id}</ProcessNumber>
+                <ProcessIcon style={{ color: step.iconColor }}>
+                  <Icon icon={step.icon} size={48} />
+                </ProcessIcon>
+                <Heading
+                  as="h3"
+                  content={step.title}
+                  style={{
+                    fontSize: '22px',
+                    fontWeight: '700',
+                    color: '#0f172a',
+                    marginBottom: '12px',
+                    textAlign: 'center',
+                  }}
+                />
+                <Text
+                  content={step.description}
+                  style={{
+                    fontSize: '15px',
+                    color: '#475569',
+                    lineHeight: '1.7',
+                    textAlign: 'center',
+                    margin: '0',
+                  }}
+                />
+              </ProcessCard>
+            ))}
+          </ProcessGrid>
+          <CTAWrapper>
+            <Heading
+              as="h3"
+              content="¿Listo para Ahorrar Dinero y Generar Más Ingresos?"
+              style={{
+                fontSize: '28px',
+                fontWeight: '700',
+                color: '#0f172a',
+                marginBottom: '16px',
+                textAlign: 'center',
+              }}
+            />
+            <Text
+              content="Solicita una consultoría gratuita y descubre cómo nuestro software a la medida puede impactar la rentabilidad de tu empresa."
+              style={{
+                fontSize: '16px',
+                color: '#475569',
+                lineHeight: '1.7',
+                textAlign: 'center',
+                marginBottom: '32px',
+                maxWidth: '600px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+              }}
+            />
+            <a
+              href={`https://wa.me/56940676501?text=${encodeURIComponent(
+                'Hola, quiero una consultoría gratuita para ver cómo el software a la medida puede ayudar a mi empresa a ahorrar dinero y generar más ingresos.'
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: 'none', display: 'inline-block' }}
+            >
+              <Button
+                title="Solicitar Consultoría Gratuita"
+                {...buttonFillStyle}
+              />
+            </a>
+          </CTAWrapper>
+        </ProcessWrapper>
       </Container>
     </Box>
   );
 };
 
 
-PricingSection.defaultProps = {
+ProcessSection.defaultProps = {
   sectionWrapper: {
     as: 'section',
     pt: ['60px', '80px', '80px', '80px', '100px'],
-    pb: '20px',
+    pb: ['60px', '80px', '80px', '80px', '100px'],
     background: 'linear-gradient(180deg, #f8fbff 0%, #e0f2ff 55%, #d9f0ff 100%)',
   },
   secTitleWrapper: {
-    mb: ['30px', '40px'],
-  },
-  secText: {
-    as: 'span',
-    display: 'block',
+    mb: ['40px', '50px', '60px'],
     textAlign: 'center',
-    fontSize: '14px',
-    letterSpacing: '0.15em',
-    fontWeight: '700',
-    color: '#ff4362',
-    mb: '12px',
   },
   secHeading: {
     textAlign: 'center',
-    fontSize: ['20px', '24px', '36px', '36px'],
+    fontSize: ['28px', '32px', '40px', '42px'],
     fontWeight: '700',
-    color: '#0f2137',
+    color: '#0f172a',
     letterSpacing: '-0.025em',
-    mb: '0',
+    mb: '20px',
     ml: 'auto',
     mr: 'auto',
-    lineHeight: '1.12',
-    width: '500px',
-    maxWidth: '100%',
-  },
-  nameStyle: {
-    fontSize: ["20px", "20px", "24px", "24px", "24px"],
-    fontWeight: "700",
-    color: "#0f172a",
-    letterSpacing: "-0.025em",
-    textAlign: "left",
-    mb: "12px",
-  },
-  descriptionStyle: {
-    fontSize: ["15px", "16px", "16px", "16px", "16px"],
-    color: "#475569",
-    lineHeight: "1.7",
-    textAlign: "left",
-    mb: "0",
-  },
-  priceStyle: {
-    as: "span",
-    display: "block",
-    fontSize: ["34px", "36px", "40px", "40px", "40px"],
-    color: "#0f172a",
-    textAlign: "left",
-    mb: "5px",
-    letterSpacing: "-0.025em",
-    fontWeight: "600",
-  },
-  priceLabelStyle: {
-    fontSize: ["13px", "14px", "14px", "14px", "14px"],
-    color: "#64748b",
-    lineHeight: "1.6",
-    textAlign: "left",
-    mb: "0",
-  },
-  buttonStyle: {
-    type: 'button',
-    fontSize: '14px',
-    fontWeight: '600',
-    borderRadius: '4px',
-    pl: '10px',
-    pr: '10px',
-    bg: '#fff',
-    color: '#2aa275',
-    colors: 'primaryWithBg',
-    width: '222px',
-    maxWidth: '100%',
+    lineHeight: '1.2',
+    maxWidth: '800px',
   },
   buttonFillStyle: {
     type: "button",
-    fontSize: "15px",
+    fontSize: "16px",
     fontWeight: "700",
     color: "#fff",
     borderRadius: "999px",
-    pl: "24px",
-    pr: "24px",
+    pl: "32px",
+    pr: "32px",
     bg: "#0ea5e9",
-    minWidth: ["180px", "210px"],
+    minWidth: ["200px", "240px"],
     maxWidth: "100%",
-    height: "52px",
+    height: "56px",
     boxShadow: "0 18px 30px rgba(14, 165, 233, 0.35)",
-  },
-  listContentStyle: {
-    fontSize: ["15px", "16px", "16px", "16px", "16px"],
-    color: "#475569",
-    mb: "0",
-    textAlign: "left",
   },
 };
 
-export default PricingSection;
+export default ProcessSection;

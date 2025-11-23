@@ -45,16 +45,16 @@ const Banner = () => {
               Desarrollo de Software a la Medida en Chile
             </HighlightPill>
             <Heading
-              content="Desarrollo de Software para Empresas: Soluciones Personalizadas que Impulsan tu Negocio"
+              content="Desarrollo de Software a la Medida que Ayuda a tu Empresa a Ahorrar y Generar Más Dinero"
               className="animate__animated animate__fadeInUp"
             />
             <Text
               className="animate__animated animate__fadeInUp"
-              content="Chilsmart es una empresa de desarrollo de software a la medida en Chile. Creamos software personalizado para empresas de todos los tamaños, desde automatizaciones hasta sistemas completos que optimizan tus operaciones, ventas y soporte."
+              content="Chilsmart es una empresa de desarrollo de software a la medida en Chile. Creamos software personalizado que ayuda a empresas a ahorrar costos operativos y generar más ingresos mediante automatizaciones inteligentes, optimización de procesos y sistemas que impulsan tu rentabilidad."
             />
             <FeatureList className="animate__animated animate__fadeInUp">
-              <FeatureItem>Desarrollo de software a medida desde discovery hasta soporte continuo.</FeatureItem>
-              <FeatureItem>Software para empresas listo para operar desde el día uno.</FeatureItem>
+              <FeatureItem>Software a medida que reduce costos operativos y aumenta la eficiencia.</FeatureItem>
+              <FeatureItem>Automatizaciones que generan más ventas y mejoran la experiencia del cliente.</FeatureItem>
             </FeatureList>
             <Subscribe className="animate__animated animate__fadeInUp">
               <Button
@@ -63,14 +63,14 @@ const Banner = () => {
                 className="primary-cta"
               />
               <Button
-                title="Conoce nuestros productos"
+                title="Ver nuestros casos de éxito"
                 onClick={handleProductsClick}
                 className="secondary-cta"
                 variant="textButton"
               />
             </Subscribe>
             <TrustSignal className="animate__animated animate__fadeInUp">
-              Más de 6 años desarrollando software a la medida para empresas en retail, logística, educación y servicios financieros en Chile y LatAm.
+              Profesionales calificados ayudando a empresas en Chile a ahorrar costos y aumentar sus ingresos con desarrollo de software a la medida.
             </TrustSignal>
           </BannerContent>
           {/*<Figure className="animate__animated animate__fadeInUp animate__fast shadow-2xl rounded-xl">
