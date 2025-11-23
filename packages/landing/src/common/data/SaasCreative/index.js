@@ -167,28 +167,28 @@ export const faqs = [
   {
     id: 1,
     expend: true,
-    title: "01. ¿Cómo funciona un proyecto de software a medida con Chilsmart?",
-    description: `Arrancamos con workshops de discovery para mapear procesos, métricas y stakeholders. Luego definimos roadmap y prototipos, avanzamos en sprints semanales con entregas continuas y cerramos con despliegue + soporte acompañando a tus equipos.`,
+    title: "01. ¿Cómo funciona el desarrollo de software a la medida con Chilsmart?",
+    description: `Nuestro proceso de desarrollo de software para empresas inicia con workshops de discovery para mapear procesos, métricas y stakeholders. Luego definimos roadmap y prototipos, avanzamos en sprints semanales con entregas continuas de software personalizado y cerramos con despliegue + soporte acompañando a tus equipos.`,
   },
   {
     id: 2,
-    title: "02. ¿Cuánto tarda implementar el ERP para talleres mecánicos?",
-    description: `El onboarding base toma entre 2 y 4 semanas: migramos catálogos, configuramos órdenes, inventario y facturación electrónica. Ajustes más avanzados (integraciones o módulos extra) pueden extender el proyecto entre 6 y 8 semanas.`,
+    title: "02. ¿Cuánto tarda el desarrollo de software a medida para mi empresa?",
+    description: `El tiempo de desarrollo de software personalizado varía según la complejidad. Para nuestro ERP para talleres mecánicos, el onboarding base toma entre 2 y 4 semanas. Proyectos de software a la medida más complejos (integraciones o módulos extra) pueden extenderse entre 6 y 12 semanas.`,
   },
   {
     id: 3,
-    title: "03. ¿Qué nivel de acompañamiento ofrecen post-lanzamiento?",
-    description: `Los founders seguimos involucrados. Incluimos soporte evolutivo, mejoras priorizadas y monitoreo de métricas clave para asegurarnos de que las automatizaciones sigan aportando valor operativo.`,
+    title: "03. ¿Qué incluye el soporte post-lanzamiento del software para empresas?",
+    description: `Los founders seguimos involucrados en cada proyecto de desarrollo de software. Incluimos soporte evolutivo, mejoras priorizadas y monitoreo de métricas clave para asegurarnos de que el software a la medida siga aportando valor operativo a tu empresa.`,
   },
   {
     id: 4,
-    title: "04. ¿Se pueden integrar sistemas existentes (ERP, CRM, WhatsApp, pasarelas)?",
-    description: `Sí. Trabajamos con APIs, conectores nativos y herramientas como n8n para unir ERP/CRM, WhatsApp Business, pasarelas de pago o BI. Evaluamos cada stack antes de proponer la arquitectura.`,
+    title: "04. ¿Pueden integrar el software a la medida con sistemas existentes?",
+    description: `Sí. En nuestro desarrollo de software para empresas trabajamos con APIs, conectores nativos y herramientas como n8n para integrar ERP/CRM, WhatsApp Business, pasarelas de pago o BI. Evaluamos cada stack antes de proponer la arquitectura del software personalizado.`,
   },
   {
     id: 5,
-    title: "05. ¿Qué necesito para comenzar el proyecto?",
-    description: `Una sesión de descubrimiento con tus líderes de operación/comercial, acceso a la información del proceso actual y definir responsables internos. Nosotros guiamos el resto: alcance, backlog y plan de implementación.`,
+    title: "05. ¿Qué necesito para comenzar un proyecto de desarrollo de software a la medida?",
+    description: `Para iniciar el desarrollo de software para tu empresa necesitas: una sesión de descubrimiento con tus líderes de operación/comercial, acceso a la información del proceso actual y definir responsables internos. Nosotros guiamos el resto: alcance, backlog y plan de implementación del software a la medida.`,
   },
 ];
 

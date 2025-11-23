@@ -26,10 +26,10 @@ import "animate.css";
 import wspLogo from "common/assets/image/saasCreative/wsp-logo.png";
 
 const SaasCreative = () => {
-  const siteUrl = "https://www.chilsmart.cl";
-  const title = "Chilsmart | Desarrollo de software a medida y ERP para talleres";
+  const siteUrl = "https://www.chilsmart.com";
+  const title = "Chilsmart | Desarrollo de Software a la Medida y Software para Empresas en Chile";
   const description =
-    "Diseñamos software personalizado, automatizaciones e implementamos nuestro ERP para talleres mecánicos. Aceleramos operaciones, ventas y soporte con IA e integraciones.";
+    "Chilsmart: Empresa de desarrollo de software a la medida en Chile. Creamos software personalizado para empresas, automatizaciones e integraciones. Soluciones de software para todo tipo de empresas.";
   const previewImage = `${siteUrl}/preview.jpg`;
 
   return (
@@ -40,7 +40,7 @@ const SaasCreative = () => {
           <meta name="description" content={description} />
           <meta
             name="keywords"
-            content="desarrollo de software a medida, ERP talleres mecánicos, automatizaciones para empresas, integraciones con IA, Chilsmart, software Chile, desarrollo web Chile, ERP Chile, automatización empresarial"
+            content="chilsmart, software a la medida, desarrollo de software, software para empresas, desarrollo de software chile, software personalizado, software a medida chile, desarrollo de software a medida, software para empresas chile, automatizaciones empresariales, integraciones software, ERP chile, desarrollo web chile"
           />
           <meta name="author" content="Chilsmart" />
           <meta name="theme-color" content="#0ea5e9" />
@@ -141,7 +141,7 @@ const SaasCreative = () => {
               __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "Service",
-                serviceType: "Desarrollo de software a medida",
+                name: "Desarrollo de Software a la Medida",
                 provider: {
                   "@type": "Organization",
                   name: "Chilsmart",
@@ -151,11 +151,13 @@ const SaasCreative = () => {
                   "@type": "Country",
                   name: "Chile"
                 },
-                description: "Desarrollo de software personalizado, ERP para talleres mecánicos, automatizaciones empresariales e integraciones con IA",
+                description: "Desarrollo de software a la medida, software para empresas, automatizaciones empresariales e integraciones. Soluciones de software personalizado para todo tipo de empresas en Chile.",
                 offers: {
                   "@type": "Offer",
-                  description: "Servicios de desarrollo de software a medida"
-                }
+                  description: "Servicios de desarrollo de software a la medida y software para empresas",
+                  name: "Desarrollo de Software a la Medida"
+                },
+                serviceType: ["Desarrollo de Software", "Software a la Medida", "Software para Empresas", "Desarrollo de Software Personalizado"]
               })
             }}
           />

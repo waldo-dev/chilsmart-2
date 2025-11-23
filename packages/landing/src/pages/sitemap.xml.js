@@ -1,7 +1,7 @@
 const Sitemap = () => {};
 
 export async function getServerSideProps({ res }) {
-  const siteUrl = 'https://www.chilsmart.cl';
+  const siteUrl = 'https://www.chilsmart.com';
   const currentDate = new Date().toISOString();
 
   const staticPages = [

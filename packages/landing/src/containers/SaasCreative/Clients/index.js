@@ -25,9 +25,9 @@ const Clients = () => {
       <Container width="100%">
         <SectionHeader>
           <Highlight>Confían en Chilsmart</Highlight>
-          <Heading content="Empresas que escalan con nuestras soluciones" />
+          <Heading content="Empresas que Escalan con Nuestro Desarrollo de Software a la Medida" />
           <Text
-            content="Acompañamos a áreas de tecnología, operaciones y comercial en la construcción de software a la medida y en la adopción de nuestros productos SaaS."
+            content="Acompañamos a empresas en Chile con desarrollo de software personalizado. Construimos software a la medida para áreas de tecnología, operaciones y comercial, además de ofrecer productos SaaS listos para implementar."
           />
           <ClientStats>
             <StatItem>

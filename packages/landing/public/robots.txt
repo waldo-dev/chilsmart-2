@@ -6,7 +6,7 @@ Disallow: /404
 Disallow: /_error
 
 # Sitemap
-Sitemap: https://www.chilsmart.cl/sitemap.xml
+Sitemap: https://www.chilsmart.com/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1

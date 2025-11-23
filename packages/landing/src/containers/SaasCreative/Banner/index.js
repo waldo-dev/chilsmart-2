@@ -42,19 +42,19 @@ const Banner = () => {
         <BannerContentWrapper>
           <BannerContent>
             <HighlightPill>
-              Partner tecnológico para empresas ambiciosas
+              Desarrollo de Software a la Medida en Chile
             </HighlightPill>
             <Heading
-              content="Software a medida y productos listos para impulsar tu crecimiento"
+              content="Desarrollo de Software para Empresas: Soluciones Personalizadas que Impulsan tu Negocio"
               className="animate__animated animate__fadeInUp"
             />
             <Text
               className="animate__animated animate__fadeInUp"
-              content="Diseñamos plataformas, integraciones según tus procesos, además de productos propios que puedes implementar hoy mismo para acelerar operaciones, ventas y soporte."
+              content="Chilsmart es una empresa de desarrollo de software a la medida en Chile. Creamos software personalizado para empresas de todos los tamaños, desde automatizaciones hasta sistemas completos que optimizan tus operaciones, ventas y soporte."
             />
             <FeatureList className="animate__animated animate__fadeInUp">
-              <FeatureItem>Desarrollo end-to-end, desde discovery hasta soporte.</FeatureItem>
-              <FeatureItem>Suite de productos SaaS lista para operar desde el día uno.</FeatureItem>
+              <FeatureItem>Desarrollo de software a medida desde discovery hasta soporte continuo.</FeatureItem>
+              <FeatureItem>Software para empresas listo para operar desde el día uno.</FeatureItem>
             </FeatureList>
             <Subscribe className="animate__animated animate__fadeInUp">
               <Button
@@ -70,7 +70,7 @@ const Banner = () => {
               />
             </Subscribe>
             <TrustSignal className="animate__animated animate__fadeInUp">
-              Más de 6 años construyendo soluciones para retail, logística, educación y servicios financieros en LatAm.
+              Más de 6 años desarrollando software a la medida para empresas en retail, logística, educación y servicios financieros en Chile y LatAm.
             </TrustSignal>
           </BannerContent>
           {/*<Figure className="animate__animated animate__fadeInUp animate__fast shadow-2xl rounded-xl">

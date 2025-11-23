@@ -94,15 +94,14 @@ const PricingSection = ({
     <Box {...sectionWrapper} id="products_section">
       <Container>
         <Box {...secTitleWrapper}>
-          <SectionBadge>Soluciones principales</SectionBadge>
+          <SectionBadge>Desarrollo de Software para Empresas</SectionBadge>
           <Heading
             {...secHeading}
             style={{ fontSize: "3rem" }}
-            content="Nuestros Productos"
+            content="Software a la Medida y Soluciones para Empresas"
           />
           <SectionDescription>
-            Desarrollamos plataformas a la medida y un ERP especializado para talleres mecánicos. Cada
-            entrega incluye discovery, despliegue guiado y soporte continuo del equipo fundador.
+            Ofrecemos desarrollo de software a la medida y un ERP especializado para talleres mecánicos. Cada proyecto de software personalizado incluye discovery, despliegue guiado y soporte continuo del equipo fundador. Software para empresas diseñado para crecer contigo.
           </SectionDescription>
         </Box>
         <PricingTableWrapper>

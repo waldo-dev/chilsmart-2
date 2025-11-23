@@ -32,9 +32,9 @@ const Services = () => {
     {
       id: "custom",
       icon: serviceIcon3,
-      title: "Desarrollos e integraciones a medida",
+      title: "Desarrollo de Software a la Medida e Integraciones",
       description:
-        "Aplicaciones web, APIs y flujos con IA para digitalizar operaciones comerciales, soporte y logística en distintas industrias.",
+        "Desarrollamos software personalizado para empresas: aplicaciones web, APIs y flujos con IA para digitalizar operaciones comerciales, soporte y logística en distintas industrias. Software a medida adaptado a tus necesidades.",
     },
   ];
 
@@ -43,9 +43,9 @@ const Services = () => {
       <Container>
         <Fade direction="up" triggerOnce delay={100}>
           <SectionHeader>
-            <Heading content="¿Qué hacemos?" />
-            <Text content="Construimos plataformas y automatizaciones que resuelven procesos críticos." />
-            <Text content="Nuestro ERP impulsa talleres mecánicos y nuestras soluciones a medida optimizan gimnasios y otras industrias, combinando desarrollos propios con integraciones e IA aplicada." />
+            <Heading content="Desarrollo de Software para Empresas en Chile" />
+            <Text content="Somos especialistas en desarrollo de software a la medida. Construimos plataformas y automatizaciones que resuelven procesos críticos de tu empresa." />
+            <Text content="Ofrecemos desarrollo de software personalizado para empresas: desde nuestro ERP para talleres mecánicos hasta software a medida para gimnasios y otras industrias. Combinamos desarrollos propios con integraciones e IA aplicada." />
           </SectionHeader>
         </Fade>
         <ServiceWrapper>

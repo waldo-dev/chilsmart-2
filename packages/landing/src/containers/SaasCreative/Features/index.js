@@ -20,11 +20,10 @@ const Features = () => {
     <Section id="testimonial">
       <Container width="1400px">
         <SectionHeading>
-          <HighlightPill>Casos reales</HighlightPill>
-          <Heading content="Implementaciones que respaldan nuestra experiencia" />
+          <HighlightPill>Casos Reales de Desarrollo de Software</HighlightPill>
+          <Heading content="Software a la Medida: Implementaciones que Respaldan Nuestra Experiencia" />
           <Description>
-            Cada proyecto combina descubrimiento, desarrollo y soporte continuo. Así se han
-            digitalizado talleres, gimnasios y servicios profesionales de la región.
+            Cada proyecto de desarrollo de software para empresas combina descubrimiento, desarrollo personalizado y soporte continuo. Así hemos creado software a medida para talleres, gimnasios y servicios profesionales en Chile y la región.
           </Description>
         </SectionHeading>
         <Grid>
