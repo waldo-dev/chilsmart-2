@@ -105,12 +105,13 @@ export const ClientWrapper = styled.div`
   overflow: hidden;
   backdrop-filter: blur(10px);
 
-  @media only screen and (max-width: 624px) {
-    padding: 40px 20px;
-  }
-
-  @media only screen and (max-width: 480px) {
-    padding: 35px 15px;
+  @media only screen and (max-width: 768px) {
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    border-radius: 0;
   }
 
   .client__text {
@@ -129,6 +130,14 @@ export const SliderMask = styled.div`
   pointer-events: none;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), transparent 12%, transparent 88%, rgba(255, 255, 255, 0.95));
   z-index: 1;
+
+  @media only screen and (max-width: 768px) {
+    background: linear-gradient(90deg, rgba(248, 251, 255, 0.9), transparent 8%, transparent 92%, rgba(248, 251, 255, 0.9));
+  }
+
+  @media only screen and (max-width: 480px) {
+    background: linear-gradient(90deg, rgba(248, 251, 255, 0.85), transparent 5%, transparent 95%, rgba(248, 251, 255, 0.85));
+  }
 `;
 
 export const ExperienceWrapper = styled.div`
@@ -203,12 +212,12 @@ export const ImageSlider = styled.div`
   padding: 0;
   z-index: 0;
 
-  @media only screen and (max-width: 991px) {
-    padding-top: 65px;
+  @media only screen and (max-width: 768px) {
+    padding: 20px 0;
   }
 
-  @media only screen and (max-width: 624px) {
-    padding-top: 45px;
+  @media only screen and (max-width: 480px) {
+    padding: 15px 0;
   }
 `;
 
@@ -219,6 +228,16 @@ export const ImageSlide = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0 30px;
+
+  @media only screen and (max-width: 768px) {
+    padding: 0 20px;
+    height: 50px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    padding: 0 15px;
+    height: 45px;
+  }
 
   a {
     transition: all 0.3s ease;
@@ -240,6 +259,16 @@ export const ImageSlide = styled.div`
       @media only screen and (max-width: 991px) {
         max-width: 80%;
       }
+
+      @media only screen and (max-width: 768px) {
+        max-height: 50px;
+        max-width: 120px;
+      }
+
+      @media only screen and (max-width: 480px) {
+        max-height: 45px;
+        max-width: 100px;
+      }
     }
 
     &:hover {
@@ -256,6 +285,14 @@ export const SliderTrack = styled.div`
   min-width: max-content;
   animation: ${slideShow} 40s linear infinite;
   will-change: transform;
+
+  @media only screen and (max-width: 768px) {
+    gap: 30px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    gap: 20px;
+  }
 `;
 
 export const ClientStats = styled.div`
