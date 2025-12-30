@@ -44,20 +44,20 @@ const AdvancedAnalytics = () => {
             </Figure>
           </Fade>
           <Content>
-            <HighlightPill>Equipo Chilsmart - Desarrollo de Software</HighlightPill>
-            <Heading as="h2" content="Software a la Medida que Ayuda a tu Empresa a Ahorrar y Generar Más Dinero" />
+            <HighlightPill>Transforma Datos en Decisiones</HighlightPill>
+            <Heading as="h2" content="Toda tu Data Ordenada para que Tomar Decisiones sea Fácil" />
             <Text
               className="description"
-              content="Somos un equipo de desarrollo de software especializado en crear soluciones a la medida que impactan directamente en la rentabilidad de tu empresa. Cada proyecto está enfocado en ayudarte a ahorrar costos operativos y generar más ingresos mediante automatizaciones inteligentes, optimización de procesos y sistemas que impulsan tu negocio."
+              content="No somos solo dashboards. Somos decisiones. Organizamos toda tu información para que la toma de decisiones estratégicas sea lo más simple posible. Dashboards profesionales creados por analistas especialistas que entienden qué datos necesitas ver para decidir mejor."
             />
             <BulletList>
-              <BulletItem>Análisis de procesos para identificar oportunidades de ahorro y generación de ingresos en tu empresa.</BulletItem>
-              <BulletItem>Desarrollo de software a medida que automatiza tareas repetitivas, reduce costos y aumenta la eficiencia operativa.</BulletItem>
-              <BulletItem>Soluciones personalizadas que optimizan ventas, mejoran la experiencia del cliente y generan más ingresos para tu negocio.</BulletItem>
+              <BulletItem>Toda tu data organizada y estructurada. No más información dispersa. Todo ordenado y listo para tomar decisiones.</BulletItem>
+              <BulletItem>Dashboards profesionales que convierten datos complejos en información clara y accionable para facilitar la toma de decisiones estratégicas.</BulletItem>
+              <BulletItem>Control de acceso inteligente: cada usuario accede solo a la información relevante para su rol, garantizando decisiones informadas con los datos correctos.</BulletItem>
             </BulletList>
-            <Signature>"Aliados cercanos que desarrollan software que realmente impacta en tu rentabilidad: ahorras dinero y generas más ingresos."</Signature>
-            <Link href="https://wa.me/56940676501?text=Hola,%20quiero%20saber%20más%20sobre%20su%20equipo" className="explore" target="_blank">
-              Agenda una conversación <Icon icon={arrowRight} />
+            <Signature>"La mejor manera de organizar tus datos y facilitar la toma de decisiones estratégicas en tu empresa."</Signature>
+            <Link href="https://wa.me/56940676501?text=Hola,%20quiero%20conocer%20más%20sobre%20su%20plataforma%20de%20BI" className="explore" target="_blank">
+              Agenda una demo gratuita <Icon icon={arrowRight} />
             </Link>
           </Content>
         </Grid>

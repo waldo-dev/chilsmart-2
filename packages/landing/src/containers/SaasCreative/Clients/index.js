@@ -25,10 +25,10 @@ const Clients = () => {
     <SectionWrapper id="experience">
       <Container width="100%">
         <SectionHeader>
-          <Highlight>Confían en Chilsmart</Highlight>
-          <Heading content="Empresas que Ahorran Dinero y Generan Más Ingresos con Nuestro Software a la Medida" />
+          <Highlight>Empresas que Toman Mejores Decisiones con Nuestra Plataforma</Highlight>
+          <Heading content="Plataforma de BI Utilizada por Empresas que Necesitan Organizar su Data para Tomar Decisiones Estratégicas" />
           <Text
-            content="Acompañamos a empresas en Chile con desarrollo de software personalizado que impacta directamente en su rentabilidad. Construimos software a la medida que ayuda a reducir costos operativos y aumentar ingresos mediante automatizaciones, optimización de procesos y sistemas que impulsan el crecimiento."
+            content="Nuestra plataforma de Business Intelligence ayuda a empresas en Chile a organizar toda su data y facilitar la toma de decisiones. Con dashboards profesionales creados por analistas especialistas y control de acceso inteligente, convertimos tus datos en decisiones estratégicas."
           />
           <ClientStats>
             <StatItem>

@@ -3,103 +3,55 @@ import styled from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
 
 const Section = styled.section`
-  background: radial-gradient(circle at top, #f8fbff 0%, #e0f2ff 55%, #d9f0ff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   position: relative;
-  min-height: 120vh;
+  min-height: 85vh;
   z-index: 0;
   overflow: hidden;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  display: flex;
+  align-items: center;
 
-  ::before,
-  ::after {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  ::before {
-    background: radial-gradient(
-        circle at 30% 30%,
-        rgba(14, 165, 233, 0.35),
-        transparent 55%
-      ),
-      radial-gradient(
-        circle at 70% 60%,
-        rgba(59, 130, 246, 0.2),
-        transparent 65%
-      ),
-      radial-gradient(
-        circle at 50% 90%,
-        rgba(14, 165, 233, 0.18),
-        transparent 75%
-      );
-    animation: pulseLights 8s ease-in-out infinite;
-    filter: blur(60px);
-  }
-
-  ::after {
-    background: linear-gradient(
-      120deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.55) 65%,
-      rgba(255, 255, 255, 0.85) 100%
-    );
-  }
-
-  @keyframes pulseLights {
-    0%, 100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    50% {
-      transform: scale(1.05);
-      opacity: 0.8;
-    }
+  @media (max-width: 768px) {
+    min-height: auto;
+    padding-bottom: 80px;
   }
 `;
 
 
 export const BannerContentWrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
 
   @media (max-width: 1024px) {
-    gap: 20px;
+    gap: 30px;
   }
 
   @media (max-width: 768px) {
-    flex-direction: column;
-  }
-
-  @media (min-width: 1280px) {
-    min-height: 100vh;
+    gap: 24px;
   }
 `;
 
 export const BannerContent = styled.div`
-  flex: 1 1 50%;
-  padding-top: 210px;
-  max-width: 720px;
+  width: 100%;
+  padding-top: 180px;
   margin: 0;
-  text-align: left;
+  text-align: center;
+  
   @media (max-width: 1024px) {
-    max-width: 600px;
-    padding-top: 170px;
-  }
-  @media (max-width: 768px) {
-    max-width: 100%;
     padding-top: 150px;
-    text-align: center;
   }
+  
+  @media (max-width: 768px) {
+    padding-top: 120px;
+  }
+  
   @media (max-width: 480px) {
     padding-top: 100px;
   }
@@ -222,11 +174,19 @@ export const HighlightPill = styled.span`
 
 export const FeatureList = styled.ul`
   list-style: none;
-  margin: 32px 0 0;
+  margin: 40px 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 `;
 
 export const FeatureItem = styled.li`
@@ -235,13 +195,12 @@ export const FeatureItem = styled.li`
   gap: 12px;
   padding: 18px 20px;
   border-radius: 16px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: #f8fafc;
   color: #0f172a;
   font-size: 15px;
   line-height: 1.5;
-  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
-  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
 
   &::before {
     content: "";
@@ -261,14 +220,11 @@ export const FeatureItem = styled.li`
 
 export const TrustSignal = styled.p`
   font-size: 14px;
-  color: rgba(15, 23, 42, 0.6);
-  margin: 12px 0 0;
+  color: #64748b;
+  margin: 24px auto 0;
   letter-spacing: 0.03em;
-  max-width: 520px;
-  @media (max-width: 768px) {
-    margin-left: auto;
-    margin-right: auto;
-  }
+  max-width: 600px;
+  text-align: center;
 `;
 
 export default Section;

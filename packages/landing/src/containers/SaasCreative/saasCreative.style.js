@@ -178,12 +178,15 @@ export const ContentWrapper = styled.div`
     width: 100%;
     transition: 0.35s ease-in-out;
     padding: 30px 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 999;
 
     .main-logo {
-      display: block;
+      display: none;
     }
     .sticky-logo {
-      display: none;
+      display: block;
     }
     .mainMenuWrapper {
       flex: 1 1 100%;
@@ -215,7 +218,7 @@ export const ContentWrapper = styled.div`
           }
         }
         a {
-          color: ${themeGet('colors.white')};
+          color: ${themeGet('colors.headingColor')};
           font-size: 15px;
           line-height: 2.2;
           font-weight: 500;
@@ -264,7 +267,7 @@ export const ContentWrapper = styled.div`
       }
       .hamburgMenu__bar {
         > span {
-          background-color: ${themeGet('colors.white')};
+          background-color: ${themeGet('colors.headingColor')};
         }
       }
     }
@@ -286,7 +289,7 @@ export const ContentWrapper = styled.div`
       }
       .main_menu li:hover a,
       .main_menu li.is-current a {
-        color: #1089ff;
+        color: ${themeGet('colors.primary')};
       }
       .reusecore-drawer__handler {
         .hamburgMenu__bar {

@@ -2,10 +2,12 @@ import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 
 const Section = styled.section`
-  padding: 110px 0;
-  background: radial-gradient(circle at top, #f8fbff 0%, #e0f2ff 55%, #d9f0ff 100%);
+  padding: 100px 0;
+  background: #ffffff;
   position: relative;
   overflow: hidden;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 
   &::before,
   &::after {
@@ -145,10 +147,10 @@ export const IconGroup = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 24px;
-    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
-    border: 2px solid rgba(14, 165, 233, 0.2);
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1);
+    border: 1px solid rgba(15, 23, 42, 0.1);
     animation: float 4s ease-in-out infinite;
 
     @media (max-width: 768px) {
@@ -209,10 +211,10 @@ export const IconGroup = styled.div`
 
 export const Content = styled.div`
   padding: 40px;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 32px;
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  box-shadow: 0 35px 80px rgba(15, 23, 42, 0.15);
+  background-color: #f8fafc;
+  border-radius: 24px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
   margin-left: 40px;
   margin-top: 0;
   color: #0f172a;

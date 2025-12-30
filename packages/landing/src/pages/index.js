@@ -13,7 +13,7 @@ import AdvancedAnalytics from "containers/SaasCreative/AdvancedAnalytics";
 import Features from "containers/SaasCreative/Features";
 import WalletExperience from "containers/SaasCreative/WalletExperience";
 import Testimonial from "containers/SaasCreative/Testimonial";
-import Pricing from "containers/SaasClassic/Pricing";
+import Pricing from "containers/SaasCreative/Pricing";
 import OurCommunity from "containers/SaasCreative/OurCommunity";
 import Faq from "containers/SaasCreative/Faq";
 import CallToAction from "containers/SaasCreative/CallToAction";
@@ -27,9 +27,9 @@ import wspLogo from "common/assets/image/saasCreative/wsp-logo.png";
 
 const SaasCreative = () => {
   const siteUrl = "https://www.chilsmart.com";
-  const title = "Chilsmart | Desarrollo de Software a la Medida que Ayuda a Ahorrar y Generar Más Dinero";
+  const title = "Chilsmart | Plataforma de BI - Toda tu Data Ordenada para Tomar las Mejores Decisiones";
   const description =
-    "Chilsmart: Empresa de desarrollo de software a la medida en Chile. Creamos software personalizado que ayuda a empresas a ahorrar costos operativos y generar más ingresos mediante automatizaciones, optimización de procesos y sistemas que impulsan la rentabilidad.";
+    "Plataforma de Business Intelligence que organiza toda tu data y facilita la toma de decisiones. Dashboards profesionales creados por analistas especialistas, con control de acceso inteligente. Convierte tus datos en decisiones estratégicas para tu empresa en Chile.";
   const previewImage = `${siteUrl}/preview.jpg`;
 
   return (
@@ -40,7 +40,7 @@ const SaasCreative = () => {
           <meta name="description" content={description} />
           <meta
             name="keywords"
-            content="chilsmart, software a la medida, desarrollo de software, software para empresas, desarrollo de software chile, software personalizado, software a medida chile, desarrollo de software a medida, software para empresas chile, automatizaciones empresariales, integraciones software, ERP chile, desarrollo web chile"
+            content="plataforma BI, business intelligence, toma de decisiones, datos ordenados, análisis de datos, BI para empresas, plataforma de analytics, dashboards empresariales, control de acceso dashboards, business intelligence chile, visualización de datos, analistas de datos, plataforma BI chile, decisiones basadas en datos"
           />
           <meta name="author" content="Chilsmart" />
           <meta name="theme-color" content="#0ea5e9" />
@@ -61,7 +61,7 @@ const SaasCreative = () => {
           <meta property="og:image" content={previewImage} />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-          <meta property="og:image:alt" content="Chilsmart - Desarrollo de software a medida" />
+          <meta property="og:image:alt" content="Chilsmart - Plataforma de BI para Toma de Decisiones" />
           <meta property="og:site_name" content="Chilsmart" />
           <meta property="og:locale" content="es_CL" />
           
@@ -70,7 +70,7 @@ const SaasCreative = () => {
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={previewImage} />
-          <meta name="twitter:image:alt" content="Chilsmart - Desarrollo de software a medida" />
+          <meta name="twitter:image:alt" content="Chilsmart - Plataforma de BI para Toma de Decisiones" />
           
           {/* Structured data - Organization */}
           <script
@@ -140,7 +140,7 @@ const SaasCreative = () => {
               __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "Service",
-                name: "Desarrollo de Software a la Medida",
+                name: "Plataforma de BI para Toma de Decisiones",
                 provider: {
                   "@type": "Organization",
                   name: "Chilsmart",
@@ -150,13 +150,13 @@ const SaasCreative = () => {
                   "@type": "Country",
                   name: "Chile"
                 },
-                description: "Desarrollo de software a la medida, software para empresas, automatizaciones empresariales e integraciones. Soluciones de software personalizado para todo tipo de empresas en Chile.",
+                description: "Plataforma de Business Intelligence que organiza toda tu data y facilita la toma de decisiones. Dashboards profesionales creados por analistas especialistas, con control de acceso por usuario. Convierte tus datos en decisiones estratégicas.",
                 offers: {
                   "@type": "Offer",
-                  description: "Servicios de desarrollo de software a la medida y software para empresas",
-                  name: "Desarrollo de Software a la Medida"
+                  description: "Plataforma de BI que organiza tus datos para facilitar la toma de decisiones con control de acceso inteligente",
+                  name: "Plataforma de Business Intelligence"
                 },
-                serviceType: ["Desarrollo de Software", "Software a la Medida", "Software para Empresas", "Desarrollo de Software Personalizado"]
+                serviceType: ["Business Intelligence", "Plataforma BI", "Análisis de Datos", "Toma de Decisiones", "Visualización de Datos", "Data Analytics"]
               })
             }}
           />
@@ -190,7 +190,7 @@ const SaasCreative = () => {
           {/* <CallToAction /> */}
           <Footer />
           <a
-            href="https://wa.me/56940676501?text=Hola,%20quiero%20cotizar"
+            href="https://wa.me/56940676501?text=Hola,%20quiero%20conocer%20más%20sobre%20la%20plataforma%20de%20BI"
             target="_blank"
             rel="noopener noreferrer"
             style={{

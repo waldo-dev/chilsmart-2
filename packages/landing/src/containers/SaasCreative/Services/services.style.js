@@ -2,62 +2,16 @@ import styled from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
 
 const SectionWrapper = styled.section`
-  background: linear-gradient(180deg, #f8fafc 0%, #e0f2ff 55%, #f5fbff 100%);
+  background: #f8fafc;
   color: #0f172a;
   width: 100%;
-  padding: 100px 0 60px;
+  padding: 100px 0 80px;
   position: relative;
   overflow: hidden;
   z-index: 0;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 
-  /* Luces difusas grandes */
-  ::before {
-    content: "";
-    position: absolute;
-    top: 15%;
-    left: 5%;
-    width: 360px;
-    height: 360px;
-    background: radial-gradient(
-      circle,
-      rgba(56, 189, 248, 0.25) 0%,
-      transparent 70%
-    );
-    filter: blur(90px);
-    animation: pulseLightLarge 6s ease-in-out infinite;
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  /* Luces difusas medianas */
-  ::after {
-    content: "";
-    position: absolute;
-    top: 60%;
-    right: 15%;
-    width: 260px;
-    height: 260px;
-    background: radial-gradient(
-      circle,
-      rgba(14, 165, 233, 0.2) 0%,
-      transparent 80%
-    );
-    filter: blur(80px);
-    animation: pulseLightMedium 5s ease-in-out infinite alternate;
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  /* Puntos de luz pequeños */
-  .sparkle {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: rgba(14, 165, 233, 0.9);
-    border-radius: 50%;
-    filter: drop-shadow(0 0 6px rgba(14, 165, 233, 0.5));
-    animation: sparkleAnim 3s ease-in-out infinite;
-  }
 
   .sparkle:nth-child(1) {
     top: 30%;

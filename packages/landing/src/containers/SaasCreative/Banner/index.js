@@ -20,7 +20,7 @@ const Banner = () => {
   const handleOnClick = () => {
     if (typeof window !== "undefined") {
       window.open(
-        "https://wa.me/56940676501?text=Hola,%20quiero%20cotizar"
+        "https://wa.me/56940676501?text=Hola,%20quiero%20conocer%20más%20sobre%20la%20plataforma%20de%20BI"
       );
     }
   };
@@ -42,19 +42,20 @@ const Banner = () => {
         <BannerContentWrapper>
           <BannerContent>
             <HighlightPill>
-              Desarrollo de Software a la Medida en Chile
+              Toda tu Data Ordenada para Mejores Decisiones
             </HighlightPill>
             <Heading
-              content="Desarrollo de Software a la Medida que Ayuda a tu Empresa a Ahorrar y Generar Más Dinero"
+              content="Transforma tus Datos en Decisiones Estratégicas para tu Empresa"
               className="animate__animated animate__fadeInUp"
             />
             <Text
               className="animate__animated animate__fadeInUp"
-              content="Chilsmart es una empresa de desarrollo de software a la medida en Chile. Creamos software personalizado que ayuda a empresas a ahorrar costos operativos y generar más ingresos mediante automatizaciones inteligentes, optimización de procesos y sistemas que impulsan tu rentabilidad."
+              content="No somos solo dashboards. Somos decisiones. Organizamos toda tu data para que la toma de decisiones sea lo más fácil posible. Dashboards profesionales creados por analistas especialistas, con control de acceso inteligente. Toda tu información ordenada y lista para tomar acción."
             />
             <FeatureList className="animate__animated animate__fadeInUp">
-              <FeatureItem>Software a medida que reduce costos operativos y aumenta la eficiencia.</FeatureItem>
-              <FeatureItem>Automatizaciones que generan más ventas y mejoran la experiencia del cliente.</FeatureItem>
+              <FeatureItem>Toda tu data organizada y ordenada para facilitar la toma de decisiones estratégicas.</FeatureItem>
+              <FeatureItem>Dashboards profesionales creados por analistas especialistas que convierten datos en decisiones.</FeatureItem>
+              <FeatureItem>Control de acceso inteligente: cada usuario ve solo la información relevante para su rol.</FeatureItem>
             </FeatureList>
             <Subscribe className="animate__animated animate__fadeInUp">
               <Button
@@ -63,14 +64,14 @@ const Banner = () => {
                 className="primary-cta"
               />
               <Button
-                title="Ver nuestros casos de éxito"
+                title="Ver cómo funciona"
                 onClick={handleProductsClick}
                 className="secondary-cta"
                 variant="textButton"
               />
             </Subscribe>
             <TrustSignal className="animate__animated animate__fadeInUp">
-              Profesionales calificados ayudando a empresas en Chile a ahorrar costos y aumentar sus ingresos con desarrollo de software a la medida.
+              Plataforma de BI profesional utilizada por empresas en Chile. Convierte tus datos en decisiones estratégicas con toda tu información ordenada y accesible.
             </TrustSignal>
           </BannerContent>
           {/*<Figure className="animate__animated animate__fadeInUp animate__fast shadow-2xl rounded-xl">

@@ -17,28 +17,28 @@ import { code } from "react-icons-kit/feather/code";
 const Services = () => {
   const services = [
     {
-      id: "cost-reduction",
-      icon: dollarSign,
-      iconColor: "#10b981",
-      title: "Sistemas que Reducen Costos Operativos",
-      description:
-        "Desarrollamos software a la medida que automatiza procesos, reduce errores y elimina tareas manuales. Esto se traduce en ahorro de tiempo y dinero, permitiendo que tu equipo se enfoque en actividades que generan valor.",
-    },
-    {
-      id: "revenue-increase",
+      id: "data-organized",
       icon: trendingUp,
-      iconColor: "#0ea5e9",
-      title: "Software que Aumenta tus Ingresos",
+      iconColor: "#10b981",
+      title: "Toda tu Data Ordenada",
       description:
-        "Creamos sistemas personalizados que optimizan ventas, mejoran la experiencia del cliente y automatizan procesos comerciales. Software a medida que ayuda a tu empresa a generar más dinero mediante mejor conversión y retención de clientes.",
+        "Organizamos y estructuramos toda tu información para que esté lista para la toma de decisiones. No más datos dispersos. Todo ordenado, accesible y fácil de entender para que puedas tomar decisiones estratégicas rápidamente.",
     },
     {
-      id: "custom-development",
+      id: "decision-making",
       icon: code,
-      iconColor: "#8b5cf6",
-      title: "Desarrollo de Software a la Medida e Integraciones",
+      iconColor: "#0ea5e9",
+      title: "Facilita la Toma de Decisiones",
       description:
-        "Desarrollamos software personalizado para empresas: aplicaciones web, APIs y automatizaciones con IA que digitalizan operaciones y optimizan procesos. Cada solución está diseñada para ayudarte a ahorrar dinero y aumentar tus ingresos.",
+        "Somos decisiones, no solo dashboards. Transformamos tus datos en información clara y accionable que facilita la toma de decisiones estratégicas. Dashboards profesionales creados por analistas especialistas que entienden qué necesitas ver para decidir mejor.",
+    },
+    {
+      id: "access-control",
+      icon: dollarSign,
+      iconColor: "#8b5cf6",
+      title: "Control de Acceso Inteligente",
+      description:
+        "Cada usuario accede solo a la información relevante para su rol. Control de acceso inteligente que garantiza que las decisiones se tomen con los datos correctos, en el momento adecuado, por las personas indicadas.",
     },
   ];
 
@@ -47,9 +47,9 @@ const Services = () => {
       <Container>
         <Fade direction="up" triggerOnce delay={100}>
           <SectionHeader>
-            <Heading as="h2" content="Desarrollo de Software para Empresas que Ahorran Dinero y Generan Más Ingresos" />
-            <Text as="p" content="Somos especialistas en desarrollo de software a la medida. Construimos plataformas y automatizaciones que optimizan procesos, reducen costos operativos y aumentan los ingresos de tu empresa." />
-            <Text as="p" content="Ofrecemos desarrollo de software personalizado para empresas de todas las industrias. Cada solución está diseñada para ayudarte a ahorrar dinero en operaciones y generar más ingresos mediante mejoras en eficiencia, automatización de procesos y optimización de ventas." />
+            <Heading as="h2" content="No Somos Solo Dashboards, Somos Decisiones" />
+            <Text as="p" content="Plataforma de Business Intelligence que organiza toda tu data y facilita la toma de decisiones. Convertimos tus datos en información clara y accionable para que tu equipo pueda tomar las mejores decisiones estratégicas." />
+            <Text as="p" content="No importa cuánta data tengas. La organizamos, la ordenamos y la presentamos de forma que facilite la toma de decisiones. Dashboards profesionales creados por analistas especialistas, con control de acceso inteligente para que cada usuario vea solo lo que necesita para decidir mejor." />
           </SectionHeader>
         </Fade>
         <ServiceWrapper>
@@ -77,14 +77,6 @@ const Services = () => {
           ))}
         </ServiceWrapper>
       </Container>
-          <div className="sparkle" />
-          <div className="sparkle" />
-          <div className="sparkle" />
-          <div className="sparkle" />
-          <div className="sparkle" />
-          <div className="sparkle" />
-          <div className="sparkle" />
-          <div className="sparkle" />
     </SectionWrapper>
   );
 };

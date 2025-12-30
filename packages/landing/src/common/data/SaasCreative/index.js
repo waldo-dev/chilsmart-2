@@ -57,33 +57,33 @@ export const howTos = [
   {
     id: 1,
     icon: icon1,
-    title: "Create Free Account",
-    text: `As a delivery driver, you'll make reliable money—working anytime, anywhere.`,
-    linkLabel: "Start Earning",
+    title: "Accede a la Plataforma",
+    text: `Regístrate en nuestra plataforma de BI y accede a todos los dashboards Power BI creados por analistas especialistas. Todo en un solo lugar, de forma segura y organizada.`,
+    linkLabel: "Comenzar ahora",
     link: "#",
   },
   {
     id: 2,
     icon: icon2,
-    title: "Monitor user Analytics",
-    text: `Grow your business and reach new customers by partnering with us.`,
-    linkLabel: "Sign up your store",
+    title: "Visualiza tus Dashboards",
+    text: `Navega entre todos tus dashboards Power BI desde la plataforma centralizada. Encuentra rápidamente la información que necesitas con nuestro sistema de organización intuitivo.`,
+    linkLabel: "Ver dashboards",
     link: "#",
   },
   {
     id: 3,
     icon: icon3,
-    title: "Safe & Trusted",
-    text: `Get the best DoorDash experience with live order tracking.`,
-    linkLabel: "Get the app",
+    title: "Asigna Accesos",
+    text: `Controla quién ve qué. Asigna dashboards específicos a diferentes usuarios y equipos de tu empresa. Solo las personas autorizadas verán la información relevante para su rol.`,
+    linkLabel: "Gestionar usuarios",
     link: "#",
   },
   {
     id: 4,
     icon: icon4,
-    title: "Fast Customer Support",
-    text: `Get the best DoorDash experience with live order tracking.`,
-    linkLabel: "Start Earning",
+    title: "Soporte Profesional",
+    text: `Nuestro equipo de analistas especialistas está disponible para ayudarte con cualquier pregunta sobre tus dashboards o la plataforma. Soporte técnico cuando lo necesites.`,
+    linkLabel: "Contactar soporte",
     link: "#",
   },
 ];
@@ -91,25 +91,24 @@ export const howTos = [
 export const features = [
   {
     id: 1,
-    icon: icon5,
-    title: "MGI Asesorías",
-    description: `Empresa que presta servicios de auditorías a locales y comedores, principalmente en zonas mineras.`,
-    url: "https://foodsafe.mgiasesorias.com",
+    icon: null,
+    title: "Toda tu Data Ordenada",
+    description: `Organizamos y estructuramos toda tu información para que esté lista para la toma de decisiones. No más datos dispersos. Todo ordenado, accesible y fácil de entender para que puedas tomar decisiones estratégicas rápidamente.`,
+    url: null,
   },
   {
     id: 2,
-    icon: icon6,
-    title: "Connie Edelai",
-    description: `Coach dedicada a los entrenamientos y consejos nutricionales, necesitaba de un desarrollo a medida
-    de una plataforma 100% personalizada para su negocio.`,
-    url: "https://www.connieedelai.com",
+    icon: null,
+    title: "Facilita la Toma de Decisiones",
+    description: `Somos decisiones, no solo dashboards. Transformamos tus datos en información clara y accionable que facilita la toma de decisiones estratégicas. Dashboards profesionales creados por analistas especialistas que entienden qué necesitas ver para decidir mejor.`,
+    url: null,
   },
   {
     id: 3,
-    icon: icon7,
-    title: "Secco Automotriz",
-    description: `Empresa dedicada a los servicios de revisiones pre compra para vehiculos, necesitaban de un sistema para la gestion de sus clientes y reservas.`,
-    url: "https://www.seccoautomotriz.cl",
+    icon: null,
+    title: "Control de Acceso Inteligente",
+    description: `Cada usuario accede solo a la información relevante para su rol. Control de acceso inteligente que garantiza que las decisiones se tomen con los datos correctos, en el momento adecuado, por las personas indicadas.`,
+    url: null,
   },
 ];
 
@@ -137,27 +136,54 @@ export const testimonials = [
   },
 ];
 
+export const setupInicial = {
+  id: 0,
+  title: "Setup Inicial",
+  isOneTime: true,
+  price: null,
+  features: [
+    "Integración de base de datos",
+    "Modelado de datos",
+    "Configuración de usuarios",
+  ],
+};
+
 export const pricing = [
   {
     id: 1,
-    title: "Enjoy one month trial",
+    title: "Plan Operacional",
+    monthlyPrice: "3 UF",
+    annualPrice: "5 UF",
     isPro: false,
     features: [
-      "Manage conversation directly",
-      "Chat prompt supported",
-      "Enjoy limited features from trial plans",
-      "Own analytics platform",
+      "Dashboard ejecutivo",
+      "Actualización automática",
+      "Soporte técnico",
+      "Ajustes menores",
     ],
   },
   {
     id: 2,
-    title: "$15 with Ultimate feature",
+    title: "Plan Optimización",
+    monthlyPrice: "5 UF",
+    annualPrice: "8 UF",
     isPro: true,
     features: [
-      "Manage ultimate conversation directly",
-      "Chat prompt supported",
-      "Enjoy unlimited features from paid plans",
-      "Own analytics platform",
+      "Todo lo del Plan Operacional",
+      "Dashboard de recursos",
+      "Reunión mensual con analista",
+    ],
+  },
+  {
+    id: 3,
+    title: "Plan Estratégico",
+    monthlyPrice: "8 UF",
+    annualPrice: "12 UF",
+    isPro: false,
+    features: [
+      "Todo lo del Plan Optimización",
+      "Dashboards a medida",
+      "2 reuniones mensuales con analista",
     ],
   },
 ];
@@ -166,28 +192,28 @@ export const faqs = [
   {
     id: 1,
     expend: true,
-    title: "01. ¿Cómo funciona el desarrollo de software a la medida con Chilsmart?",
-    description: `Nuestro proceso de desarrollo de software para empresas inicia con workshops de discovery para mapear procesos, métricas y stakeholders. Luego definimos roadmap y prototipos, avanzamos en sprints semanales con entregas continuas de software personalizado y cerramos con despliegue + soporte acompañando a tus equipos.`,
+    title: "01. ¿Cómo funciona la plataforma de BI de Chilsmart?",
+    description: `Nuestra plataforma organiza toda tu data y facilita la toma de decisiones. Los analistas de datos especialistas crean dashboards profesionales que convierten tus datos en información clara y accionable. Como administrador, puedes asignar diferentes visualizaciones a usuarios específicos, controlando quién accede a qué información. Todo está ordenado y organizado para que tomar decisiones sea lo más fácil posible.`,
   },
   {
     id: 2,
-    title: "02. ¿Cuánto tarda el desarrollo de software a medida para mi empresa?",
-    description: `El tiempo de desarrollo de software personalizado varía según la complejidad. Para nuestro ERP para talleres mecánicos, el onboarding base toma entre 2 y 4 semanas. Proyectos de software a la medida más complejos (integraciones o módulos extra) pueden extenderse entre 6 y 12 semanas.`,
+    title: `02. ¿Qué significa que "somos decisiones, no solo dashboards"?`,
+    description: `Significa que nuestro enfoque va más allá de mostrar datos. Organizamos toda tu información para facilitar la toma de decisiones estratégicas. Nuestros analistas especialistas entienden qué datos necesitas ver, cómo estructurarlos y cómo presentarlos para que tu equipo pueda tomar las mejores decisiones rápidamente. No es solo visualización, es convertir datos en decisiones.`,
   },
   {
     id: 3,
-    title: "03. ¿Qué incluye el soporte post-lanzamiento del software para empresas?",
-    description: `Los founders seguimos involucrados en cada proyecto de desarrollo de software. Incluimos soporte evolutivo, mejoras priorizadas y monitoreo de métricas clave para asegurarnos de que el software a la medida siga aportando valor operativo a tu empresa.`,
+    title: "03. ¿Cómo organizan mi data para facilitar las decisiones?",
+    description: `Nuestros analistas especialistas trabajan contigo para entender qué información necesitas para tomar decisiones estratégicas. Organizan y estructuran tus datos de forma lógica, creando dashboards profesionales que presentan la información más relevante de manera clara y accionable. Cada visualización está diseñada para facilitar una decisión específica, no solo para mostrar datos.`,
   },
   {
     id: 4,
-    title: "04. ¿Pueden integrar el software a la medida con sistemas existentes?",
-    description: `Sí. En nuestro desarrollo de software para empresas trabajamos con APIs, conectores nativos y herramientas como n8n para integrar ERP/CRM, WhatsApp Business, pasarelas de pago o BI. Evaluamos cada stack antes de proponer la arquitectura del software personalizado.`,
+    title: "04. ¿Cómo controlo qué información ve cada usuario?",
+    description: `Nuestra plataforma incluye control de acceso inteligente por usuario. Como administrador, puedes asignar visualizaciones específicas a diferentes usuarios o equipos. Esto garantiza que cada persona acceda solo a la información relevante para su rol, permitiendo que tome decisiones con los datos correctos en el momento adecuado.`,
   },
   {
     id: 5,
-    title: "05. ¿Qué necesito para comenzar un proyecto de desarrollo de software a la medida?",
-    description: `Para iniciar el desarrollo de software para tu empresa necesitas: una sesión de descubrimiento con tus líderes de operación/comercial, acceso a la información del proceso actual y definir responsables internos. Nosotros guiamos el resto: alcance, backlog y plan de implementación del software a la medida.`,
+    title: "05. ¿Qué necesito para comenzar a usar la plataforma de BI?",
+    description: `Para comenzar, solo necesitas registrarte en nuestra plataforma. Nuestro equipo te ayudará con el onboarding inicial, organizando tu data y explicándote cómo acceder a la información. Trabajamos contigo para entender qué decisiones necesitas tomar y qué datos son relevantes. Nuestros analistas especialistas crearán dashboards personalizados que faciliten esas decisiones específicas.`,
   },
 ];
 

@@ -3,161 +3,162 @@ import { rgba } from 'polished';
 import { themeGet } from '@styled-system/theme-get';
 
 const Section = styled.section`
-  background: linear-gradient(180deg, #f8fbff 0%, #e0f2ff 55%, #d9f0ff 100%);
-  padding: 120px 0 100px;
+  background: #ffffff;
+  padding: 100px 0 90px;
 
   @media (max-width: 1024px) {
-    padding-bottom: 70px;
+    padding: 80px 0 70px;
   }
   @media (max-width: 768px) {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding: 70px 0 60px;
   }
   @media (max-width: 480px) {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding: 60px 0 50px;
   }
 `;
 
 
 export const SectionHeading = styled.div`
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto 60px;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  
   h2 {
     color: #0f172a;
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
-    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    font-size: 40px;
+    margin-bottom: 20px;
+    
+    @media (max-width: 768px) {
+      font-size: 32px;
+    }
+    
     @media (max-width: 480px) {
-      font-size: 30px;
+      font-size: 28px;
     }
   }
+  
   p {
-    color: #475569;
+    color: #64748b;
+    font-size: 18px;
+    line-height: 1.7;
+    
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 `;
 
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 80px;
+  gap: 32px;
+  margin-top: 70px;
+  
+  @media (max-width: 1024px) {
+    gap: 24px;
+  }
+  
   @media (max-width: 768px) {
     margin-top: 50px;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (max-width: 480px) {
-    margin-top: 50px;
     grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  @media (max-width: 480px) {
+    margin-top: 40px;
+    gap: 20px;
+  }
+`;
+
+export const IconWrapper = styled.div`
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  
+  @media (max-width: 768px) {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 24px;
+  }
+  
+  svg {
+    transition: transform 0.3s ease;
   }
 `;
 
 export const Item = styled.div`
   color: #0f172a;
-  border-radius: 24px;
-  padding: 32px;
+  border-radius: 20px;
+  padding: 40px 32px;
   text-align: center;
   transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.1);
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
   display: flex;
   flex-direction: column;
   height: 100%;
-  cursor: ${props => props.hasUrl ? 'pointer' : 'default'};
   
   @media (max-width: 1024px) {
-    padding: 28px;
+    padding: 36px 28px;
   }
   @media (max-width: 768px) {
-    padding: 24px;
+    padding: 32px 24px;
   }
   @media (max-width: 480px) {
-    padding: 20px;
+    padding: 28px 20px;
   }
   
   :hover {
-    transform: translateY(-6px);
-    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.15);
-    border-color: rgba(14, 165, 233, 0.3);
-  }
-  
-  figure {
-    margin: 0 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    min-height: 200px;
-    background: linear-gradient(135deg, rgba(14, 165, 233, 0.06) 0%, rgba(139, 92, 246, 0.06) 100%);
-    border-radius: 16px;
-    border: 1px solid rgba(148, 163, 184, 0.15);
-    padding: 12px;
-    overflow: hidden;
-    position: relative;
-    transition: all 0.3s ease;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12);
+    border-color: rgba(14, 165, 233, 0.2);
     
-    @media (max-width: 1024px) {
-      min-height: 180px;
-    }
-    
-    @media (max-width: 768px) {
-      min-height: 160px;
-    }
-    
-    a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      text-decoration: none;
-      color: inherit;
-    }
-    
-    img {
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-    
-    &:hover {
-      border-color: rgba(14, 165, 233, 0.3);
-      background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    ${IconWrapper} {
+      transform: scale(1.05);
       
-      img {
-        transform: scale(1.03);
+      svg {
+        transform: scale(1.1);
       }
     }
   }
   
   h4 {
-    margin: 0 0 12px;
-    font-size: 22px;
+    margin: 0 0 16px;
+    font-size: 24px;
     font-weight: 700;
     color: #0f172a;
     text-align: center;
+    line-height: 1.3;
     
     @media (max-width: 768px) {
-      font-size: 20px;
+      font-size: 22px;
     }
   }
   
   p {
     color: #475569;
-    line-height: 1.7;
-    margin: 0 0 20px;
-    font-size: 15px;
+    line-height: 1.75;
+    margin: 0;
+    font-size: 16px;
     text-align: center;
     flex-grow: 1;
     
     @media (max-width: 768px) {
-      font-size: 14px;
-      margin-bottom: 16px;
+      font-size: 15px;
     }
   }
 `;
@@ -200,21 +201,22 @@ export const HighlightPill = styled.span`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(14, 165, 233, 0.4);
-  background: rgba(14, 165, 233, 0.12);
-  color: #0f172a;
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  background: rgba(14, 165, 233, 0.08);
+  color: #0ea5e9;
   font-size: 13px;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 `;
 
 export const Description = styled.p`
-  font-size: 16px;
-  line-height: 1.8;
-  color: #475569;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #64748b;
   margin-top: 16px;
 `;
 

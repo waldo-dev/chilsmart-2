@@ -12,35 +12,19 @@ const slideShow = keyframes`
 
 const SectionWrapper = styled.section`
   position: relative;
-  background: radial-gradient(circle at top, #f8fbff 0%, #e0f2ff 60%, #d4e9ff 100%);
+  background: #f8fafc;
   padding: 100px 0;
   overflow: hidden;
   isolation: isolate;
-  ::before,
-  ::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: 0.4;
-    z-index: -1;
-  }
-  ::before {
-    background: radial-gradient(
-      circle at 20% 20%,
-      rgba(56, 189, 248, 0.35),
-      transparent 55%
-    );
-    filter: blur(140px);
-  }
-  ::after {
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0.8), transparent);
-  }
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  
   @media only screen and (max-width: 991px) {
-    padding: 60px 0 80px;
+    padding: 80px 0;
   }
 
   @media only screen and (max-width: 624px) {
-    padding: 45px 0 65px;
+    padding: 60px 0;
   }
 `;
 
