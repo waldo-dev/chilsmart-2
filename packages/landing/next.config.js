@@ -9,6 +9,39 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  async redirects() {
+    return [
+      // Redirigir www a non-www (o viceversa según tu preferencia)
+      // Si prefieres non-www, descomenta estas líneas:
+      // {
+      //   source: '/:path*',
+      //   has: [
+      //     {
+      //       type: 'host',
+      //       value: 'www.chilsmart.com',
+      //     },
+      //   ],
+      //   destination: 'https://chilsmart.com/:path*',
+      //   permanent: true,
+      // },
+      // Redirigir URLs comunes que pueden causar 404s
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/index',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

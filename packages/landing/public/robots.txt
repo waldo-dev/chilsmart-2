@@ -4,6 +4,7 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /404
 Disallow: /_error
+Disallow: /*?*
 
 # Sitemap
 Sitemap: https://www.chilsmart.com/sitemap.xml
