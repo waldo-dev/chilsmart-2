@@ -9,6 +9,7 @@ const Section = styled.section`
   z-index: 0;
   overflow: hidden;
   padding-bottom: 100px;
+  padding-top: 0;
   border-bottom: 1px solid rgba(15, 23, 42, 0.08);
   display: flex;
   align-items: center;
@@ -16,6 +17,11 @@ const Section = styled.section`
   @media (max-width: 768px) {
     min-height: auto;
     padding-bottom: 80px;
+    padding-top: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    padding-top: 15px;
   }
 `;
 
@@ -49,11 +55,11 @@ export const BannerContent = styled.div`
   }
   
   @media (max-width: 768px) {
-    padding-top: 120px;
+    padding-top: 140px;
   }
   
   @media (max-width: 480px) {
-    padding-top: 100px;
+    padding-top: 130px;
   }
   h2 {
     color: #0f172a;
