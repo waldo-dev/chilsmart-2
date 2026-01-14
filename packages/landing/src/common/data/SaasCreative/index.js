@@ -25,17 +25,17 @@ export const menu_items = [
     offset: "70",
   },
   {
-    label: "Quienes Somos",
+    label: "El Problema",
     path: "#how-to",
     offset: "70",
   },
   {
-    label: "Servicios",
+    label: "Nuestra Solución",
     path: "#services",
     offset: "70",
   },
   {
-    label: "Testimonios",
+    label: "Qué Hacemos",
     path: "#testimonial",
     offset: "70",
   },
@@ -92,22 +92,22 @@ export const features = [
   {
     id: 1,
     icon: null,
-    title: "Toda tu Data Ordenada",
-    description: `Organizamos y estructuramos toda tu información para que esté lista para la toma de decisiones. No más datos dispersos. Todo ordenado, accesible y fácil de entender para que puedas tomar decisiones estratégicas rápidamente.`,
+    title: "Plataformas operativas y agentes de IA",
+    description: `Desarrollamos productos SaaS que resuelven problemas operativos específicos. Plataformas que gestionan tu operación día a día, agentes de IA que automatizan procesos, sistemas que escalan con tu negocio. Productos pensados para empresas que necesitan orden y control real.`,
     url: null,
   },
   {
     id: 2,
     icon: null,
-    title: "Facilita la Toma de Decisiones",
-    description: `Somos decisiones, no solo dashboards. Transformamos tus datos en información clara y accionable que facilita la toma de decisiones estratégicas. Dashboards profesionales creados por analistas especialistas que entienden qué necesitas ver para decidir mejor.`,
+    title: "Datos que se convierten en decisiones",
+    description: `Construimos sistemas donde el software captura la realidad operativa y los analistas convierten esa información en decisiones. No vendemos dashboards genéricos: diseñamos sistemas de datos que entienden tu operación y transforman información en acciones concretas y decisiones claras.`,
     url: null,
   },
   {
     id: 3,
     icon: null,
-    title: "Control de Acceso Inteligente",
-    description: `Cada usuario accede solo a la información relevante para su rol. Control de acceso inteligente que garantiza que las decisiones se tomen con los datos correctos, en el momento adecuado, por las personas indicadas.`,
+    title: "Software diseñado para tu negocio",
+    description: `Desarrollamos software a medida cuando necesitas una solución específica para tu operación. Sistemas que se adaptan a cómo trabajas, procesos que reflejan tu realidad, integraciones que conectan todo. Software que ordena tu operación sin forzarte a cambiar cómo trabajas.`,
     url: null,
   },
 ];
@@ -140,11 +140,13 @@ export const setupInicial = {
   id: 0,
   title: "Setup Inicial",
   isOneTime: true,
-  price: null,
+  price: "Variable según la empresa",
+  description: "El setup inicial incluye la configuración específica de tu sistema y se cotiza según las necesidades de tu empresa.",
   features: [
     "Integración de base de datos",
     "Modelado de datos",
     "Configuración de usuarios",
+    "Diagnóstico y diseño del sistema",
   ],
 };
 
@@ -153,7 +155,8 @@ export const pricing = [
     id: 1,
     title: "Plan Operacional",
     monthlyPrice: "3 UF",
-    annualPrice: "5 UF",
+    annualPrice: "2.5 UF",
+    annualSavings: "Ahorra 6 UF al año",
     isPro: false,
     features: [
       "Dashboard ejecutivo",
@@ -166,7 +169,8 @@ export const pricing = [
     id: 2,
     title: "Plan Optimización",
     monthlyPrice: "5 UF",
-    annualPrice: "8 UF",
+    annualPrice: "4.2 UF",
+    annualSavings: "Ahorra 9.6 UF al año",
     isPro: true,
     features: [
       "Todo lo del Plan Operacional",
@@ -178,7 +182,8 @@ export const pricing = [
     id: 3,
     title: "Plan Estratégico",
     monthlyPrice: "8 UF",
-    annualPrice: "12 UF",
+    annualPrice: "6.8 UF",
+    annualSavings: "Ahorra 14.4 UF al año",
     isPro: false,
     features: [
       "Todo lo del Plan Optimización",

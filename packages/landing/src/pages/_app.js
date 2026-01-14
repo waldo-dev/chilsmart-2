@@ -1,6 +1,5 @@
 import { MantineProvider } from '@mantine/core';
 import 'common/assets/css/flaticon.css';
-import '../containers/CryptoModern/CountDown/timer.css';
 import 'common/assets/css/icon-example-page.css';
 // swiper bundle styles
 import 'swiper/css/bundle';

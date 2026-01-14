@@ -27,9 +27,9 @@ import wspLogo from "common/assets/image/saasCreative/wsp-logo.png";
 
 const SaasCreative = () => {
   const siteUrl = "https://www.chilsmart.com";
-  const title = "Chilsmart | Plataforma de BI - Toda tu Data Ordenada para Tomar las Mejores Decisiones";
+  const title = "Chilsmart | Sistemas que ordenan tu operación y convierten datos en decisiones";
   const description =
-    "Plataforma de Business Intelligence que organiza toda tu data y facilita la toma de decisiones. Dashboards profesionales creados por analistas especialistas, con control de acceso inteligente. Convierte tus datos en decisiones estratégicas para tu empresa en Chile.";
+    "Diseñamos y construimos sistemas digitales que ordenan la operación de las empresas y convierten sus datos en decisiones accionables. No somos una empresa de dashboards ni solo de desarrollo: diseñamos sistemas donde el software captura la realidad del negocio y los analistas convierten esa información en decisiones.";
   const previewImage = `${siteUrl}/preview.jpg`;
 
   return (
@@ -40,7 +40,7 @@ const SaasCreative = () => {
           <meta name="description" content={description} />
           <meta
             name="keywords"
-            content="plataforma BI, business intelligence, toma de decisiones, datos ordenados, análisis de datos, BI para empresas, plataforma de analytics, dashboards empresariales, control de acceso dashboards, business intelligence chile, visualización de datos, analistas de datos, plataforma BI chile, decisiones basadas en datos"
+            content="desarrollo de software, sistemas de datos, software a medida, productos SaaS, análisis de datos, sistemas operativos, ordenar operación, decisiones accionables, pymes, software para empresas, sistemas integrados, inteligencia operativa, desarrollo a medida chile, sistemas de datos chile"
           />
           <meta name="author" content="Chilsmart" />
           <meta name="theme-color" content="#0ea5e9" />
@@ -61,7 +61,7 @@ const SaasCreative = () => {
           <meta property="og:image" content={previewImage} />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-          <meta property="og:image:alt" content="Chilsmart - Plataforma de BI para Toma de Decisiones" />
+          <meta property="og:image:alt" content="Chilsmart - Sistemas que ordenan tu operación y convierten datos en decisiones" />
           <meta property="og:site_name" content="Chilsmart" />
           <meta property="og:locale" content="es_CL" />
           
@@ -70,7 +70,7 @@ const SaasCreative = () => {
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={previewImage} />
-          <meta name="twitter:image:alt" content="Chilsmart - Plataforma de BI para Toma de Decisiones" />
+          <meta name="twitter:image:alt" content="Chilsmart - Sistemas que ordenan tu operación y convierten datos en decisiones" />
           
           {/* Structured data - Organization */}
           <script
@@ -140,7 +140,7 @@ const SaasCreative = () => {
               __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "Service",
-                name: "Plataforma de BI para Toma de Decisiones",
+                name: "Sistemas digitales que ordenan operaciones y convierten datos en decisiones",
                 provider: {
                   "@type": "Organization",
                   name: "Chilsmart",
@@ -150,13 +150,66 @@ const SaasCreative = () => {
                   "@type": "Country",
                   name: "Chile"
                 },
-                description: "Plataforma de Business Intelligence que organiza toda tu data y facilita la toma de decisiones. Dashboards profesionales creados por analistas especialistas, con control de acceso por usuario. Convierte tus datos en decisiones estratégicas.",
+                description: "Diseñamos y construimos sistemas digitales que ordenan la operación de las empresas y convierten sus datos en decisiones accionables. No somos una empresa de dashboards ni solo de desarrollo: diseñamos sistemas donde el software captura la realidad del negocio y los analistas convierten esa información en decisiones.",
                 offers: {
                   "@type": "Offer",
-                  description: "Plataforma de BI que organiza tus datos para facilitar la toma de decisiones con control de acceso inteligente",
-                  name: "Plataforma de Business Intelligence"
+                  description: "Sistemas digitales que ordenan operaciones y convierten datos en decisiones accionables",
+                  name: "Desarrollo de software y sistemas de datos"
                 },
-                serviceType: ["Business Intelligence", "Plataforma BI", "Análisis de Datos", "Toma de Decisiones", "Visualización de Datos", "Data Analytics"]
+                serviceType: ["Desarrollo de Software", "Sistemas de Datos", "Software a Medida", "Productos SaaS", "Análisis de Datos", "Sistemas Operativos", "Inteligencia Operativa"]
+              })
+            }}
+          />
+          
+          {/* Structured data - FAQPage */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: "¿Cómo funciona la plataforma de BI de Chilsmart?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Nuestra plataforma organiza toda tu data y facilita la toma de decisiones. Los analistas de datos especialistas crean dashboards profesionales que convierten tus datos en información clara y accionable. Como administrador, puedes asignar diferentes visualizaciones a usuarios específicos, controlando quién accede a qué información. Todo está ordenado y organizado para que tomar decisiones sea lo más fácil posible."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    name: '¿Qué significa que "somos decisiones, no solo dashboards"?',
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Significa que nuestro enfoque va más allá de mostrar datos. Organizamos toda tu información para facilitar la toma de decisiones estratégicas. Nuestros analistas especialistas entienden qué datos necesitas ver, cómo estructurarlos y cómo presentarlos para que tu equipo pueda tomar las mejores decisiones rápidamente. No es solo visualización, es convertir datos en decisiones."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    name: "¿Cómo organizan mi data para facilitar las decisiones?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Nuestros analistas especialistas trabajan contigo para entender qué información necesitas para tomar decisiones estratégicas. Organizan y estructuran tus datos de forma lógica, creando dashboards profesionales que presentan la información más relevante de manera clara y accionable. Cada visualización está diseñada para facilitar una decisión específica, no solo para mostrar datos."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    name: "¿Cómo controlo qué información ve cada usuario?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Nuestra plataforma incluye control de acceso inteligente por usuario. Como administrador, puedes asignar visualizaciones específicas a diferentes usuarios o equipos. Esto garantiza que cada persona acceda solo a la información relevante para su rol, permitiendo que tome decisiones con los datos correctos en el momento adecuado."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    name: "¿Qué necesito para comenzar a usar la plataforma de BI?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Para comenzar, solo necesitas registrarte en nuestra plataforma. Nuestro equipo te ayudará con el onboarding inicial, organizando tu data y explicándote cómo acceder a la información. Trabajamos contigo para entender qué decisiones necesitas tomar y qué datos son relevantes. Nuestros analistas especialistas crearán dashboards personalizados que faciliten esas decisiones específicas."
+                    }
+                  }
+                ]
               })
             }}
           />
@@ -190,28 +243,37 @@ const SaasCreative = () => {
           {/* <CallToAction /> */}
           <Footer />
           <a
-            href="https://wa.me/56940676501?text=Hola,%20quiero%20conocer%20más%20sobre%20la%20plataforma%20de%20BI"
+            href="https://wa.me/56940676501?text=Hola,%20quiero%20conversar%20sobre%20cómo%20ordenar%20la%20operación%20de%20mi%20empresa"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Contactar por WhatsApp"
             style={{
               position: "fixed",
               width: "60px",
               height: "60px",
               bottom: "20px",
               right: "20px",
-              // backgroundColor: "#25D366",
               color: "white",
               borderRadius: "50%",
               textAlign: "center",
               fontSize: "30px",
-              boxShadow: "0 2px 10px rgba(0,0,0,0.3)",
-              zIndex: 1000,
+              boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
+              zIndex: 999,
+              transition: "transform 0.2s ease, box-shadow 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.1)";
+              e.currentTarget.style.boxShadow = "0 6px 16px rgba(0,0,0,0.35)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.25)";
             }}
           >
             <img
               src={wspLogo.src}
               alt="Contactar por WhatsApp - Chilsmart"
-              style={{ width: "50px", height: "55px" }}
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
             />
           </a>
         </ContentWrapper>

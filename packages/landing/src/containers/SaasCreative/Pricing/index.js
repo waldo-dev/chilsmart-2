@@ -14,7 +14,7 @@ import { pricing, setupInicial } from 'common/data/SaasCreative';
 import { Fade } from 'react-awesome-reveal';
 
 const Pricing = () => {
-  const [isAnnual, setIsAnnual] = useState(false);
+  const [isAnnual, setIsAnnual] = useState(true);
 
   return (
     <Section id="pricing">
@@ -31,8 +31,14 @@ const Pricing = () => {
               <div style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%)', padding: '12px', borderRadius: '12px'}}>
                 <Icon icon={settings} size={24} style={{color: '#fff'}} />
               </div>
-              <Heading as="h3" content={setupInicial.title} style={{margin: 0, fontSize: '24px', fontWeight: '700'}} />
+              <div style={{flex: 1}}>
+                <Heading as="h3" content={setupInicial.title} style={{margin: 0, fontSize: '24px', fontWeight: '700'}} />
+                <Text content={setupInicial.price} style={{fontSize: '14px', color: '#94a3b8', marginTop: '4px', fontWeight: '500'}} />
+              </div>
             </div>
+            {setupInicial.description && (
+              <Text content={setupInicial.description} style={{fontSize: '15px', color: '#e2e8f0', marginBottom: '20px', lineHeight: '1.6'}} />
+            )}
             <FeatureList>
               {setupInicial.features.map((feature, i) => (
                 <FeatureItem key={i}>
@@ -69,8 +75,8 @@ const Pricing = () => {
                     </span>
                     <span className="price-period">/mes</span>
                   </PriceTag>
-                  {isAnnual && parseFloat(plan.annualPrice.replace(' UF', '')) < parseFloat(plan.monthlyPrice.replace(' UF', '')) && (
-                    <Text content="Mejor precio pagando anual" 
+                  {isAnnual && plan.annualSavings && (
+                    <Text content={plan.annualSavings} 
                       style={{fontSize: '14px', color: '#10b981', marginTop: '8px', fontWeight: '600'}} />
                   )}
                 </PriceHeader>

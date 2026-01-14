@@ -17,28 +17,28 @@ import { code } from "react-icons-kit/feather/code";
 const Services = () => {
   const services = [
     {
-      id: "data-organized",
-      icon: trendingUp,
-      iconColor: "#10b981",
-      title: "Toda tu Data Ordenada",
-      description:
-        "Organizamos y estructuramos toda tu información para que esté lista para la toma de decisiones. No más datos dispersos. Todo ordenado, accesible y fácil de entender para que puedas tomar decisiones estratégicas rápidamente.",
-    },
-    {
-      id: "decision-making",
+      id: "software-reality",
       icon: code,
       iconColor: "#0ea5e9",
-      title: "Facilita la Toma de Decisiones",
+      title: "El software captura la realidad del negocio",
       description:
-        "Somos decisiones, no solo dashboards. Transformamos tus datos en información clara y accionable que facilita la toma de decisiones estratégicas. Dashboards profesionales creados por analistas especialistas que entienden qué necesitas ver para decidir mejor.",
+        "Desarrollamos software que se adapta a cómo trabajas realmente y captura la realidad de tu operación. Sistemas que registran ventas, inventario, clientes y procesos de forma que reflejen cómo funciona tu negocio realmente. No adaptas tu negocio al software: el software captura tu realidad.",
     },
     {
-      id: "access-control",
+      id: "analysts-decisions",
+      icon: trendingUp,
+      iconColor: "#10b981",
+      title: "Los analistas convierten información en decisiones",
+      description:
+        "No solo construimos sistemas que capturan datos: nuestros analistas entienden qué información importa, cómo se relaciona y cómo presentarla para que se convierta en decisiones accionables. El software captura la realidad, los analistas la convierten en decisiones claras y medibles.",
+    },
+    {
+      id: "integrated-systems",
       icon: dollarSign,
       iconColor: "#8b5cf6",
-      title: "Control de Acceso Inteligente",
+      title: "Todo conectado, todo ordenado",
       description:
-        "Cada usuario accede solo a la información relevante para su rol. Control de acceso inteligente que garantiza que las decisiones se tomen con los datos correctos, en el momento adecuado, por las personas indicadas.",
+        "Construimos sistemas que integran toda tu operación. Ventas conectadas con inventario, clientes vinculados con producción, costos relacionados con resultados. Una sola fuente de verdad que ordena tu operación y facilita las decisiones.",
     },
   ];
 
@@ -47,9 +47,8 @@ const Services = () => {
       <Container>
         <Fade direction="up" triggerOnce delay={100}>
           <SectionHeader>
-            <Heading as="h2" content="No Somos Solo Dashboards, Somos Decisiones" />
-            <Text as="p" content="Plataforma de Business Intelligence que organiza toda tu data y facilita la toma de decisiones. Convertimos tus datos en información clara y accionable para que tu equipo pueda tomar las mejores decisiones estratégicas." />
-            <Text as="p" content="No importa cuánta data tengas. La organizamos, la ordenamos y la presentamos de forma que facilite la toma de decisiones. Dashboards profesionales creados por analistas especialistas, con control de acceso inteligente para que cada usuario vea solo lo que necesita para decidir mejor." />
+            <Heading as="h2" content="Nuestra solución" />
+            <Text as="p" content="No somos una empresa de dashboards ni solo de desarrollo. Diseñamos sistemas donde el software captura la realidad del negocio y los analistas convierten esa información en decisiones. Combinamos desarrollo de software y análisis de datos para construir sistemas que ordenan tu operación desde la base y la convierten en algo claro, medible y controlable." />
           </SectionHeader>
         </Fade>
         <ServiceWrapper>

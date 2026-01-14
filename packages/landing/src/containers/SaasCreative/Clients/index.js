@@ -2,7 +2,6 @@ import React from "react";
 import Container from "common/components/UI/Container";
 import Heading from "common/components/Heading";
 import Text from "common/components/Text";
-import { clients } from "common/data/AgencyClassic";
 import Logo from "common/components/UIElements/Logo";
 
 import SectionWrapper, {
@@ -19,7 +18,7 @@ import SectionWrapper, {
 
 const Clients = () => {
   // Duplicamos los logos 3 veces para un loop perfecto sin delay
-  const carouselLogos = [...clients, ...clients, ...clients];
+  // const carouselLogos = [...clients, ...clients, ...clients];
 
   return (
     <SectionWrapper id="experience">
@@ -45,7 +44,7 @@ const Clients = () => {
             </StatItem>*/}
           </ClientStats>
         </SectionHeader>
-        <ClientWrapper>
+        {/*<ClientWrapper>
           <SliderMask />
           <ImageSlider>
             <SliderTrack>
@@ -56,7 +55,7 @@ const Clients = () => {
               ))}
             </SliderTrack>
           </ImageSlider>
-        </ClientWrapper>
+        </ClientWrapper>*/}
       </Container>
     </SectionWrapper>
   );

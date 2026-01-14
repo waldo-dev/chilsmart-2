@@ -20,7 +20,7 @@ const Banner = () => {
   const handleOnClick = () => {
     if (typeof window !== "undefined") {
       window.open(
-        "https://wa.me/56940676501?text=Hola,%20quiero%20conocer%20más%20sobre%20la%20plataforma%20de%20BI"
+        "https://wa.me/56940676501?text=Hola,%20quiero%20conversar%20sobre%20cómo%20ordenar%20la%20operación%20de%20mi%20empresa"
       );
     }
   };
@@ -42,36 +42,37 @@ const Banner = () => {
         <BannerContentWrapper>
           <BannerContent>
             <HighlightPill>
-              Toda tu Data Ordenada para Mejores Decisiones
+              Sistemas que ordenan tu operación
             </HighlightPill>
             <Heading
-              content="Transforma tus Datos en Decisiones Estratégicas para tu Empresa"
+              as="h1"
+              content="Sistemas digitales que ordenan tu operación y convierten tus datos en decisiones"
               className="animate__animated animate__fadeInUp"
             />
             <Text
               className="animate__animated animate__fadeInUp"
-              content="No somos solo dashboards. Somos decisiones. Organizamos toda tu data para que la toma de decisiones sea lo más fácil posible. Dashboards profesionales creados por analistas especialistas, con control de acceso inteligente. Toda tu información ordenada y lista para tomar acción."
+              content="Diseñamos y construimos sistemas digitales que ordenan la operación de las empresas y convierten sus datos en decisiones accionables. No somos una empresa de dashboards ni solo de desarrollo: diseñamos sistemas donde el software captura la realidad del negocio y los analistas convierten esa información en decisiones."
             />
             <FeatureList className="animate__animated animate__fadeInUp">
-              <FeatureItem>Toda tu data organizada y ordenada para facilitar la toma de decisiones estratégicas.</FeatureItem>
-              <FeatureItem>Dashboards profesionales creados por analistas especialistas que convierten datos en decisiones.</FeatureItem>
-              <FeatureItem>Control de acceso inteligente: cada usuario ve solo la información relevante para su rol.</FeatureItem>
+              <FeatureItem>Sistemas que ordenan tu operación desde la base</FeatureItem>
+              <FeatureItem>Datos convertidos en decisiones claras y accionables</FeatureItem>
+              <FeatureItem>Ingeniería de software combinada con análisis de datos</FeatureItem>
             </FeatureList>
             <Subscribe className="animate__animated animate__fadeInUp">
               <Button
-                title="Agenda una llamada"
+                title="Conversemos"
                 onClick={handleOnClick}
                 className="primary-cta"
               />
               <Button
-                title="Ver cómo funciona"
+                title="Ver cómo trabajamos"
                 onClick={handleProductsClick}
                 className="secondary-cta"
                 variant="textButton"
               />
             </Subscribe>
             <TrustSignal className="animate__animated animate__fadeInUp">
-              Plataforma de BI profesional utilizada por empresas en Chile. Convierte tus datos en decisiones estratégicas con toda tu información ordenada y accesible.
+              Trabajamos con pymes en Latinoamérica que necesitan sistemas operativos y de datos que funcionen en la operación diaria.
             </TrustSignal>
           </BannerContent>
           {/*<Figure className="animate__animated animate__fadeInUp animate__fast shadow-2xl rounded-xl">

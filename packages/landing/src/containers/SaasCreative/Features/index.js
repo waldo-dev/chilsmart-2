@@ -28,10 +28,10 @@ const Features = () => {
     <Section id="testimonial">
       <Container width="1400px">
         <SectionHeading>
-          <HighlightPill>Lo que Ofrecemos</HighlightPill>
-          <Heading content="Toda tu Data Ordenada para Facilitar la Toma de Decisiones" />
+          <HighlightPill>Qué hacemos</HighlightPill>
+          <Heading content="Tres tipos de soluciones para ordenar tu operación" />
           <Description>
-            No somos solo dashboards. Somos decisiones. Nuestra plataforma organiza toda tu información para que tomar decisiones estratégicas sea más fácil. Dashboards profesionales, control de acceso inteligente y toda tu data ordenada en un solo lugar.
+            Ayudamos a empresas a transformar operaciones desordenadas en sistemas claros, medibles y controlables. Desarrollamos software a medida, productos SaaS y sistemas de datos donde el software captura la realidad del negocio y los analistas convierten esa información en decisiones.
           </Description>
         </SectionHeading>
         <Grid>
