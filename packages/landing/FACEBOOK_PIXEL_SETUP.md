@@ -17,15 +17,17 @@ Crea un archivo `.env.local` en la carpeta `packages/landing/` con el siguiente 
 ```env
 NEXT_PUBLIC_FB_PIXEL_ID=tu_pixel_id_aqui
 NEXT_PUBLIC_FB_TEST_EVENT_CODE=TEST59121
-FB_ACCESS_TOKEN=EAARWHhHjFLYBQl3l9XIEum2tnnLbB8ZBcsZCHLoVjdkn0jvKSpDx6q8UMb5XIqUJmv6SSJAQeZBHDQpDzLZCCSiKNwbMmTFZCWylKZCmOnau5Ee32CRZCp5xEYvl6BOb95TnlyP8YZBDYAiueaGs082RkbfwqhLqdEu4Sg8SgxmOKxpZC9XpZB7lgVJcodtmJhMX8M1CMD2t3PpEtevVv2UYgTwGZAY3FrSZAfHYyBYVtQZDZD
+FB_ACCESS_TOKEN=tu_access_token_aqui
 ```
 
-**Ejemplo:**
+**Ejemplo con tu Access Token de Conversions API:**
 ```env
 NEXT_PUBLIC_FB_PIXEL_ID=123456789012345
 NEXT_PUBLIC_FB_TEST_EVENT_CODE=TEST59121
-FB_ACCESS_TOKEN=EAARWHhHjFLYBQl3l9XIEum2tnnLbB8ZBcsZCHLoVjdkn0jvKSpDx6q8UMb5XIqUJmv6SSJAQeZBHDQpDzLZCCSiKNwbMmTFZCWylKZCmOnau5Ee32CRZCp5xEYvl6BOb95TnlyP8YZBDYAiueaGs082RkbfwqhLqdEu4Sg8SgxmOKxpZC9XpZB7lgVJcodtmJhMX8M1CMD2t3PpEtevVv2UYgTwGZAY3FrSZAfHYyBYVtQZDZD
+FB_ACCESS_TOKEN=EACBCxfzNg4EBQk931knOIw0HmWPJgGKLBvhZC9zvJNAg6aDIVzP9qNhyNZAJ5bDv5ZAOPZCQELZCXhEIOvoyFwQLDvNpMa32xmBTUdJXHYpDYsGDuTxXXayIIImajBphR5q8ZBP1aqVZCBUWrOtJbxZCKtkrdfz6Vb2G7ejxsvJJ3SxeLMbGBRVepjnutsS7VerCOwZDZD
 ```
+
+**Nota:** Este es un Access Token específico para Conversions API. Si se te olvida o expira, puedes generar uno nuevo desde Facebook Events Manager.
 
 **⚠️ IMPORTANTE - Seguridad del Access Token:**
 - El `FB_ACCESS_TOKEN` **NUNCA** debe ir en el código del frontend
@@ -74,10 +76,15 @@ import {
   trackContactFormSubmit, 
   trackWhatsAppClick,
   trackViewContent,
-  trackLead 
+  trackLead,
+  trackSchedule,
+  trackCompleteRegistration,
+  trackSubmitApplication,
+  trackFindLocation,
+  trackServerEvent
 } from 'common/hooks/useFacebookPixel';
 
-// Trackear evento personalizado
+// Trackear evento personalizado (client-side)
 trackEvent('CustomEvent', {
   content_name: 'Nombre del contenido',
   value: 100,
@@ -93,20 +100,110 @@ trackLead({
   value: 0,
   currency: 'CLP'
 });
+
+// Trackear evento Schedule (Programar cita)
+trackSchedule({
+  content_name: 'Appointment Scheduled'
+});
+
+// Trackear registro completado
+trackCompleteRegistration({
+  content_name: 'Registration Completed',
+  status: true
+});
+
+// Trackear solicitud enviada
+trackSubmitApplication({
+  content_name: 'Application Submitted'
+});
+
+// Trackear búsqueda de ubicación
+trackFindLocation({
+  content_name: 'Location Search'
+});
+
+// Trackear evento server-side (Conversions API)
+// Los datos del usuario se hashean automáticamente
+trackServerEvent('Lead', {
+  content_name: 'Contact Form',
+  value: 0,
+  currency: 'CLP'
+}, {
+  email: 'usuario@ejemplo.com',
+  phone: '+56912345678',
+  first_name: 'Juan',
+  last_name: 'Pérez',
+  country: 'CL'
+}, {
+  // Opciones adicionales
+  eventId: 'unique_event_id_123', // Para deduplicación (opcional, se genera automáticamente si no se proporciona)
+  eventTime: Math.floor(Date.now() / 1000), // Timestamp Unix (opcional, usa tiempo actual si no se proporciona)
+  testEventCode: 'TEST59121' // Código de test event (opcional)
+});
 ```
 
-## 📊 Eventos estándar de Facebook
+## 📊 Eventos estándar de Facebook implementados
 
-Los eventos estándar que puedes usar incluyen:
-- `PageView` - Vista de página
+### Eventos básicos:
+- `PageView` - Vista de página (automático)
 - `ViewContent` - Ver contenido
+- `Contact` - Contacto (llamada, chat, SMS, email)
+- `Lead` - Cliente potencial generado
+- `Schedule` - Programar cita
+- `CompleteRegistration` - Registro completado
+- `SubmitApplication` - Enviar solicitud
+- `FindLocation` - Buscar ubicación
+
+### Otros eventos estándar disponibles:
 - `Search` - Búsqueda
 - `AddToCart` - Agregar al carrito
 - `InitiateCheckout` - Iniciar checkout
 - `Purchase` - Compra
-- `Lead` - Lead generado
-- `CompleteRegistration` - Registro completado
-- `Contact` - Contacto
+
+## 📋 Parámetros requeridos según documentación oficial
+
+### Parámetros comunes a todos los eventos:
+- **event_time**: Fecha y hora del evento (timestamp Unix)
+  - Puede ser anterior al momento de envío
+  - **No puede ser más de 7 días en el pasado** (se rechazará el evento)
+  - Si no se proporciona, se usa el tiempo actual
+- **event_name**: Nombre del evento
+- **event_id**: Identificador único del evento (para deduplicación)
+  - Facebook usa `event_id` + `event_name` para deduplicar eventos del pixel y del servidor
+  - Si no se proporciona, se genera automáticamente
+  - **Importante**: Usa el mismo `event_id` en el pixel y en la API para evitar duplicados
+- **event_source_url**: URL de origen del evento
+- **action_source**: Origen de la acción (`website`, `app`, `phone_call`, etc.)
+
+### Parámetros de información del cliente (user_data):
+**Campos que DEBEN ir hasheados (SHA256):**
+- `em` - Email
+- `ph` - Teléfono (solo números)
+- `fn` - Nombre (first_name)
+- `ln` - Apellidos (last_name)
+- `db` - Fecha de nacimiento (YYYYMMDD)
+- `ge` - Género (m o f)
+- `ct` - Ciudad
+- `st` - Estado/Provincia
+- `zp` - Código postal
+- `country` - País (código ISO de 2 letras)
+
+**Campos que NO deben ir hasheados:**
+- `client_ip_address` - Dirección IP del cliente
+- `client_user_agent` - Agente de usuario del cliente
+
+### Eventos con parámetros adicionales:
+
+**CompleteRegistration:**
+- `event_id` - Identificador único del evento (opcional pero recomendado)
+- Todos los campos de user_data disponibles
+
+**ViewContent:**
+- `content_name` - Nombre del contenido
+- `content_category` - Categoría del contenido
+- `content_ids` - IDs del contenido
+- `value` - Valor del contenido
+- `currency` - Moneda
 
 ## 🚀 Próximos pasos recomendados
 
@@ -127,16 +224,60 @@ El Access Token se usa para **Conversions API** (server-side tracking), que comp
    - **NUNCA** lo pongas en el código fuente o en archivos que se suban a Git
 
 2. **Uso del Access Token:**
-   - Actualmente el token está configurado pero no se usa activamente
-   - Se puede usar para implementar Conversions API en el futuro
-   - Permite enviar eventos desde el servidor para mayor precisión
+   - El token está configurado y **activamente en uso** para Conversions API
+   - Se usa para enviar eventos desde el servidor (`/api/facebook-conversion`)
+   - Permite tracking más preciso y confiable
 
-### Implementación de Conversions API (Opcional):
+### Implementación de Conversions API:
 
-Si quieres implementar server-side tracking, puedes crear una API route que envíe eventos a Facebook usando el access token. Esto es útil para:
+✅ **Ya implementado y funcionando según la especificación oficial de Facebook**
+
+La Conversions API está completamente configurada siguiendo la documentación oficial de Facebook:
+- **Endpoint:** `https://graph.facebook.com/v18.0/{PIXEL_ID}/events?access_token={TOKEN}`
+- **Método:** POST
+- **Access Token:** Enviado como query parameter (según especificación oficial)
+- **Datos hasheados:** Email y teléfono con SHA256 (requerido por Facebook)
+- **Deduplicación:** Usa `event_id` para evitar duplicados entre pixel y servidor
+- **Validación:** `event_time` validado (no más de 7 días en el pasado)
+
+El sistema envía eventos tanto desde el cliente (Pixel) como desde el servidor (Conversions API) para:
 - Mejorar la precisión del tracking
 - Evitar bloqueos de ad blockers
 - Tracking más confiable en dispositivos móviles
+- Mejor matching de usuarios con datos hasheados
+- Mayor visibilidad de datos del servidor (CRM, eventos offline)
+
+**Características implementadas:**
+
+1. **Deduplicación de eventos:**
+   - Usa `event_id` único para cada evento
+   - Facebook deduplica automáticamente eventos idénticos del pixel y del servidor
+   - El mismo `event_id` debe usarse en ambos lugares para evitar duplicados
+
+2. **Validación de event_time:**
+   - Valida que `event_time` no sea más de 7 días en el pasado
+   - Permite eventos históricos (hasta 7 días)
+   - Si no se proporciona, usa el tiempo actual
+
+3. **Lotes de eventos:**
+   - Se pueden enviar hasta 1000 eventos en un lote
+   - **Recomendación:** Enviar eventos inmediatamente cuando ocurren
+   - Si un evento del lote es inválido, se rechaza todo el lote
+
+4. **Testing:**
+   - Soporte para `test_event_code` (ej: `TEST59121`)
+   - Permite probar eventos sin afectar datos de producción
+   - Los eventos de test aparecen en Facebook Events Manager
+
+**Archivos relacionados:**
+- `/api/facebook-conversion.js` - Endpoint para enviar eventos server-side siguiendo la especificación oficial
+- `useFacebookPixel.js` - Hook con función `trackServerEvent()` mejorada
+- Formulario de contacto - Envía eventos duales (client + server) con deduplicación
+
+**Referencia oficial:**
+- [Documentación de Conversions API](https://developers.facebook.com/docs/marketing-api/conversions-api)
+- [Deduplicación de eventos](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events)
+- [Lotes de eventos](https://developers.facebook.com/docs/marketing-api/conversions-api/batch-requests)
 
 ## 📝 Notas importantes
 

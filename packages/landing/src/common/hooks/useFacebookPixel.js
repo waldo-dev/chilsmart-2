@@ -66,12 +66,78 @@ export const trackInitiateCheckout = () => {
   trackEvent('InitiateCheckout');
 };
 
+// Eventos estándar adicionales según documentación oficial de Facebook
+
+/**
+ * Trackear evento Schedule (Programar)
+ * Reserva de una cita para visitar uno de tus establecimientos
+ */
+export const trackSchedule = (scheduleData = {}) => {
+  trackEvent('Schedule', {
+    content_name: 'Appointment Scheduled',
+    ...scheduleData
+  });
+};
+
+/**
+ * Trackear evento CompleteRegistration (Completar registro)
+ * Envío de información por parte de un cliente a cambio de un servicio
+ */
+export const trackCompleteRegistration = (registrationData = {}) => {
+  trackEvent('CompleteRegistration', {
+    content_name: 'Registration Completed',
+    ...registrationData
+  });
+};
+
+/**
+ * Trackear evento SubmitApplication (Enviar solicitud)
+ * Envío de una solicitud para recibir un producto, servicio o programa
+ */
+export const trackSubmitApplication = (applicationData = {}) => {
+  trackEvent('SubmitApplication', {
+    content_name: 'Application Submitted',
+    ...applicationData
+  });
+};
+
+/**
+ * Trackear evento FindLocation (Buscar ubicación)
+ * Cuando una persona busca uno de tus establecimientos
+ */
+export const trackFindLocation = (locationData = {}) => {
+  trackEvent('FindLocation', {
+    content_name: 'Location Search',
+    ...locationData
+  });
+};
+
 /**
  * Enviar evento a Facebook Conversions API (server-side)
  * Útil para mejorar la precisión del tracking y evitar bloqueos de ad blockers
+ * 
+ * @param {string} eventName - Nombre del evento estándar o personalizado
+ * @param {object} eventData - Datos del evento (custom_data)
+ * @param {object} userData - Datos del usuario (se hashean automáticamente)
+ *   - email: Email del usuario (se hashea)
+ *   - phone: Teléfono del usuario (se hashea)
+ *   - first_name: Nombre (se hashea)
+ *   - last_name: Apellidos (se hashea)
+ *   - date_of_birth: Fecha de nacimiento YYYYMMDD (se hashea)
+ *   - gender: Género 'm' o 'f' (se hashea)
+ *   - city: Ciudad (se hashea)
+ *   - state: Estado/Provincia (se hashea)
+ *   - zip: Código postal (se hashea)
+ *   - country: País código ISO de 2 letras (se hashea)
+ * @param {object} options - Opciones adicionales
+ *   - eventId: Identificador único del evento (para deduplicación con pixel). Si no se proporciona, se genera automáticamente
+ *   - eventTime: Timestamp Unix del evento (puede ser hasta 7 días en el pasado). Si no se proporciona, usa el tiempo actual
+ *   - testEventCode: Código de test event para pruebas (ej: 'TEST59121')
  */
-export const trackServerEvent = async (eventName, eventData = {}, userData = {}) => {
+export const trackServerEvent = async (eventName, eventData = {}, userData = {}, options = {}) => {
   try {
+    const { eventId, eventTime, testEventCode } = options;
+    
     const response = await fetch('/api/facebook-conversion', {
       method: 'POST',
       headers: {
@@ -81,11 +147,15 @@ export const trackServerEvent = async (eventName, eventData = {}, userData = {})
         eventName,
         eventData,
         userData,
+        eventId,
+        eventTime,
+        testEventCode,
       }),
     });
 
     if (!response.ok) {
-      console.warn('Failed to send server-side event to Facebook');
+      const errorData = await response.json().catch(() => ({}));
+      console.warn('Failed to send server-side event to Facebook:', errorData);
     }
   } catch (error) {
     console.warn('Error sending server-side event to Facebook:', error);

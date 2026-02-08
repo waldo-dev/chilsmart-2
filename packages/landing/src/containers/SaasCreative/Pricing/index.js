@@ -106,14 +106,35 @@ const Contact = () => {
         
         // Track server-side event (Conversions API) for better accuracy
         // Note: The API route will handle proper hashing of user data
+        // También trackear evento Contact según documentación oficial
+        const userDataForTracking = {
+          email: formData.email ? formData.email.toLowerCase().trim() : undefined,
+          phone: formData.telefono ? formData.telefono.replace(/\D/g, '') : undefined,
+        };
+        
+        // Generar event_id único para deduplicación con eventos del pixel
+        // Facebook usa event_id y event_name para deduplicar eventos idénticos
+        const eventId = `contact_form_${Date.now()}_${Math.random().toString(36).substring(2, 15)}`;
+        const testEventCode = process.env.NEXT_PUBLIC_FB_TEST_EVENT_CODE;
+        
+        // Enviar evento Lead con event_id para deduplicación
         trackServerEvent('Lead', {
           content_name: 'Contact Form Submission',
           content_category: 'Lead Generation',
           value: 0,
           currency: 'CLP'
-        }, {
-          email: formData.email ? formData.email.toLowerCase().trim() : undefined,
-          phone: formData.telefono ? formData.telefono.replace(/\D/g, '') : undefined,
+        }, userDataForTracking, {
+          eventId: `${eventId}_lead`,
+          testEventCode
+        });
+        
+        // También enviar evento Contact (según documentación oficial)
+        trackServerEvent('Contact', {
+          content_name: 'Contact Form',
+          content_category: 'Form Submission'
+        }, userDataForTracking, {
+          eventId: `${eventId}_contact`,
+          testEventCode
         });
         
         setFormData({
