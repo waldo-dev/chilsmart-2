@@ -13,6 +13,7 @@ const Section = styled.section`
 
   @media (max-width: 768px) {
     min-height: 90vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
   }
   
   @media (max-width: 480px) {
@@ -39,6 +40,20 @@ export const BannerContentWrapper = styled.div`
     min-height: 85vh;
     padding-top: 80px;
     padding-bottom: 60px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at center, rgba(14, 165, 233, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
   }
 
   @media (max-width: 480px) {
@@ -305,6 +320,10 @@ export const Figure = styled.figure`
   z-index: 1;
   overflow: hidden;
   
+  @media (max-width: 768px) {
+    display: none;
+  }
+  
   &::after {
     content: "";
     position: absolute;
@@ -316,11 +335,6 @@ export const Figure = styled.figure`
       radial-gradient(circle at center, rgba(14, 165, 233, 0.3) 0%, rgba(15, 23, 42, 0.6) 100%);
     z-index: 2;
     pointer-events: none;
-
-    @media (max-width: 768px) {
-      background: 
-        radial-gradient(circle at center, rgba(14, 165, 233, 0.35) 0%, rgba(15, 23, 42, 0.7) 100%);
-    }
   }
   
   img {
@@ -332,10 +346,6 @@ export const Figure = styled.figure`
     top: 0;
     left: 0;
     z-index: 1;
-
-    @media (max-width: 768px) {
-      object-position: center center;
-    }
   }
 `;
 
