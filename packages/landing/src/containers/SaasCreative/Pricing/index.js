@@ -75,7 +75,7 @@ const Contact = () => {
     setSubmitStatus(null);
 
     try {
-      const response = await fetch('https://n8n.chilsmart.com/webhook-test/contacto-chilsmart', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
