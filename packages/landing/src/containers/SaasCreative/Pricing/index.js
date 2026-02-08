@@ -8,6 +8,7 @@ import Container from 'common/components/UI/Container';
 import Heading from 'common/components/Heading';
 import Text from 'common/components/Text';
 import Button from 'common/components/Button';
+import { trackContactFormSubmit, trackLead, trackServerEvent } from 'common/hooks/useFacebookPixel';
 import Section, { 
   SectionHeading, 
   ContactForm, 
@@ -92,6 +93,29 @@ const Contact = () => {
 
       if (response.ok) {
         setSubmitStatus('success');
+        
+        // Track Facebook Pixel events (client-side)
+        trackContactFormSubmit({
+          value: 0,
+          currency: 'CLP'
+        });
+        trackLead({
+          content_name: 'Contact Form Submission',
+          content_category: 'Lead Generation'
+        });
+        
+        // Track server-side event (Conversions API) for better accuracy
+        // Note: The API route will handle proper hashing of user data
+        trackServerEvent('Lead', {
+          content_name: 'Contact Form Submission',
+          content_category: 'Lead Generation',
+          value: 0,
+          currency: 'CLP'
+        }, {
+          email: formData.email ? formData.email.toLowerCase().trim() : undefined,
+          phone: formData.telefono ? formData.telefono.replace(/\D/g, '') : undefined,
+        });
+        
         setFormData({
           nombre: '',
           email: '',

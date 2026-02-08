@@ -11,6 +11,36 @@ export async function getServerSideProps({ res }) {
       priority: '1.0',
       lastmod: currentDate,
     },
+    {
+      url: `${siteUrl}#proyectos`,
+      changefreq: 'monthly',
+      priority: '0.9',
+      lastmod: currentDate,
+    },
+    {
+      url: `${siteUrl}#services`,
+      changefreq: 'monthly',
+      priority: '0.9',
+      lastmod: currentDate,
+    },
+    {
+      url: `${siteUrl}#testimonial`,
+      changefreq: 'monthly',
+      priority: '0.8',
+      lastmod: currentDate,
+    },
+    {
+      url: `${siteUrl}#contacto`,
+      changefreq: 'monthly',
+      priority: '0.8',
+      lastmod: currentDate,
+    },
+    {
+      url: `${siteUrl}#faq`,
+      changefreq: 'monthly',
+      priority: '0.7',
+      lastmod: currentDate,
+    },
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

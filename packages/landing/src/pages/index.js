@@ -5,6 +5,7 @@ import Sticky from "react-stickynode";
 import { DrawerProvider } from "common/contexts/DrawerContext";
 import { theme } from "common/theme/saasCreative";
 import ResetCSS from "common/assets/css/style";
+import { trackWhatsAppClick, trackViewContent } from "common/hooks/useFacebookPixel";
 import BannerSection from "containers/SaasCreative/Banner";
 import Navbar from "containers/SaasCreative/Navbar";
 import Proyects from "containers/SaasCreative/Proyects";
@@ -46,12 +47,30 @@ const SaasCreative = () => {
           <meta name="theme-color" content="#0ea5e9" />
           <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
           <meta name="googlebot" content="index,follow" />
+          <meta name="bingbot" content="index,follow" />
           <meta name="language" content="Spanish" />
           <meta name="geo.region" content="CL" />
           <meta name="geo.placename" content="Chile" />
+          <meta name="rating" content="general" />
+          <meta name="distribution" content="global" />
+          <meta name="revisit-after" content="7 days" />
           <link rel="canonical" href={siteUrl} />
           <link rel="alternate" hrefLang="es" href={siteUrl} />
+          <link rel="alternate" hrefLang="es-CL" href={siteUrl} />
           <link rel="alternate" hrefLang="x-default" href={siteUrl} />
+          
+          {/* Mobile optimization */}
+          <meta name="mobile-web-app-capable" content="yes" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+          <meta name="apple-mobile-web-app-title" content="Chilsmart" />
+          
+          {/* Performance hints */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link rel="dns-prefetch" href="https://wa.me" />
+          <link rel="dns-prefetch" href="https://www.linkedin.com" />
+          <link rel="dns-prefetch" href="https://www.instagram.com" />
           
           {/* Open Graph */}
           <meta property="og:title" content={title} />
@@ -64,6 +83,8 @@ const SaasCreative = () => {
           <meta property="og:image:alt" content="Chilsmart - Sistemas que ordenan tu operación y convierten datos en decisiones" />
           <meta property="og:site_name" content="Chilsmart" />
           <meta property="og:locale" content="es_CL" />
+          <meta property="og:locale:alternate" content="es_ES" />
+          <meta property="article:author" content="Chilsmart" />
           
           {/* Twitter */}
           <meta name="twitter:card" content="summary_large_image" />
@@ -71,6 +92,8 @@ const SaasCreative = () => {
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={previewImage} />
           <meta name="twitter:image:alt" content="Chilsmart - Sistemas que ordenan tu operación y convierten datos en decisiones" />
+          <meta name="twitter:site" content="@chilsmart" />
+          <meta name="twitter:creator" content="@chilsmart" />
           
           {/* Structured data - Organization */}
           <script
@@ -213,8 +236,50 @@ const SaasCreative = () => {
               })
             }}
           />
+          
+          {/* Structured data - BreadcrumbList */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Inicio",
+                    item: siteUrl
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Proyectos",
+                    item: `${siteUrl}#proyectos`
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: "Servicios",
+                    item: `${siteUrl}#services`
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 4,
+                    name: "Contacto",
+                    item: `${siteUrl}#contacto`
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 5,
+                    name: "Preguntas Frecuentes",
+                    item: `${siteUrl}#faq`
+                  }
+                ]
+              })
+            }}
+          />
           {/* Load google fonts */}
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Inter&family=Manrope:wght@400;500;700;800&display=swap"
@@ -247,6 +312,7 @@ const SaasCreative = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Contactar por WhatsApp"
+            onClick={() => trackWhatsAppClick()}
             style={{
               position: "fixed",
               width: "60px",

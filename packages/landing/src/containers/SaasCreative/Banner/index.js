@@ -3,6 +3,7 @@ import Heading from "common/components/Heading";
 import Text from "common/components/Text";
 import Button from "common/components/Button";
 import NextImage from "common/components/NextImage";
+import { trackWhatsAppClick } from "common/hooks/useFacebookPixel";
 import Section, {
   BannerContentWrapper,
   BannerContent,
@@ -46,6 +47,7 @@ const Typewriter = ({ text, speed = 50, delay = 0 }) => {
 
 const Banner = () => {
   const handleOnClick = () => {
+    trackWhatsAppClick();
     if (typeof window !== "undefined") {
       window.open(
         "https://wa.me/56940676501?text=Hola,%20quiero%20conversar%20sobre%20cómo%20ordenar%20la%20operación%20de%20mi%20empresa"
@@ -59,7 +61,7 @@ const Banner = () => {
         <Figure>
           <NextImage
             src={dashboard}
-            alt="Ejemplo de sistemas a medida"
+            alt="Chilsmart - Sistemas digitales que ordenan la operación de empresas y convierten datos en decisiones accionables. Software a medida para pymes en Latinoamérica."
             width={1920}
             height={1080}
             quality={100}
