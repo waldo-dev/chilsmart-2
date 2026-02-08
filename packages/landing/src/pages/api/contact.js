@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     }
 
     // Enviar los datos al webhook de n8n
-    const webhookUrl = 'https://n8n.chilsmart.com/webhook-test/contacto-chilsmart';
+    const webhookUrl = 'https://n8n.chilsmart.com/webhook/contacto-chilsmart';
     
     const response = await fetch(webhookUrl, {
       method: 'POST',
