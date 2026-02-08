@@ -30,12 +30,21 @@ export const BannerContentWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
+    height: auto;
     min-height: 90vh;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     min-height: 85vh;
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  @media (max-width: 480px) {
+    min-height: 80vh;
+    padding-top: 70px;
+    padding-bottom: 40px;
   }
 `;
 
@@ -63,11 +72,20 @@ export const BannerContent = styled.div`
     background: radial-gradient(circle at center, rgba(14, 165, 233, 0.15) 0%, transparent 70%);
     pointer-events: none;
     z-index: -1;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    max-width: 100%;
+    padding: 0 48px;
   }
 
   @media (max-width: 1024px) {
-    padding: 0 48px;
-    max-width: 100%;
+    padding: 0 40px;
   }
 
   @media (max-width: 768px) {
@@ -77,7 +95,11 @@ export const BannerContent = styled.div`
   }
 
   @media (max-width: 480px) {
-    padding: 0 24px;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 360px) {
+    padding: 0 16px;
   }
 
   h1,
@@ -95,15 +117,28 @@ export const BannerContent = styled.div`
     position: relative;
     z-index: 2;
 
+    @media (max-width: 1200px) {
+      font-size: 48px;
+    }
+
     @media (max-width: 1024px) {
-      font-size: 46px;
+      font-size: 42px;
     }
+
     @media (max-width: 768px) {
-      font-size: 38px;
+      font-size: 36px;
       line-height: 1.15;
+      margin-bottom: 20px;
     }
+
     @media (max-width: 480px) {
-      font-size: 32px;
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 360px) {
+      font-size: 24px;
     }
   }
 
@@ -118,10 +153,26 @@ export const BannerContent = styled.div`
     z-index: 2;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 
+    @media (max-width: 1024px) {
+      max-width: 550px;
+      font-size: 17px;
+    }
+
     @media (max-width: 768px) {
       max-width: 100%;
       font-size: 16px;
       line-height: 1.65;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 360px) {
+      font-size: 14px;
     }
   }
 
@@ -146,8 +197,16 @@ export const Subscribe = styled.div`
   z-index: 1;
   animation: fadeInUp 1s ease-out 2s both;
 
-  @media only screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     justify-content: center;
+    margin-top: 32px;
+    gap: 16px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 24px;
+    gap: 12px;
+    width: 100%;
   }
 
   .reusecore__button {
@@ -159,6 +218,18 @@ export const Subscribe = styled.div`
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
+
+    @media (max-width: 768px) {
+      padding: 0 36px;
+      min-height: 60px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 32px;
+      min-height: 56px;
+      font-size: 15px;
+    }
   }
 
   .primary-cta {
@@ -245,6 +316,11 @@ export const Figure = styled.figure`
       radial-gradient(circle at center, rgba(14, 165, 233, 0.3) 0%, rgba(15, 23, 42, 0.6) 100%);
     z-index: 2;
     pointer-events: none;
+
+    @media (max-width: 768px) {
+      background: 
+        radial-gradient(circle at center, rgba(14, 165, 233, 0.35) 0%, rgba(15, 23, 42, 0.7) 100%);
+    }
   }
   
   img {
@@ -256,6 +332,10 @@ export const Figure = styled.figure`
     top: 0;
     left: 0;
     z-index: 1;
+
+    @media (max-width: 768px) {
+      object-position: center center;
+    }
   }
 `;
 
@@ -330,6 +410,30 @@ export const TrustSignal = styled.p`
     animation: checkPulse 2s ease-in-out infinite;
   }
 
+  @media (max-width: 768px) {
+    font-size: 12px;
+    margin-top: 20px;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+
+    &::before {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: 11px;
+    margin-top: 16px;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+
+    &::before {
+      font-size: 12px;
+    }
+  }
+
   @keyframes checkPulse {
     0%, 100% {
       transform: scale(1);
@@ -381,27 +485,41 @@ export const AnimatedBadge = styled.span`
   position: relative;
   z-index: 2;
   transition: all 0.3s ease;
+  white-space: nowrap;
 
   &:hover {
     background: rgba(14, 165, 233, 0.3);
     border-color: rgba(14, 165, 233, 0.5);
   }
 
-  @media (max-width: 1024px) {
-    font-size: 15px;
+  @media (max-width: 1200px) {
+    font-size: 28px;
     padding: 10px 24px;
   }
 
+  @media (max-width: 1024px) {
+    font-size: 24px;
+    padding: 10px 22px;
+  }
+
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: 18px;
     padding: 8px 20px;
     margin-bottom: 20px;
+    letter-spacing: 0.12em;
   }
 
   @media (max-width: 480px) {
-    font-size: 12px;
+    font-size: 14px;
     padding: 6px 16px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 12px;
+    padding: 5px 12px;
+    letter-spacing: 0.08em;
   }
 `;
 
