@@ -1,118 +1,229 @@
 import React, { useState } from 'react';
 import { Icon } from 'react-icons-kit';
-import { check } from 'react-icons-kit/feather/check';
-import { database } from 'react-icons-kit/feather/database';
-import { users } from 'react-icons-kit/feather/users';
-import { settings } from 'react-icons-kit/feather/settings';
+import { mail } from 'react-icons-kit/feather/mail';
+import { send } from 'react-icons-kit/feather/send';
+import { checkCircle } from 'react-icons-kit/feather/checkCircle';
+import { alertCircle } from 'react-icons-kit/feather/alertCircle';
 import Container from 'common/components/UI/Container';
 import Heading from 'common/components/Heading';
 import Text from 'common/components/Text';
 import Button from 'common/components/Button';
-import Section, { SectionHeading, PricingWrapper, SetupCard, PlansGrid, PriceCard, PriceHeader, PriceContent, PriceTag, FeatureList, FeatureItem, ToggleWrapper, ToggleButton } from './pricing.style';
-
-import { pricing, setupInicial } from 'common/data/SaasCreative';
+import Section, { 
+  SectionHeading, 
+  ContactForm, 
+  FormRow, 
+  FormGroup, 
+  FormLabel, 
+  FormInput, 
+  FormTextarea,
+  SubmitButton,
+  SuccessMessage,
+  ErrorMessage,
+  LoadingSpinner
+} from './pricing.style';
 import { Fade } from 'react-awesome-reveal';
 
-const Pricing = () => {
-  const [isAnnual, setIsAnnual] = useState(true);
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    nombre: '',
+    email: '',
+    telefono: '',
+    empresa: '',
+    mensaje: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    // Limpiar mensaje de error al escribir
+    if (submitStatus === 'error') {
+      setSubmitStatus(null);
+    }
+  };
+
+  const validateForm = () => {
+    if (!formData.nombre.trim()) {
+      return 'El nombre es requerido';
+    }
+    if (!formData.email.trim()) {
+      return 'El email es requerido';
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      return 'El email no es válido';
+    }
+    if (!formData.mensaje.trim()) {
+      return 'El mensaje es requerido';
+    }
+    return null;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const validationError = validateForm();
+    if (validationError) {
+      setSubmitStatus('error');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch('http://n8n.chilsmart.com:5678/webhook-test/contacto-chilsmart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nombre: formData.nombre,
+          email: formData.email,
+          telefono: formData.telefono || null,
+          empresa: formData.empresa || null,
+          mensaje: formData.mensaje,
+          fecha: new Date().toISOString()
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          nombre: '',
+          email: '',
+          telefono: '',
+          empresa: '',
+          mensaje: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error al enviar formulario:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
-    <Section id="pricing">
+    <Section id="contacto">
       <Container width="1400px">
-        <SectionHeading>
-          <Heading content="Planes para tu Plataforma de BI" style={{fontSize: "3rem", color: "#fff"}}/>
-          <Text content="Elige el plan que mejor se adapte a las necesidades de tu empresa" style={{color: "#e2e8f0", fontSize: "18px", marginTop: "16px"}} />
-        </SectionHeading>
-
-        {/* Setup Inicial */}
-        <Fade direction='up' triggerOnce>
-          <SetupCard>
-            <div style={{display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px'}}>
-              <div style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%)', padding: '12px', borderRadius: '12px'}}>
-                <Icon icon={settings} size={24} style={{color: '#fff'}} />
-              </div>
-              <div style={{flex: 1}}>
-                <Heading as="h3" content={setupInicial.title} style={{margin: 0, fontSize: '24px', fontWeight: '700'}} />
-                <Text content={setupInicial.price} style={{fontSize: '14px', color: '#94a3b8', marginTop: '4px', fontWeight: '500'}} />
-              </div>
-            </div>
-            {setupInicial.description && (
-              <Text content={setupInicial.description} style={{fontSize: '15px', color: '#e2e8f0', marginBottom: '20px', lineHeight: '1.6'}} />
-            )}
-            <FeatureList>
-              {setupInicial.features.map((feature, i) => (
-                <FeatureItem key={i}>
-                  <Icon icon={check} size={20} style={{color: '#10b981', flexShrink: 0}} />
-                  <span>{feature}</span>
-                </FeatureItem>
-              ))}
-            </FeatureList>
-          </SetupCard>
+        <Fade direction="up" triggerOnce>
+          <SectionHeading>
+            <Heading content="Contáctanos" style={{fontSize: "3rem", color: "#fff"}}/>
+            <Text 
+              content="Cuéntanos sobre tu proyecto y te responderemos lo antes posible" 
+              style={{color: "#e2e8f0", fontSize: "18px", marginTop: "16px"}} 
+            />
+          </SectionHeading>
         </Fade>
 
-        {/* Toggle Mensual/Anual */}
-        <ToggleWrapper>
-          <ToggleButton active={!isAnnual} onClick={() => setIsAnnual(false)}>
-            Mensual
-          </ToggleButton>
-          <ToggleButton active={isAnnual} onClick={() => setIsAnnual(true)}>
-            Anual
-            <span style={{fontSize: '12px', marginLeft: '4px', opacity: 0.8}}>(Ahorra más)</span>
-          </ToggleButton>
-        </ToggleWrapper>
+        <Fade direction="up" triggerOnce delay={200}>
+          <ContactForm onSubmit={handleSubmit}>
+            <FormRow>
+              <FormGroup>
+                <FormLabel htmlFor="nombre">Nombre *</FormLabel>
+                <FormInput
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  value={formData.nombre}
+                  onChange={handleChange}
+                  required
+                  placeholder="Tu nombre completo"
+                />
+              </FormGroup>
 
-        {/* Planes */}
-        <PlansGrid>
-          {pricing.map((plan) => (
-            <Fade key={plan.id} direction='up' triggerOnce delay={100 * plan.id}>
-              <PriceCard isPro={plan.isPro}>
-                {plan.isPro && <div className="popular-badge">Más Popular</div>}
-                <PriceHeader>
-                  <Heading as="h3" content={plan.title} />
-                  <PriceTag>
-                    <span className="price-amount">
-                      {isAnnual ? plan.annualPrice : plan.monthlyPrice}
-                    </span>
-                    <span className="price-period">/mes</span>
-                  </PriceTag>
-                  {isAnnual && plan.annualSavings && (
-                    <Text content={plan.annualSavings} 
-                      style={{fontSize: '14px', color: '#10b981', marginTop: '8px', fontWeight: '600'}} />
-                  )}
-                </PriceHeader>
-                <PriceContent>
-                  <FeatureList>
-                    {plan.features.map((feature, i) => (
-                      <FeatureItem key={i}>
-                        <Icon icon={check} size={20} style={{color: '#10b981', flexShrink: 0}} />
-                        <span>{feature}</span>
-                      </FeatureItem>
-                    ))}
-                  </FeatureList>
-                  <Button
-                    title="Solicitar Demo"
-                    onClick={() => window.open(`https://wa.me/56940676501?text=${encodeURIComponent(`Hola, estoy interesado en el ${plan.title}`)}`, '_blank')}
-                    style={{
-                      width: '100%',
-                      marginTop: '32px',
-                      background: plan.isPro ? 'linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%)' : '#0ea5e9',
-                      border: 'none',
-                      color: '#fff',
-                      fontWeight: '700',
-                      padding: '16px 32px',
-                      borderRadius: '12px',
-                      cursor: 'pointer',
-                      transition: 'all 0.3s ease'
-                    }}
-                  />
-                </PriceContent>
-              </PriceCard>
-            </Fade>
-          ))}
-        </PlansGrid>
+              <FormGroup>
+                <FormLabel htmlFor="email">Email *</FormLabel>
+                <FormInput
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="tu@email.com"
+                />
+              </FormGroup>
+            </FormRow>
+
+            <FormRow>
+              <FormGroup>
+                <FormLabel htmlFor="telefono">Teléfono</FormLabel>
+                <FormInput
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  value={formData.telefono}
+                  onChange={handleChange}
+                  placeholder="+56 9 1234 5678"
+                />
+              </FormGroup>
+
+              <FormGroup>
+                <FormLabel htmlFor="empresa">Empresa</FormLabel>
+                <FormInput
+                  type="text"
+                  id="empresa"
+                  name="empresa"
+                  value={formData.empresa}
+                  onChange={handleChange}
+                  placeholder="Nombre de tu empresa"
+                />
+              </FormGroup>
+            </FormRow>
+
+            <FormGroup>
+              <FormLabel htmlFor="mensaje">Mensaje *</FormLabel>
+              <FormTextarea
+                id="mensaje"
+                name="mensaje"
+                value={formData.mensaje}
+                onChange={handleChange}
+                required
+                rows="6"
+                placeholder="Cuéntanos sobre tu proyecto, necesidades o consultas..."
+              />
+            </FormGroup>
+
+            {submitStatus === 'success' && (
+              <SuccessMessage>
+                <Icon icon={checkCircle} size={20} />
+                <span>¡Mensaje enviado con éxito! Te contactaremos pronto.</span>
+              </SuccessMessage>
+            )}
+
+            {submitStatus === 'error' && (
+              <ErrorMessage>
+                <Icon icon={alertCircle} size={20} />
+                <span>Error al enviar el mensaje. Por favor, intenta nuevamente.</span>
+              </ErrorMessage>
+            )}
+
+            <SubmitButton type="submit" disabled={isSubmitting}>
+              {isSubmitting ? (
+                <>
+                  <LoadingSpinner />
+                  <span>Enviando...</span>
+                </>
+              ) : (
+                <>
+                  <Icon icon={send} size={18} />
+                  <span>Enviar Mensaje</span>
+                </>
+              )}
+            </SubmitButton>
+          </ContactForm>
+        </Fade>
       </Container>
     </Section>
   );
 };
 
-export default Pricing;
+export default Contact;

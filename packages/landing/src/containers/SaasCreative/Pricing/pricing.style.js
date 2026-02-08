@@ -32,6 +32,199 @@ export const PricingWrapper = styled.div`
   gap: 40px;
 `;
 
+export const ContactForm = styled.form`
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 48px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  
+  @media (max-width: 768px) {
+    padding: 32px 24px;
+  }
+`;
+
+export const FormRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+`;
+
+export const FormGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
+`;
+
+export const FormLabel = styled.label`
+  color: #e2e8f0;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+`;
+
+export const FormInput = styled.input`
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  
+  &::placeholder {
+    color: rgba(226, 232, 240, 0.5);
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: #0ea5e9;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+  }
+  
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+`;
+
+export const FormTextarea = styled.textarea`
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 120px;
+  
+  &::placeholder {
+    color: rgba(226, 232, 240, 0.5);
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: #0ea5e9;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+  }
+  
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+`;
+
+export const SubmitButton = styled.button`
+  width: 100%;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
+  
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(14, 165, 233, 0.4);
+    background: linear-gradient(135deg, #0284c7 0%, #7c3aed 100%);
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+  
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  svg {
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover:not(:disabled) svg {
+    transform: translateX(3px);
+  }
+`;
+
+export const SuccessMessage = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 12px;
+  color: #10b981;
+  font-size: 15px;
+  margin-bottom: 24px;
+  
+  svg {
+    flex-shrink: 0;
+  }
+`;
+
+export const ErrorMessage = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 12px;
+  color: #ef4444;
+  font-size: 15px;
+  margin-bottom: 24px;
+  
+  svg {
+    flex-shrink: 0;
+  }
+`;
+
+export const LoadingSpinner = styled.div`
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
 export const SetupCard = styled.div`
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);

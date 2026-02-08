@@ -1,5 +1,4 @@
-import React from "react";
-import Container from "common/components/UI/Container";
+import React, { useState, useEffect } from "react";
 import Heading from "common/components/Heading";
 import Text from "common/components/Text";
 import Button from "common/components/Button";
@@ -13,8 +12,37 @@ import Section, {
   FeatureList,
   FeatureItem,
   TrustSignal,
+  TypewriterText,
+  AnimatedBadge,
+  GlowEffect,
 } from "./banner.style";
-import dashboard from "common/assets/image/saasCreative/banner.webp";
+import dashboard from "common/assets/image/saasCreative/banner-2.png";
+
+const Typewriter = ({ text, speed = 50, delay = 0 }) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isComplete, setIsComplete] = useState(false);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText(text.slice(0, currentIndex + 1));
+        setCurrentIndex(currentIndex + 1);
+      }, speed + (currentIndex === 0 ? delay : 0));
+
+      return () => clearTimeout(timeout);
+    } else {
+      setIsComplete(true);
+    }
+  }, [currentIndex, text, speed, delay]);
+
+  return (
+    <TypewriterText>
+      {displayedText}
+      {!isComplete && <span className="cursor">|</span>}
+    </TypewriterText>
+  );
+};
 
 const Banner = () => {
   const handleOnClick = () => {
@@ -25,67 +53,49 @@ const Banner = () => {
     }
   };
 
-  const handleProductsClick = () => {
-    if (typeof window !== "undefined") {
-      const element = document.querySelector("#solutions");
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
-        return;
-      }
-      window.location.hash = "#solutions";
-    }
-  };
-
   return (
     <Section id="home">
-      <Container width="1400px">
-        <BannerContentWrapper>
-          <BannerContent>
-            <HighlightPill>
-              Sistemas que ordenan tu operación
-            </HighlightPill>
-            <Heading
-              as="h1"
-              content="Sistemas digitales que ordenan tu operación y convierten tus datos en decisiones"
-              className="animate__animated animate__fadeInUp"
+      <BannerContentWrapper>
+        <Figure>
+          <NextImage
+            src={dashboard}
+            alt="Ejemplo de sistemas a medida"
+            width={1920}
+            height={1080}
+            quality={100}
+            priority
+          />
+        </Figure>
+        <BannerContent>
+          <AnimatedBadge className="animate__animated animate__fadeInDown">
+            SOFTWARE A MEDIDA
+          </AnimatedBadge>
+          <Heading
+            as="h2"
+            className="main-heading animate__animated animate__fadeInUp"
+          >
+            <Typewriter
+              text="Sistemas que ordenan tu operación"
+              speed={80}
+              delay={300}
             />
-            <Text
-              className="animate__animated animate__fadeInUp"
-              content="Diseñamos y construimos sistemas digitales que ordenan la operación de las empresas y convierten sus datos en decisiones accionables. No somos una empresa de dashboards ni solo de desarrollo: diseñamos sistemas donde el software captura la realidad del negocio y los analistas convierten esa información en decisiones."
+          </Heading>
+          <Text
+            className="description-text animate__animated animate__fadeInUp"
+            content="Diseñamos y construimos sistemas digitales que ordenan la operación de las empresas y convierten sus datos en decisiones accionables."
+          />
+          <Subscribe className="animate__animated animate__fadeInUp">
+            <Button
+              title="Contáctanos"
+              onClick={handleOnClick}
+              className="primary-cta"
             />
-            <FeatureList className="animate__animated animate__fadeInUp">
-              <FeatureItem>Sistemas que ordenan tu operación desde la base</FeatureItem>
-              <FeatureItem>Datos convertidos en decisiones claras y accionables</FeatureItem>
-              <FeatureItem>Ingeniería de software combinada con análisis de datos</FeatureItem>
-            </FeatureList>
-            <Subscribe className="animate__animated animate__fadeInUp">
-              <Button
-                title="Conversemos"
-                onClick={handleOnClick}
-                className="primary-cta"
-              />
-              <Button
-                title="Ver cómo trabajamos"
-                onClick={handleProductsClick}
-                className="secondary-cta"
-                variant="textButton"
-              />
-            </Subscribe>
-            <TrustSignal className="animate__animated animate__fadeInUp">
-              Trabajamos con pymes en Latinoamérica que necesitan sistemas operativos y de datos que funcionen en la operación diaria.
-            </TrustSignal>
-          </BannerContent>
-          {/*<Figure className="animate__animated animate__fadeInUp animate__fast shadow-2xl rounded-xl">
-            <NextImage
-              src={dashboard}
-              alt="dashboard"
-              width={800}
-              height={800}
-              quality={100}
-            />
-          </Figure>*/}
-        </BannerContentWrapper>
-      </Container>
+          </Subscribe>
+          <TrustSignal className="animate__animated animate__fadeInUp">
+            Trabajamos con pymes en Latinoamérica que necesitan sistemas digitales que funcionen en la operación diaria.
+          </TrustSignal>
+        </BannerContent>
+      </BannerContentWrapper>
     </Section>
   );
 };

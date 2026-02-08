@@ -58,7 +58,7 @@ import feature5 from 'common/assets/image/webApp/feature-5.png';
 import footerDribble from 'common/assets/image/webApp/footer-dribble.svg';
 import footerFacebook from 'common/assets/image/saasCreative/tiktok-logo.webp';
 import footerTwitter from 'common/assets/image/saasCreative/ig-logo.webp';
-import footerLogo from 'common/assets/image/saasCreative/chilsmart-logo.png';
+import footerLogo from 'common/assets/image/logo-2.png';
 import secure2 from 'common/assets/image/webApp/secure-1.png';
 import secure1 from 'common/assets/image/webApp/secure-2.png';
 import secureImage from 'common/assets/image/webApp/secure-dashboard.png';

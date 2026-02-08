@@ -6,7 +6,6 @@ import { dollarSign } from 'react-icons-kit/feather/dollarSign';
 import { trendingUp } from 'react-icons-kit/feather/trendingUp';
 import Container from 'common/components/UI/Container';
 import Text from 'common/components/Text';
-import Link from 'common/components/Link';
 import Heading from 'common/components/Heading';
 import Section, {
   Grid,
@@ -18,6 +17,7 @@ import Section, {
   Signature,
   IconContainer,
   IconGroup,
+  ExploreLink,
 } from "./analytics.style";
 import { Fade } from 'react-awesome-reveal';
 
@@ -56,9 +56,13 @@ const AdvancedAnalytics = () => {
               <BulletItem><strong>Decisiones sin información suficiente:</strong> Cuando no hay sistemas que ordenen la operación ni datos claros, las decisiones se toman con intuición o con información incompleta.</BulletItem>
             </BulletList>
             <Signature>"Transformamos operaciones desordenadas en sistemas claros, medibles y controlables."</Signature>
-            <Link href="https://wa.me/56940676501?text=Hola,%20quiero%20conversar%20sobre%20cómo%20ordenar%20la%20operación%20de%20mi%20empresa" className="explore" target="_blank">
+            <ExploreLink 
+              href="https://wa.me/56940676501?text=Hola,%20quiero%20conversar%20sobre%20cómo%20ordenar%20la%20operación%20de%20mi%20empresa" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Conversemos <Icon icon={arrowRight} />
-            </Link>
+            </ExploreLink>
           </Content>
         </Grid>
       </Container>

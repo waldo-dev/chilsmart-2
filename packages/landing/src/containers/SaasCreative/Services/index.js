@@ -10,35 +10,44 @@ import SectionWrapper, {
 } from "./services.style";
 import { Fade } from "react-awesome-reveal";
 import { Icon } from "react-icons-kit";
-import { dollarSign } from "react-icons-kit/feather/dollarSign";
-import { trendingUp } from "react-icons-kit/feather/trendingUp";
-import { code } from "react-icons-kit/feather/code";
+import { zap } from "react-icons-kit/feather/zap";
+import { settings } from "react-icons-kit/feather/settings";
+import { briefcase } from "react-icons-kit/feather/briefcase";
+import { barChart2 } from "react-icons-kit/feather/barChart2";
 
 const Services = () => {
   const services = [
     {
-      id: "software-reality",
-      icon: code,
+      id: "startup-development",
+      icon: zap,
       iconColor: "#0ea5e9",
-      title: "El software captura la realidad del negocio",
+      title: "Desarrollos para Startup",
       description:
-        "Desarrollamos software que se adapta a cómo trabajas realmente y captura la realidad de tu operación. Sistemas que registran ventas, inventario, clientes y procesos de forma que reflejen cómo funciona tu negocio realmente. No adaptas tu negocio al software: el software captura tu realidad.",
+        "Desarrollamos productos digitales y plataformas SaaS desde cero para startups que buscan escalar rápidamente. Creamos MVPs funcionales, productos mínimos viables y sistemas escalables que crecen con tu negocio.",
     },
     {
-      id: "analysts-decisions",
-      icon: trendingUp,
+      id: "process-automation",
+      icon: settings,
       iconColor: "#10b981",
-      title: "Los analistas convierten información en decisiones",
+      title: "Automatización de Procesos",
       description:
-        "No solo construimos sistemas que capturan datos: nuestros analistas entienden qué información importa, cómo se relaciona y cómo presentarla para que se convierta en decisiones accionables. El software captura la realidad, los analistas la convierten en decisiones claras y medibles.",
+        "Automatizamos tareas repetitivas y procesos manuales. Integramos Excel, correo electrónico, hojas de cálculo y otros sistemas para eliminar trabajo manual, reducir errores y aumentar la eficiencia operativa.",
     },
     {
-      id: "integrated-systems",
-      icon: dollarSign,
+      id: "custom-development",
+      icon: briefcase,
       iconColor: "#8b5cf6",
-      title: "Todo conectado, todo ordenado",
+      title: "Desarrollo a la Medida",
       description:
-        "Construimos sistemas que integran toda tu operación. Ventas conectadas con inventario, clientes vinculados con producción, costos relacionados con resultados. Una sola fuente de verdad que ordena tu operación y facilita las decisiones.",
+        "Desarrollamos software personalizado para negocios y corporaciones. Sistemas que se adaptan a tus procesos específicos, integran con tus herramientas existentes y crecen con tu empresa.",
+    },
+    {
+      id: "data-analysis",
+      icon: barChart2,
+      iconColor: "#f59e0b",
+      title: "Análisis de Datos para Empresas",
+      description:
+        "Convertimos tus datos en decisiones accionables. Creamos dashboards, reportes y análisis que te permiten entender tu negocio, identificar oportunidades y tomar decisiones informadas basadas en datos reales.",
     },
   ];
 
@@ -47,8 +56,8 @@ const Services = () => {
       <Container>
         <Fade direction="up" triggerOnce delay={100}>
           <SectionHeader>
-            <Heading as="h2" content="Nuestra solución" />
-            <Text as="p" content="No somos una empresa de dashboards ni solo de desarrollo. Diseñamos sistemas donde el software captura la realidad del negocio y los analistas convierten esa información en decisiones. Combinamos desarrollo de software y análisis de datos para construir sistemas que ordenan tu operación desde la base y la convierten en algo claro, medible y controlable." />
+            <Heading as="h2" content="Nuestros Servicios" />
+            <Text as="p" content="Ofrecemos soluciones digitales completas que van desde el desarrollo de productos para startups hasta automatizaciones y análisis de datos para empresas establecidas. Cada proyecto está diseñado para ordenar tu operación y convertir datos en decisiones." />
           </SectionHeader>
         </Fade>
         <ServiceWrapper>

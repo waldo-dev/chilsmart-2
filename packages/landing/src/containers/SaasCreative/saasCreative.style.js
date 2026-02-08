@@ -177,9 +177,9 @@ export const ContentWrapper = styled.div`
     left: 0;
     width: 100%;
     transition: 0.35s ease-in-out;
-    padding: 30px 0;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    padding: 8px 0;
+    background-color: ${themeGet('colors.white')};
+    box-shadow: 0px 2px 8px 0px rgba(15, 23, 42, 0.06);
     z-index: 999;
 
     .main-logo {
@@ -190,14 +190,12 @@ export const ContentWrapper = styled.div`
     }
     .mainMenuWrapper {
       flex: 1 1 100%;
-
-      @media (max-width: 991px) {
-        flex: 0 0 auto;
-        margin-left: auto;
-      }
+      display: flex;
+      justify-content: center;
+      margin-left: 0;
     }
     .main_menu {
-      margin-left: 45px;
+      margin-left: 64px;
       li {
         display: inline-flex;
         padding-left: 13px;

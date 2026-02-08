@@ -142,52 +142,95 @@ export const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, ${props => props.style?.color || '#0ea5e9'}15, ${props => props.style?.color || '#0ea5e9'}05);
-  border: 2px solid ${props => props.style?.color || '#0ea5e9'}30;
-  transition: all 0.3s ease;
+  width: 90px;
+  height: 90px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, ${props => props.style?.color || '#0ea5e9'}20, ${props => props.style?.color || '#0ea5e9'}08);
+  border: 2px solid ${props => props.style?.color || '#0ea5e9'}25;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 22px;
+    padding: 2px;
+    background: linear-gradient(135deg, ${props => props.style?.color || '#0ea5e9'}, transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
   
   svg {
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   }
 
   @media only screen and (max-width: 768px) {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
   }
 `;
 
 export const ServiceWrapper = styled.div`
-  gap: 40px;
+  gap: 32px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin-bottom: 64px;
+  
+  @media only screen and (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
   @media only screen and (max-width: 767px) {
     grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
   }
   .service__item {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    padding: 32px;
-    border-radius: 28px;
-    background: rgba(255, 255, 255, 0.75);
-    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
-    border: 1px solid rgba(148, 163, 184, 0.2);
-    backdrop-filter: blur(6px);
-    transition: all 0.3s ease;
+    padding: 40px 32px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08),
+                0 0 0 1px rgba(148, 163, 184, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #0ea5e9, #8b5cf6);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
 
     &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 30px 70px rgba(15, 23, 42, 0.2);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.15),
+                  0 0 0 1px rgba(14, 165, 233, 0.2);
+      
+      &::before {
+        transform: scaleX(1);
+      }
       
       ${IconWrapper} {
-        transform: scale(1.1);
-        background: linear-gradient(135deg, ${props => props.theme?.primary || '#0ea5e9'}20, ${props => props.theme?.primary || '#0ea5e9'}10);
+        transform: scale(1.15) rotate(5deg);
+        box-shadow: 0 8px 24px rgba(14, 165, 233, 0.25);
       }
     }
 
@@ -211,18 +254,20 @@ export const ServiceWrapper = styled.div`
     }
 
     h3 {
-      margin: 0 0 10px;
-      font-weight: 700;
-      font-size: 20px;
-      line-height: 30px;
+      margin: 0 0 16px;
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 1.3;
       text-align: center;
       color: #0f172a;
+      letter-spacing: -0.02em;
 
       @media only screen and (max-width: 1440px) {
-        margin: 0 0 5px;
+        margin: 0 0 12px;
+        font-size: 20px;
       }
       @media only screen and (max-width: 1360px) {
-        font-size: 18px;
+        font-size: 19px;
       }
     }
 

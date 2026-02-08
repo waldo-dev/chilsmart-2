@@ -13,8 +13,8 @@ import { DrawerContext } from 'common/contexts/DrawerContext';
 import { menu_items } from 'common/data/SaasCreative';
 import ScrollSpyMenu from 'common/components/ScrollSpyMenu';
 
-import logoDark from 'common/assets/image/saasCreative/chilsmart-logo.png';
-import logoWhite from 'common/assets/image/saasCreative/chilsmart-oscuro.png';
+import logoDark from 'common/assets/image/logo-2.png';
+import logoWhite from 'common/assets/image/logo-2.png';
 import { fontWeight } from 'styled-system';
 
 const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
@@ -89,7 +89,7 @@ Navbar.propTypes = {
 Navbar.defaultProps = {
   navbarStyle: {
     className: 'sass_creative_navbar',
-    minHeight: '70px',
+    minHeight: '56px',
     display: 'block',
   },
   row: {

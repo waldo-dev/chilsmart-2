@@ -7,13 +7,13 @@ import { theme } from "common/theme/saasCreative";
 import ResetCSS from "common/assets/css/style";
 import BannerSection from "containers/SaasCreative/Banner";
 import Navbar from "containers/SaasCreative/Navbar";
-import Clients from "containers/SaasCreative/Clients";
+import Proyects from "containers/SaasCreative/Proyects";
 import HowItWorks from "containers/SaasCreative/Services";
 import AdvancedAnalytics from "containers/SaasCreative/AdvancedAnalytics";
 import Features from "containers/SaasCreative/Features";
 import WalletExperience from "containers/SaasCreative/WalletExperience";
 import Testimonial from "containers/SaasCreative/Testimonial";
-import Pricing from "containers/SaasCreative/Pricing";
+import Contact from "containers/SaasCreative/Pricing";
 import OurCommunity from "containers/SaasCreative/OurCommunity";
 import Faq from "containers/SaasCreative/Faq";
 import CallToAction from "containers/SaasCreative/CallToAction";
@@ -231,14 +231,14 @@ const SaasCreative = () => {
             </DrawerProvider>
           </Sticky>
           <BannerSection />
-          <Clients />
+          <Proyects />
           <HowItWorks />
           <AdvancedAnalytics />
           <Features />
           {/* <WalletExperience />
 					<Testimonial />
 					<OurCommunity /> */}
-          <Pricing />
+          <Contact />
           <Faq />
           {/* <CallToAction /> */}
           <Footer />
