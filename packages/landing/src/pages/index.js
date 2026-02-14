@@ -24,10 +24,11 @@ import wspLogo from "common/assets/image/saasCreative/wsp-logo.png";
 
 const SaasCreative = () => {
   const siteUrl = "https://www.chilsmart.com";
-  const title = "Chilsmart | Software a la Medida";
+  const title = "Chilsmart | Software a Medida y Automatización en Chile | Desarrollo de Sistemas Digitales";
   const description =
-    "Diseñamos y construimos sistemas digitales que ordenan la operación de las empresas y convierten sus datos en decisiones accionables. No somos una empresa de dashboards ni solo de desarrollo: diseñamos sistemas donde el software captura la realidad del negocio y los analistas convierten esa información en decisiones.";
+    "Desarrollo de software a medida, automatización de procesos y sistemas digitales en Chile. Transformamos operaciones desordenadas en sistemas claros que convierten datos en decisiones accionables. Especialistas en software empresarial, integraciones y plataformas SaaS.";
   const previewImage = `${siteUrl}/preview.jpg`;
+  const keywords = "software a medida chile, desarrollo de software chile, automatización de procesos, sistemas digitales empresas, software empresarial chile, desarrollo a medida santiago, integraciones sistemas, plataformas SaaS chile, sistemas operativos empresas, inteligencia operativa, software para pymes chile, desarrollo de aplicaciones chile, sistemas de datos, business intelligence chile, transformación digital empresas";
 
   return (
     <ThemeProvider theme={theme}>
@@ -35,12 +36,17 @@ const SaasCreative = () => {
         <Head>
           <title>{title}</title>
           <meta name="description" content={description} />
-          <meta
-            name="keywords"
-            content="desarrollo de software, sistemas de datos, software a medida, productos SaaS, análisis de datos, sistemas operativos, ordenar operación, decisiones accionables, pymes, software para empresas, sistemas integrados, inteligencia operativa, desarrollo a medida chile, sistemas de datos chile"
-          />
+          <meta name="keywords" content={keywords} />
+          <meta name="classification" content="Business, Technology, Software Development" />
+          <meta name="category" content="Software Development, Business Solutions" />
+          <meta name="coverage" content="Worldwide" />
+          <meta name="target" content="all" />
+          <meta name="audience" content="all" />
+          <meta name="subject" content="Software Development and Business Automation" />
           <meta name="author" content="Chilsmart" />
-          <meta name="theme-color" content="#0ea5e9" />
+          <meta name="theme-color" content="#0051ad" />
+          <meta name="msapplication-TileColor" content="#0051ad" />
+          <meta name="application-name" content="Chilsmart" />
           <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
           <meta name="googlebot" content="index,follow" />
           <meta name="bingbot" content="index,follow" />
@@ -54,6 +60,8 @@ const SaasCreative = () => {
           <link rel="alternate" hrefLang="es" href={siteUrl} />
           <link rel="alternate" hrefLang="es-CL" href={siteUrl} />
           <link rel="alternate" hrefLang="x-default" href={siteUrl} />
+          <link rel="sitemap" type="application/xml" href={`${siteUrl}/sitemap.xml`} />
+          <link rel="manifest" href="/manifest.json" />
           
           {/* Mobile optimization */}
           <meta name="mobile-web-app-capable" content="yes" />
@@ -76,7 +84,9 @@ const SaasCreative = () => {
           <meta property="og:image" content={previewImage} />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-          <meta property="og:image:alt" content="Chilsmart - Software a la Medida" />
+          <meta property="og:image:alt" content="Chilsmart - Software a Medida y Automatización en Chile" />
+          <meta property="og:image:type" content="image/jpeg" />
+          <meta property="og:image:secure_url" content={previewImage} />
           <meta property="og:site_name" content="Chilsmart" />
           <meta property="og:locale" content="es_CL" />
           <meta property="og:locale:alternate" content="es_ES" />
@@ -87,7 +97,8 @@ const SaasCreative = () => {
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={previewImage} />
-          <meta name="twitter:image:alt" content="Chilsmart -Software a la Medida" />
+          <meta name="twitter:image:alt" content="Chilsmart - Software a Medida y Automatización en Chile" />
+          <meta name="twitter:domain" content="chilsmart.com" />
           <meta name="twitter:site" content="@chilsmart" />
           <meta name="twitter:creator" content="@chilsmart" />
           
@@ -110,14 +121,35 @@ const SaasCreative = () => {
                   "https://www.linkedin.com/company/chilsmart",
                   "https://www.instagram.com/chilsmart"
                 ],
-                contactPoint: {
-                  "@type": "ContactPoint",
-                  contactType: "sales",
-                  availableLanguage: ["Spanish"],
-                  telephone: "+56-9-6406-76501",
-                  areaServed: "CL",
-                  contactOption: "TollFree"
-                }
+                contactPoint: [
+                  {
+                    "@type": "ContactPoint",
+                    contactType: "sales",
+                    availableLanguage: ["Spanish"],
+                    telephone: "+56-9-6406-76501",
+                    areaServed: "CL",
+                    contactOption: "TollFree"
+                  },
+                  {
+                    "@type": "ContactPoint",
+                    contactType: "customer service",
+                    availableLanguage: ["Spanish"],
+                    telephone: "+56-9-6406-76501",
+                    areaServed: "CL"
+                  }
+                ],
+                foundingDate: "2020",
+                numberOfEmployees: {
+                  "@type": "QuantitativeValue",
+                  value: "5-10"
+                },
+                knowsAbout: [
+                  "Software Development",
+                  "Business Automation",
+                  "Data Systems",
+                  "SaaS Platforms",
+                  "System Integration"
+                ]
               })
             }}
           />
@@ -250,31 +282,233 @@ const SaasCreative = () => {
                   {
                     "@type": "ListItem",
                     position: 2,
-                    name: "Proyectos",
-                    item: `${siteUrl}#proyectos`
+                    name: "Servicios",
+                    item: `${siteUrl}#servicios`
                   },
                   {
                     "@type": "ListItem",
                     position: 3,
-                    name: "Servicios",
-                    item: `${siteUrl}#services`
+                    name: "Proceso",
+                    item: `${siteUrl}#proceso`
                   },
                   {
                     "@type": "ListItem",
                     position: 4,
-                    name: "Contacto",
-                    item: `${siteUrl}#contacto`
+                    name: "Por qué nosotros",
+                    item: `${siteUrl}#nosotros`
                   },
                   {
                     "@type": "ListItem",
                     position: 5,
-                    name: "Preguntas Frecuentes",
-                    item: `${siteUrl}#faq`
+                    name: "Casos de éxito",
+                    item: `${siteUrl}#testimonios`
                   }
                 ]
               })
             }}
           />
+
+          {/* Structured data - LocalBusiness */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "@id": `${siteUrl}#organization`,
+                name: "Chilsmart",
+                image: `${siteUrl}/logo.png`,
+                url: siteUrl,
+                telephone: "+56-9-6406-76501",
+                priceRange: "$$",
+                address: {
+                  "@type": "PostalAddress",
+                  addressCountry: "CL",
+                  addressLocality: "Santiago",
+                  addressRegion: "Región Metropolitana"
+                },
+                geo: {
+                  "@type": "GeoCoordinates",
+                  latitude: "-33.4489",
+                  longitude: "-70.6693"
+                },
+                openingHoursSpecification: {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday"
+                  ],
+                  opens: "09:00",
+                  closes: "18:00"
+                },
+                areaServed: {
+                  "@type": "Country",
+                  name: "Chile"
+                },
+                serviceArea: {
+                  "@type": "Country",
+                  name: "Chile"
+                }
+              })
+            }}
+          />
+
+          {/* Structured data - SoftwareApplication */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "SoftwareApplication",
+                name: "Sistemas Digitales Chilsmart",
+                applicationCategory: "BusinessApplication",
+                operatingSystem: "Web",
+                offers: {
+                  "@type": "Offer",
+                  price: "0",
+                  priceCurrency: "CLP"
+                },
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "5",
+                  ratingCount: "3",
+                  bestRating: "5",
+                  worstRating: "1"
+                }
+              })
+            }}
+          />
+
+          {/* Structured data - ItemList for Services */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Software a medida",
+                    description: "Desarrollamos aplicaciones robustas y escalables diseñadas específicamente para resolver desafíos de negocio únicos."
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Automatización",
+                    description: "Optimizamos procesos repetitivos mediante flujos inteligentes que liberan el potencial del capital humano."
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: "Integraciones",
+                    description: "Conectamos herramientas existentes (CRM, ERP, APIs) para crear un ecosistema de datos unificado."
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 4,
+                    name: "Plataformas Web",
+                    description: "Experiencias digitales de alto rendimiento enfocadas en la conversión y mejor experiencia de usuario."
+                  }
+                ]
+              })
+            }}
+          />
+          {/* Structured data - AggregateRating from Testimonials */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "AggregateRating",
+                itemReviewed: {
+                  "@type": "Service",
+                  name: "Desarrollo de Software a Medida Chilsmart"
+                },
+                ratingValue: "5",
+                bestRating: "5",
+                worstRating: "1",
+                ratingCount: "3"
+              })
+            }}
+          />
+
+          {/* Structured data - Reviews */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                itemListElement: [
+                  {
+                    "@type": "Review",
+                    author: {
+                      "@type": "Person",
+                      name: "Gerente de Operaciones",
+                      jobTitle: "Gerente de Operaciones"
+                    },
+                    itemReviewed: {
+                      "@type": "Service",
+                      name: "Automatización de Inventario"
+                    },
+                    reviewBody: "La automatización de nuestro inventario redujo los errores en un 90%. Chilsmart entendió exactamente lo que necesitábamos desde el día uno.",
+                    reviewRating: {
+                      "@type": "Rating",
+                      ratingValue: "5",
+                      bestRating: "5"
+                    }
+                  },
+                  {
+                    "@type": "Review",
+                    author: {
+                      "@type": "Person",
+                      name: "CTO",
+                      jobTitle: "CTO"
+                    },
+                    itemReviewed: {
+                      "@type": "Service",
+                      name: "Desarrollo de Plataforma Web"
+                    },
+                    reviewBody: "Desarrollar nuestra plataforma web con ellos fue la mejor decisión. La escalabilidad es impecable y el soporte técnico siempre está presente.",
+                    reviewRating: {
+                      "@type": "Rating",
+                      ratingValue: "5",
+                      bestRating: "5"
+                    }
+                  },
+                  {
+                    "@type": "Review",
+                    author: {
+                      "@type": "Person",
+                      name: "Director Ejecutivo",
+                      jobTitle: "Director Ejecutivo"
+                    },
+                    itemReviewed: {
+                      "@type": "Service",
+                      name: "Integraciones de Sistemas"
+                    },
+                    reviewBody: "Sus integraciones nos permitieron conectar 4 sistemas aislados en un solo tablero de control. Ahora tomamos decisiones basadas en datos reales.",
+                    reviewRating: {
+                      "@type": "Rating",
+                      ratingValue: "5",
+                      bestRating: "5"
+                    }
+                  }
+                ]
+              })
+            }}
+          />
+
+          {/* Additional SEO Meta Tags */}
+          <meta name="HandheldFriendly" content="true" />
+          <meta name="MobileOptimized" content="320" />
+          <meta name="referrer" content="no-referrer-when-downgrade" />
+          
           {/* Load google fonts */}
           <link
             rel="stylesheet"
@@ -339,7 +573,10 @@ const SaasCreative = () => {
           >
             <img
               src={wspLogo.src}
-              alt="Contactar por WhatsApp - Chilsmart"
+              alt="Contactar por WhatsApp - Chilsmart | Software a medida Chile"
+              width="60"
+              height="60"
+              loading="lazy"
               style={{ width: "100%", height: "100%", objectFit: "contain" }}
             />
           </a>

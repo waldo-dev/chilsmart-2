@@ -38,17 +38,17 @@ const Navbar = () => {
   return (
     <NavbarWrapper>
       <NavbarContainer>
-        <LogoContainer>
-          <LogoIcon>C</LogoIcon>
-          <LogoText>
+        <LogoContainer itemScope itemType="https://schema.org/Organization">
+          <LogoIcon aria-hidden="true">C</LogoIcon>
+          <LogoText itemProp="name">
             CHIL<span className="highlight">SMART</span>
           </LogoText>
         </LogoContainer>
         <NavLinks>
-          <a href="#servicios">Servicios</a>
-          <a href="#proceso">Proceso</a>
-          <a href="#nosotros">Por qué nosotros</a>
-          <a href="#testimonios">Casos de éxito</a>
+          <a href="#servicios" aria-label="Ir a sección de Servicios">Servicios</a>
+          <a href="#proceso" aria-label="Ir a sección de Proceso">Proceso</a>
+          <a href="#nosotros" aria-label="Ir a sección Por qué nosotros">Por qué nosotros</a>
+          <a href="#testimonios" aria-label="Ir a sección de Casos de éxito">Casos de éxito</a>
         </NavLinks>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <ContactButton href="#" onClick={handleContactClick}>

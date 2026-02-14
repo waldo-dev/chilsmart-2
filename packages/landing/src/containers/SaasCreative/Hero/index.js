@@ -88,7 +88,7 @@ const Hero = () => {
           </BadgePing>
           Software Engineering Excellence
         </Badge>
-        <Title>
+        <Title itemProp="headline">
           <Typewriter
             text="Transformamos su visión en software escalable y eficiente"
             highlightText="software escalable"
@@ -96,8 +96,8 @@ const Hero = () => {
             delay={500}
           />
         </Title>
-        <Description>
-          Desarrollo a medida, automatización y soluciones digitales diseñadas para impulsar el crecimiento de su empresa.
+        <Description itemProp="description">
+          Desarrollo a medida, automatización y soluciones digitales diseñadas para impulsar el crecimiento de su empresa en Chile.
         </Description>
         <CTAButtons>
           <Button

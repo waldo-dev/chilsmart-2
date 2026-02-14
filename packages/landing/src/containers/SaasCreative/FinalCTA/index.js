@@ -26,7 +26,7 @@ const FinalCTA = () => {
     <Section>
       <BackgroundGradient />
       <Container>
-        <Title>¿Listo para llevar su empresa al siguiente nivel tecnológico?</Title>
+        <Title as="h2">¿Listo para llevar su empresa al siguiente nivel tecnológico?</Title>
         <Description>
           Hablemos sobre su proyecto y cómo podemos ayudarle a automatizar y escalar sus operaciones.
         </Description>

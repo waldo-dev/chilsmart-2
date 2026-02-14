@@ -42,9 +42,9 @@ export default class CustomDocument extends Document {
           <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
-          <meta name="format-detection" content="telephone=no" />
-          <meta name="msapplication-TileColor" content="#0ea5e9" />
-          <meta name="theme-color" content="#0ea5e9" />
+          <meta name="format-detection" content="telephone=yes" />
+          <meta name="msapplication-TileColor" content="#0051ad" />
+          <meta name="theme-color" content="#0051ad" />
           {/* Next and Styled components SSR styles */}
           {this.props.styles}
           {/* Mantine SSR styles */}

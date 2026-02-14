@@ -47,7 +47,7 @@ const Process = () => {
     <Section id="proceso">
       <Container>
         <SectionHeader>
-          <SectionTitle>Nuestra Metodología</SectionTitle>
+          <SectionTitle as="h2">Nuestra Metodología</SectionTitle>
           <SectionDescription>
             Un camino claro desde la idea hasta el soporte continuo.
           </SectionDescription>
@@ -58,7 +58,7 @@ const Process = () => {
             {steps.map((step, index) => (
               <StepItem key={index}>
                 <StepNumber>{step.number}</StepNumber>
-                <StepTitle>{step.title}</StepTitle>
+                <StepTitle as="h3">{step.title}</StepTitle>
                 <StepDescription>{step.description}</StepDescription>
               </StepItem>
             ))}

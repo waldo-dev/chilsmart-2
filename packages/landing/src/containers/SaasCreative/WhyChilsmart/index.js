@@ -30,7 +30,7 @@ const WhyChilsmart = () => {
         <FeaturesGrid>
           {features.map((feature, index) => (
             <FeatureItem key={index}>
-              <FeatureTitle>{feature.title}</FeatureTitle>
+              <FeatureTitle as="h3">{feature.title}</FeatureTitle>
               <FeatureDescription>{feature.description}</FeatureDescription>
             </FeatureItem>
           ))}

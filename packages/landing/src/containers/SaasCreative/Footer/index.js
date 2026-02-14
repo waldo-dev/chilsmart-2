@@ -26,10 +26,20 @@ const Footer = () => {
             © 2024 CHILSMART SpA. Todos los derechos reservados. Santiago, Chile.
           </Copyright>
           <SocialLinks>
-            <SocialLink href="#" target="_blank" rel="noopener noreferrer">
+            <SocialLink 
+              href="https://www.linkedin.com/company/chilsmart" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Síguenos en LinkedIn"
+            >
               LinkedIn
             </SocialLink>
-            <SocialLink href="#" target="_blank" rel="noopener noreferrer">
+            <SocialLink 
+              href="https://github.com/chilsmart" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Visita nuestro GitHub"
+            >
               GitHub
             </SocialLink>
           </SocialLinks>

@@ -40,7 +40,7 @@ const ServicesGrid = () => {
     <Section id="servicios">
       <Container>
         <SectionHeader>
-          <SectionTitle>Nuestros Servicios</SectionTitle>
+          <SectionTitle as="h2">Nuestros Servicios</SectionTitle>
           <SectionDivider />
         </SectionHeader>
         <ServicesGridStyled>
@@ -49,7 +49,7 @@ const ServicesGrid = () => {
               <ServiceIcon>
                 <span className="material-icons">{service.icon}</span>
               </ServiceIcon>
-              <ServiceTitle>{service.title}</ServiceTitle>
+              <ServiceTitle as="h3">{service.title}</ServiceTitle>
               <ServiceDescription>{service.description}</ServiceDescription>
             </ServiceCard>
           ))}

@@ -20,23 +20,26 @@ const Testimonials = () => {
       text: 'La automatización de nuestro inventario redujo los errores en un 90%. Chilsmart entendió exactamente lo que necesitábamos desde el día uno.',
       author: 'Gerente de Operaciones',
       role: 'Retail Logístico',
+      rating: 5,
     },
     {
       text: 'Desarrollar nuestra plataforma web con ellos fue la mejor decisión. La escalabilidad es impecable y el soporte técnico siempre está presente.',
       author: 'CTO',
       role: 'Fintech Emerging',
+      rating: 5,
     },
     {
       text: 'Sus integraciones nos permitieron conectar 4 sistemas aislados en un solo tablero de control. Ahora tomamos decisiones basadas en datos reales.',
       author: 'Director Ejecutivo',
       role: 'Servicios Industriales',
+      rating: 5,
     },
   ];
 
   return (
     <Section id="testimonios">
       <Container>
-        <SectionTitle>Soluciones creadas para negocios reales</SectionTitle>
+        <SectionTitle as="h2">Soluciones creadas para negocios reales</SectionTitle>
         <TestimonialsGrid>
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index}>

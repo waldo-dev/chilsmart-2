@@ -20,8 +20,8 @@ const ProblemSolution = () => {
     <Section>
       <Container>
         <ContentGrid>
-          <div>
-            <h2>
+          <div itemScope itemType="https://schema.org/Article">
+            <h2 itemProp="headline">
               Deje de luchar con procesos manuales que frenan su crecimiento
             </h2>
             <ProblemsList>
