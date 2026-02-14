@@ -88,7 +88,7 @@ const Banner = () => {
             className="main-heading animate__animated animate__fadeInUp"
           >
             <Typewriter
-              text="Sistemas que ordenan tu operación"
+              text="Software a la Medida"
               speed={80}
               delay={300}
             />

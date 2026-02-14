@@ -24,7 +24,7 @@ import wspLogo from "common/assets/image/saasCreative/wsp-logo.png";
 
 const SaasCreative = () => {
   const siteUrl = "https://www.chilsmart.com";
-  const title = "Chilsmart | Sistemas que ordenan tu operación y convierten datos en decisiones";
+  const title = "Chilsmart | Software a la Medida";
   const description =
     "Diseñamos y construimos sistemas digitales que ordenan la operación de las empresas y convierten sus datos en decisiones accionables. No somos una empresa de dashboards ni solo de desarrollo: diseñamos sistemas donde el software captura la realidad del negocio y los analistas convierten esa información en decisiones.";
   const previewImage = `${siteUrl}/preview.jpg`;
@@ -76,7 +76,7 @@ const SaasCreative = () => {
           <meta property="og:image" content={previewImage} />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-          <meta property="og:image:alt" content="Chilsmart - Sistemas que ordenan tu operación y convierten datos en decisiones" />
+          <meta property="og:image:alt" content="Chilsmart - Software a la Medida" />
           <meta property="og:site_name" content="Chilsmart" />
           <meta property="og:locale" content="es_CL" />
           <meta property="og:locale:alternate" content="es_ES" />
@@ -87,7 +87,7 @@ const SaasCreative = () => {
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={previewImage} />
-          <meta name="twitter:image:alt" content="Chilsmart - Sistemas que ordenan tu operación y convierten datos en decisiones" />
+          <meta name="twitter:image:alt" content="Chilsmart -Software a la Medida" />
           <meta name="twitter:site" content="@chilsmart" />
           <meta name="twitter:creator" content="@chilsmart" />
           
