@@ -27,15 +27,10 @@ const Navbar = () => {
 
   const handleContactClick = (e) => {
     e.preventDefault();
-    if (typeof window !== 'undefined' && window.Calendly) {
-      window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/waldo-chilsmart/30min'
-      });
-    } else if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined') {
       window.open(
-        'https://calendly.com/waldo-chilsmart/30min',
-        '_blank',
-        'width=700,height=600'
+        'https://wa.me/56940676501?text=Hola,%20quiero%20conversar%20sobre%20cómo%20ordenar%20la%20operación%20de%20mi%20empresa',
+        '_blank'
       );
     }
   };
