@@ -97,7 +97,7 @@ const Hero = () => {
           />
         </Title>
         <Description>
-          Desarrollo a medida, automatización y soluciones digitales diseñadas para impulsar el crecimiento de su empresa en Chile.
+          Desarrollo a medida, automatización y soluciones digitales diseñadas para impulsar el crecimiento de su empresa.
         </Description>
         <CTAButtons>
           <Button
