@@ -12,13 +12,21 @@ const colors = {
   inactiveField: '#f2f2f2', // 8
   inactiveButton: '#b7dbdd', // 9
   inactiveIcon: '#EBEBEB', // 10
-  primary: '#2C6FEE', // 11
-  primaryHover: '#2C50EE', // 12
+  primary: '#0051ad', // 11 - Updated to match new design
+  primaryHover: '#003d85', // 12
   secondary: '#FF9B3E', // 13
   borderColor: '#E5ECF4', //14
   linkColor: '#4C91FB', // 15
   primaryBoxShadow: '0px 8px 20px -6px rgba(42, 162, 117, 0.57)',
   secondaryBoxShadow: '0px 8px 20px -6px rgba(237, 205, 55, 0.5)',
+  // New design colors
+  text: '#0f172a',
+  textSecondary: '#64748b',
+  background: '#ffffff',
+  backgroundLight: '#f5f7f8',
+  backgroundDark: '#0f1823',
+  cardBackground: '#ffffff',
+  border: '#e2e8f0',
 };
 
 export default colors;

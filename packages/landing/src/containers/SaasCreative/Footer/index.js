@@ -1,29 +1,41 @@
 import React from 'react';
-import Container from 'common/components/UI/ContainerTwo';
-import Link from 'common/components/Link';
-import { Section, Grid, FooterWidget } from './footer.style';
-import { footer } from 'common/data/SaasCreative';
+import {
+  FooterSection,
+  Container,
+  FooterContent,
+  LogoContainer,
+  LogoIcon,
+  LogoText,
+  Copyright,
+  SocialLinks,
+  SocialLink,
+} from './footer.style';
 
 const Footer = () => {
   return (
-    <Section>
+    <FooterSection>
       <Container>
-        <Grid>
-          {footer.map((item) => (
-            <FooterWidget key={item.id}>
-              <h4>{item.title}</h4>
-              <ul>
-                {item.list.map((item) => (
-                  <li className="widgetListItem" key={item.id}>
-                    <Link href={item.link}>{item.title}</Link>
-                  </li>
-                ))}
-              </ul>
-            </FooterWidget>
-          ))}
-        </Grid>
+        <FooterContent>
+          <LogoContainer>
+            <LogoIcon>C</LogoIcon>
+            <LogoText>
+              CHIL<span className="highlight">SMART</span>
+            </LogoText>
+          </LogoContainer>
+          <Copyright>
+            © 2024 CHILSMART SpA. Todos los derechos reservados. Santiago, Chile.
+          </Copyright>
+          <SocialLinks>
+            <SocialLink href="#" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </SocialLink>
+            <SocialLink href="#" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </SocialLink>
+          </SocialLinks>
+        </FooterContent>
       </Container>
-    </Section>
+    </FooterSection>
   );
 };
 

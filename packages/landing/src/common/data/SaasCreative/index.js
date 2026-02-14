@@ -25,28 +25,23 @@ export const menu_items = [
     offset: "70",
   },
   {
-    label: "Proyectos",
-    path: "#proyectos",
-    offset: "70",
-  },
-  {
     label: "Servicios",
-    path: "#services",
+    path: "#servicios",
     offset: "70",
   },
   {
-    label: "Nosotros",
-    path: "#testimonial",
+    label: "Proceso",
+    path: "#proceso",
     offset: "70",
   },
   {
-    label: "Contacto",
-    path: "#contacto",
+    label: "Por qué nosotros",
+    path: "#nosotros",
     offset: "70",
   },
   {
-    label: "Preguntas Frecuentes",
-    path: "#faq",
+    label: "Casos de éxito",
+    path: "#testimonios",
     offset: "70",
   },
 ];

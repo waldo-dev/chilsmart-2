@@ -6,19 +6,15 @@ import { DrawerProvider } from "common/contexts/DrawerContext";
 import { theme } from "common/theme/saasCreative";
 import ResetCSS from "common/assets/css/style";
 import { trackWhatsAppClick, trackViewContent } from "common/hooks/useFacebookPixel";
-import BannerSection from "containers/SaasCreative/Banner";
+import Hero from "containers/SaasCreative/Hero";
 import Navbar from "containers/SaasCreative/Navbar";
-import Proyects from "containers/SaasCreative/Proyects";
-import HowItWorks from "containers/SaasCreative/Services";
-import AdvancedAnalytics from "containers/SaasCreative/AdvancedAnalytics";
-import Features from "containers/SaasCreative/Features";
-import WalletExperience from "containers/SaasCreative/WalletExperience";
-import Testimonial from "containers/SaasCreative/Testimonial";
-import Contact from "containers/SaasCreative/Pricing";
-import OurCommunity from "containers/SaasCreative/OurCommunity";
-import Faq from "containers/SaasCreative/Faq";
-import CallToAction from "containers/SaasCreative/CallToAction";
-import Footer from "containers/WebApp/Footer";
+import ProblemSolution from "containers/SaasCreative/ProblemSolution";
+import ServicesGrid from "containers/SaasCreative/ServicesGrid";
+import WhyChilsmart from "containers/SaasCreative/WhyChilsmart";
+import Process from "containers/SaasCreative/Process";
+import Testimonials from "containers/SaasCreative/Testimonials";
+import FinalCTA from "containers/SaasCreative/FinalCTA";
+import Footer from "containers/SaasCreative/Footer";
 import {
   GlobalStyle,
   ContentWrapper,
@@ -282,7 +278,16 @@ const SaasCreative = () => {
           {/* Load google fonts */}
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter&family=Manrope:wght@400;500;700;800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;700;800&display=swap"
+          />
+          {/* Material Icons */}
+          <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
           />
         </Head>
 
@@ -295,17 +300,13 @@ const SaasCreative = () => {
               <Navbar />
             </DrawerProvider>
           </Sticky>
-          <BannerSection />
-          <Proyects />
-          <HowItWorks />
-          <AdvancedAnalytics />
-          <Features />
-          {/* <WalletExperience />
-					<Testimonial />
-					<OurCommunity /> */}
-          <Contact />
-          <Faq />
-          {/* <CallToAction /> */}
+          <Hero />
+          <ProblemSolution />
+          <ServicesGrid />
+          <WhyChilsmart />
+          <Process />
+          <Testimonials />
+          <FinalCTA />
           <Footer />
           <a
             href="https://wa.me/56940676501?text=Hola,%20quiero%20conversar%20sobre%20cómo%20ordenar%20la%20operación%20de%20mi%20empresa"
@@ -348,3 +349,4 @@ const SaasCreative = () => {
   );
 };
 export default SaasCreative;
+

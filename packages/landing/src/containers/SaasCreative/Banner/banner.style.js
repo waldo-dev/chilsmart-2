@@ -319,10 +319,7 @@ export const Figure = styled.figure`
   margin: 0;
   z-index: 1;
   overflow: hidden;
-  
-  @media (max-width: 768px) {
-    display: none;
-  }
+  background: #0f172a;
   
   &::after {
     content: "";
@@ -331,8 +328,7 @@ export const Figure = styled.figure`
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-      radial-gradient(circle at center, rgba(14, 165, 233, 0.3) 0%, rgba(15, 23, 42, 0.6) 100%);
+    background: radial-gradient(circle at center, rgba(14, 165, 233, 0.3) 0%, rgba(15, 23, 42, 0.7) 100%);
     z-index: 2;
     pointer-events: none;
   }
@@ -346,6 +342,25 @@ export const Figure = styled.figure`
     top: 0;
     left: 0;
     z-index: 1;
+  }
+  
+  &.desktop-image {
+    display: block;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  
+  &.mobile-image {
+    display: none;
+    @media (max-width: 768px) {
+      display: block;
+      
+      img {
+        transform: scale(1.2);
+        object-position: center 30%;
+      }
+    }
   }
 `;
 

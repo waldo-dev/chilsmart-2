@@ -1,110 +1,79 @@
 import React, { useContext } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import NavbarWrapper from 'common/components/Navbar';
 import Drawer from 'common/components/Drawer';
-import Button from 'common/components/Button';
-import Logo from 'common/components/UIElements/Logo';
-import Box from 'common/components/Box';
 import HamburgMenu from 'common/components/HamburgMenu';
-import Container from 'common/components/UI/Container';
 import { DrawerContext } from 'common/contexts/DrawerContext';
-
 import { menu_items } from 'common/data/SaasCreative';
 import ScrollSpyMenu from 'common/components/ScrollSpyMenu';
+import {
+  NavbarWrapper,
+  NavbarContainer,
+  LogoContainer,
+  LogoIcon,
+  LogoText,
+  NavLinks,
+  ContactButton,
+} from './navbar.style';
 
-import logoDark from 'common/assets/image/logo-2.png';
-import logoWhite from 'common/assets/image/logo-2.png';
-import { fontWeight } from 'styled-system';
-
-const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
+const Navbar = () => {
   const { state, dispatch } = useContext(DrawerContext);
 
-  // Toggle drawer
   const toggleHandler = () => {
     dispatch({
       type: 'TOGGLE',
     });
   };
 
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    if (typeof window !== 'undefined') {
+      window.open(
+        'https://wa.me/56940676501?text=Hola,%20quiero%20conversar%20sobre%20cómo%20ordenar%20la%20operación%20de%20mi%20empresa',
+        '_blank'
+      );
+    }
+  };
+
   return (
-    <NavbarWrapper {...navbarStyle}>
-      <Container>
-        <Box {...row}>
-          <Logo
-            href="#"
-            logoSrc={logoWhite}
-            title="Chilsmart - Desarrollo de software a medida"
-            logoStyle={logoStyle}
-            className="main-logo"
-          />
-          <Logo
-            href="#"
-            logoSrc={logoDark}
-            title="Chilsmart - Desarrollo de software a medida"
-            logoStyle={logoStyle}
-            className="sticky-logo"
-          />
-          <Box {...menuWrapper} className="mainMenuWrapper">
+    <NavbarWrapper>
+      <NavbarContainer>
+        <LogoContainer>
+          <LogoIcon>C</LogoIcon>
+          <LogoText>
+            CHIL<span className="highlight">SMART</span>
+          </LogoText>
+        </LogoContainer>
+        <NavLinks>
+          <a href="#servicios">Servicios</a>
+          <a href="#proceso">Proceso</a>
+          <a href="#nosotros">Por qué nosotros</a>
+          <a href="#testimonios">Casos de éxito</a>
+        </NavLinks>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <ContactButton href="#" onClick={handleContactClick}>
+            Contactar
+          </ContactButton>
+          <Drawer
+            width="420px"
+            placement="right"
+            drawerHandler={<HamburgMenu barColor="#0051ad" className={state.isOpen ? 'active' : ''} />}
+            open={state.isOpen}
+            toggleHandler={toggleHandler}
+          >
             <ScrollSpyMenu
-              className="main_menu"
+              className="mobile_menu"
               menuItems={menu_items}
-              offset={-70}
+              drawerClose={true}
+              offset={-100}
             />
-            {/* <Link href="#" className="navbar_button navbar_button_one">
-              <Button {...button} title="Login Now" />
-            </Link>
-            <Link href="#" className="navbar_button navbar_button_two">
-              <Button {...button} title="Join Free" />
-            </Link> */}
-            <Drawer
-              width="420px"
-              placement="right"
-              drawerHandler={<HamburgMenu barColor="#108AFF" />}
-              open={state.isOpen}
-              toggleHandler={toggleHandler}
-            >
-              <ScrollSpyMenu
-                className="mobile_menu"
-                menuItems={menu_items}
-                drawerClose={true}
-                offset={-100}
-              />
-            </Drawer>
-          </Box>
-        </Box>
-      </Container>
+          </Drawer>
+        </div>
+      </NavbarContainer>
     </NavbarWrapper>
   );
 };
 
-Navbar.propTypes = {
-  navbarStyle: PropTypes.object,
-  logoStyle: PropTypes.object,
-  button: PropTypes.object,
-  row: PropTypes.object,
-  menuWrapper: PropTypes.object,
-};
-
-Navbar.defaultProps = {
-  navbarStyle: {
-    className: 'sass_creative_navbar',
-    minHeight: '56px',
-    display: 'block',
-  },
-  row: {
-    flexBox: true,
-    alignItems: 'center',
-    width: '100%',
-  },
-  logoStyle: {
-    maxWidth: ['126px', '126px'],
-  },
-  button: {},
-  menuWrapper: {
-    flexBox: true,
-    alignItems: 'center',
-  },
-};
+Navbar.propTypes = {};
 
 export default Navbar;

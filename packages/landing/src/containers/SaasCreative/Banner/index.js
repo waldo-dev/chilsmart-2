@@ -18,6 +18,7 @@ import Section, {
   GlowEffect,
 } from "./banner.style";
 import dashboard from "common/assets/image/saasCreative/banner-2.png";
+import dashboardMobile from "common/assets/image/saasCreative/banner-mobile.png";
 
 const Typewriter = ({ text, speed = 50, delay = 0 }) => {
   const [displayedText, setDisplayedText] = useState("");
@@ -58,12 +59,22 @@ const Banner = () => {
   return (
     <Section id="home">
       <BannerContentWrapper>
-        <Figure>
+        <Figure className="desktop-image" suppressHydrationWarning>
           <NextImage
             src={dashboard}
             alt="Chilsmart - Sistemas digitales que ordenan la operación de empresas y convierten datos en decisiones accionables. Software a medida para pymes en Latinoamérica."
             width={1920}
             height={1080}
+            quality={100}
+            priority
+          />
+        </Figure>
+        <Figure className="mobile-image" suppressHydrationWarning>
+          <NextImage
+            src={dashboardMobile}
+            alt="Chilsmart - Sistemas digitales que ordenan la operación de empresas y convierten datos en decisiones accionables. Software a medida para pymes en Latinoamérica."
+            width={800}
+            height={1200}
             quality={100}
             priority
           />

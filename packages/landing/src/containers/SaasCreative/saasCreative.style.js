@@ -22,7 +22,9 @@ const FadeUp = keyframes`
 
 export const GlobalStyle = createGlobalStyle`
   body{
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', 'Manrope', sans-serif;
+    background-color: #0f1823;
+    color: #f1f5f9;
   }
 
   h1,
@@ -31,11 +33,11 @@ export const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', 'Manrope', sans-serif;
   }
 
   input, button, textarea {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', 'Manrope', sans-serif;
   }
 
   img {
@@ -170,6 +172,8 @@ export const GlobalStyle = createGlobalStyle`
 
 export const ContentWrapper = styled.div`
   overflow: hidden;
+  background-color: #0f1823;
+  min-height: 100vh;
 
   .sass_creative_navbar {
     position: fixed;
