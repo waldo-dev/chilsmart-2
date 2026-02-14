@@ -60,6 +60,20 @@ const Typewriter = ({ text, speed = 50, delay = 0, highlightText = '' }) => {
 
 const Hero = () => {
   const handlePrimaryClick = () => {
+    if (typeof window !== 'undefined' && window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/waldo-chilsmart/30min'
+      });
+    } else if (typeof window !== 'undefined') {
+      window.open(
+        'https://calendly.com/waldo-chilsmart/30min',
+        '_blank',
+        'width=700,height=600'
+      );
+    }
+  };
+
+  const handleWhatsAppClick = () => {
     trackWhatsAppClick();
     if (typeof window !== 'undefined') {
       window.open(
@@ -101,7 +115,7 @@ const Hero = () => {
         </Description>
         <CTAButtons>
           <Button
-            title="Solicitar cotización"
+            title="Agendar reunión"
             onClick={handlePrimaryClick}
             className="primary-button"
           />
